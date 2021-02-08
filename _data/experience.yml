@@ -10,12 +10,13 @@
     computer systems. 
   description: | # this will include new lines to allow paragraphs
     Responsibilities:
-      - Analyzing cross-platform performance behavior of Facebook deep-learning
+      - Analysis of cross-platform performance behavior of Facebook deep-learning
         recommender systems as part of a collaboration with Columbia University
-        on work to be submitted in the NSDI'22 conference.
-      - Validating past research results on highly configurable systems.
-      - Learning about causal inference and ML through reading academic
-        literature and attending an AISys reading-group.
+        on work to be submitted in the [NSDI'22](https://usenix.org/conference/nsdi22)
+        conference.
+      - Ensuring reproducability of past research on highly configurable systems.
+      - Staying current on developments on  causal inference and ML and how
+        those may impact our work.
 
 - layout: left
   company: Velocity Technology Solutions
@@ -26,7 +27,7 @@
     Cloud Technology Provider
   description: | # this will include new lines to allow paragraphs
     Responsibilities and Achievements:
-    - Create orchestration primitive mapping virtual disks to their AWS ID
-      across thousands of servers.
+    - Create AWS storage primitive abstracting cloud complexity for high level
+      orchestration.
     - Development of storage optimization solution
       for Amazon Elastic Block Storage.
