@@ -1,0 +1,32 @@
+# Experience template
+- layout: left
+  company: AI and Systems Laboratory
+  link: www.pooyanjamshidi.github.io/AISys/
+  job_title: Research Assistant
+  dates: August 2020 - Present
+  quote: >
+    UofSC Research Lab investigating a variety of open problems that sit at
+    the intersection of artificial intelligence, machine learning, and
+    computer systems. 
+  description: | # this will include new lines to allow paragraphs
+    Responsibilities:
+      - Analyzing cross-platform performance behavior of Facebook deep-learning
+        recommender systems as part of a collaboration with Columbia University
+        on work to be submitted in the NSDI'22 conference.
+      - Validating past research results on highly configurable systems.
+      - Learning about causal inference and ML through reading academic
+        literature and attending an AISys reading-group.
+
+- layout: left
+  company: Velocity Technology Solutions
+  link: www.velocitycloud.com/
+  job_title: VCAMP Intern
+  dates: Summer 2018
+  quote: > 
+    Cloud Technology Provider
+  description: | # this will include new lines to allow paragraphs
+    Responsibilities and Achievements:
+    - Create orchestration primitive mapping virtual disks to their AWS ID
+      across thousands of servers.
+    - Development of storage optimization solution
+      for Amazon Elastic Block Storage.
