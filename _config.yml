@@ -4,7 +4,7 @@ favicon: images/favicon.ico
 
 # Personal info
 name: Cody Shearer
-title: Undergraduate Research Assistant
+title: Software Development Intern, Krumware | Computer Science Undergradute, UofSC
 email: cjshearer@live.com
 # phone: Your phone number (optional)
 # website: Your website (eg. https://google.com)(optional)
@@ -48,9 +48,8 @@ about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
   Hi, my name is Cody. I'm a undergraduate studying <mark>computer
   science</mark> and <mark>mathematics</mark> at the University of South
-  Carolina. I'm also a research assistant at
-  [AISys Labs](https://pooyanjamshidi.github.io/AISys/#shearer) studying
-  applications of casual inference for transfer learning of systems performance.
+  Carolina. I'm also a software development intern at
+  [Krumware](https://www.krum.io/).
 
   **Languages:**
   - Python, Java, C++, Matlab
