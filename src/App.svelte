@@ -1,7 +1,14 @@
 <script lang="ts">
   import logo from "@assets/svelte.png";
   import Counter from "@lib/Counter.svelte";
+  import Theme from "@themes/Theme.svelte";
 </script>
+
+<svelte:head>
+  <title>Cody Shearer</title>
+</svelte:head>
+
+<Theme />
 
 <main>
   <img src={logo} alt="Svelte Logo" />
