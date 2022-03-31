@@ -1,4 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+npm run smui-theme-light && npm run smui-theme-dark
+git add static
 npx lint-staged
