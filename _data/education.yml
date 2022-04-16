@@ -1,7 +1,10 @@
 - layout: left
   name: University of South Carolina
   dates: 2017 - 2021
-  qualification: BS Computer Science
+  qualification: 
+    title: BS Computer Science
+    icon: fa fa-file-pdf
+    link: /assets/UofSC_B.S._Computer_Science_Cody_Shearer.pdf
   quote: >
     Founded in 1801 as South Carolina College, Columbia is the flagship
     research institution of the UofSC System.
