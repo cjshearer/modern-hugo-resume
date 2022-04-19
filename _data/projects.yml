@@ -1,18 +1,18 @@
 # Project template
-- layout: top-middle
-  name: Senior Capstone Project - EZBag
-  link: www.github.com/SCCapstone/EZBag (currently private)
-  quote: >
-    A scan-and-go webapp to streamline customers' shopping experiences
-    and automate a business's inventory tracking.
-  description: | # this will include new lines to allow paragraphs
-    My role in this project is to develop a single page application for
-    customers to scan and pay for items in their shopping cart. To simplify
-    collaboration for our team with little front-end experience, I selected
-    Vue as a framework for its component-based architecture and the Vuetify
-    Library to enforce a consistent UI design.
+# - layout: top-middle
+#   name: Senior Capstone Project - EZBag
+#   link: www.github.com/SCCapstone/EZBag
+#   quote: >
+#     A scan-and-go webapp to streamline customers' shopping experiences
+#     and automate a business's inventory tracking.
+#   description: | # this will include new lines to allow paragraphs
+#     My role in this project is to develop a single page application for
+#     customers to scan and pay for items in their shopping cart. To simplify
+#     collaboration for our team with little front-end experience, I selected
+#     Vue as a framework for its component-based architecture and the Vuetify
+#     Library to enforce a consistent UI design.
 
-    My biggest takeaway from this project is the importance of consistent
-    communication and being open to change. In a team of five, there are five
-    different visions of the final product, so it's important to amicably
-    resolve these differences as early in the design process as possible.
+#     My biggest takeaway from this project is the importance of consistent
+#     communication and being open to change. In a team of five, there are five
+#     different visions of the final product, so it's important to amicably
+#     resolve these differences as early in the design process as possible.

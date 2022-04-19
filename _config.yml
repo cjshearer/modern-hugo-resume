@@ -58,9 +58,9 @@ about_profile_image: images/profile.jpg
 
 # More Section
 # more_title: A Little More About Me
-more_content: | # this will include new lines to allow paragraphs
-  Alongside my interests in ML and casual inference, some of my hobbies include
-  parkour, gaming (including board games and DnD!) and carpentry.
+# more_content: | # this will include new lines to allow paragraphs
+#   Alongside my interests in ML and casual inference, some of my hobbies include
+#   parkour, gaming (including board games and DnD!) and carpentry.
 
 # Footer
 footer_show_references: true

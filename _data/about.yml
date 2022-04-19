@@ -1,14 +1,21 @@
 descriptions:
-  - "Hi, my name is Cody. I'm a undergraduate studying <mark>computer
-  science</mark> and <mark>mathematics</mark> at the University of South
-  Carolina. I'm also a software development intern at
-  [Krumware](https://www.krum.io/)."
+  - "Hi, my name is Cody. I'm a software developer who is passionate about
+  building tooling to accelerate development of high quality solutions."
+  
+  - "**Languages**: JavaScript, Python, Java, C++"
 
-  - "**Languages:**"
-  - "- Python, Java, C++, Matlab"
+  - "**Frameworks**: [React-Native](https://reactnative.dev/),
+  [Express](https://expressjs.com/), [React](https://reactjs.org/),
+  [Svelte](https://svelte.dev/)"
 
-  - "**Front-end Technologies:**"
-  - "- Vue, Vuetify, Vue-router, Vuex, jQuery, Cypress"
+  - "**Testing**: [Detox](https://wix.github.io/Detox/), [Jest](https://jestjs.io/),
+  [Mocha](https://mochajs.org/), [Chai](https://www.chaijs.com/),
+  [Sinon](https://sinonjs.org/)"
 
-  - "**Misc. Technologies:**"
-  - "- Anaconda, Docker, Make"
+  - "**Databases**: [CouchDB](https://couchdb.apache.org/),
+  [MongoDB](https://www.mongodb.com/)"
+
+  - "**Services**: [Auth0](https://auth0.com/), [Stripe](https://stripe.com/)"
+  
+  - "*I am not a \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ programmer, I am a problem
+  solver. These skills are not my limits, they are my foundation.*"

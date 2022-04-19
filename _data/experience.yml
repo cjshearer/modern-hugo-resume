@@ -1,5 +1,30 @@
 # Experience template
 - layout: left
+  company: Krumware
+  link: krum.io
+  job_title: Software Developer
+  dates: April 2021 - Present
+  quote: >
+    Building next generation technologies for partners, their people, & the
+    world.
+  descriptions:
+    - "Designed and developed cross-platform mobile application and back-end for
+    streaming data from Bluetooth device to remote dashboard."
+
+    - "Customer enablement of independent application maintainence and
+    development."
+
+    - "Facilitated Stripe partnership through reviewal of submission
+    certification."
+  tags:
+   - agile
+   - android
+   - ios
+   - full stack
+   - e2e testing
+   - bluetooth
+
+- layout: left
   company: AI and Systems Laboratory
   link: pooyanjamshidi.github.io/AISys
   job_title: Research Assistant
