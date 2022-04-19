@@ -11,8 +11,8 @@
     research institution of the UofSC System.
   descriptions:
     - "My time at UofSC has been fundamental in my development as problem solver
-    and developer. My favorite courses have been <mark>Artificial
-    Intelligence</mark> and <mark>Machine Learning Systems</mark>."
+    and developer. My favorite courses have been Artificial Intelligence and
+    Machine Learning Systems."
     
     - "I also spent some of my free time as a member of the *Carolina Movement
     Club* taking on roles such as *President* and *Treasurer*."
@@ -24,3 +24,10 @@
     - "**Honors**: [Phi Beta Kappa](https://www.pbk.org/About), [President's
     List](https://sc.edu/about/signature_events/awards_day/award_recipients.php?search=Cody%20James%20Shearer#recipients),
     Dean's List"
+  tags:
+   - artificial intelligence
+   - machine learning
+   - algorithms
+   - big data
+   - advanced math
+
