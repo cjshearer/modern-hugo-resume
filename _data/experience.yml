@@ -1,7 +1,7 @@
 # Experience template
 - layout: left
   company: AI and Systems Laboratory
-  link: https://pooyanjamshidi.github.io/AISys/
+  link: pooyanjamshidi.github.io/AISys
   job_title: Research Assistant
   dates: August 2020 - April 2021
   quote: >
@@ -24,7 +24,7 @@
 
 - layout: left
   company: Velocity Technology Solutions
-  link: https://velocitycloud.com/
+  link: velocitycloud.com
   job_title: VCAMP Intern
   dates: Summer 2018
   quote: > 
