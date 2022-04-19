@@ -15,6 +15,9 @@
           </a>
         {%- endif -%}
       </p>
+      {%- if include.item.qualification.subtitle -%}
+        <p>{{ include.item.qualification.subtitle }}</p>
+      {%- endif -%}
     {%- endif -%}
     {%- if include.item.dates -%}<p>{{ include.item.dates }}</p>{%- endif -%}
     {% for job in include.item.jobs %}
