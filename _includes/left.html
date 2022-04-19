@@ -33,6 +33,8 @@
     {%- if include.item.quote -%}
       <p class="quote">{{ include.item.quote }}</p>
     {%- endif -%}
-    {{ include.item.description | strip | markdownify }}
+    {% for description in include.item.descriptions %}
+      {{ description | strip | markdownify }}
+    {% endfor %}
   </div>
 </div>

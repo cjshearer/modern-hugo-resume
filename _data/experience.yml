@@ -8,15 +8,19 @@
     UofSC Research Lab investigating a variety of open problems that sit at
     the intersection of artificial intelligence, machine learning, and
     computer systems. 
-  description: | # this will include new lines to allow paragraphs
-    Responsibilities:
-      - Analysis of cross-platform performance behavior of Facebook deep-learning
-        recommender systems as part of a collaboration with Columbia University
-        on work to be submitted in the [NSDI'22](https://usenix.org/conference/nsdi22)
-        conference.
-      - Ensuring reproducability of past research on highly configurable systems.
-      - Staying current on developments on  causal inference and ML and how
-        those may impact our work.
+  descriptions:
+    - "Responsibilities:"
+
+    - "- Analysis of cross-platform performance behavior of Facebook deep-learning
+      recommender systems as part of a collaboration with Columbia University on
+      work to be submitted in the
+      [NSDI'22](https://usenix.org/conference/nsdi22) conference."
+
+    - "- Ensuring reproducability of past research on highly configurable
+    systems."
+
+    - "- Staying current on developments on  causal inference and ML and how
+    those may impact our work."
 
 - layout: left
   company: Velocity Technology Solutions
@@ -25,9 +29,11 @@
   dates: Summer 2018
   quote: > 
     Cloud Technology Provider
-  description: | # this will include new lines to allow paragraphs
-    Responsibilities and Achievements:
-    - Create AWS storage primitive abstracting cloud complexity for high level
-      orchestration.
-    - Development of storage optimization solution
-      for Amazon Elastic Block Storage.
+  descriptions:
+    - "Responsibilities and Achievements:"
+
+    - "- Create AWS storage primitive abstracting cloud complexity for high
+    level orchestration."
+
+    - "- Development of storage optimization solution for Amazon Elastic Block
+    Storage."
