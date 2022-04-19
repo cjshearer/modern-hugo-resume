@@ -28,6 +28,13 @@
         </a>
       </p>
     {%- endif -%}
+    {%- if include.item.tags %}
+      <div class="labels">
+        {% for tag in include.item.tags %}
+          <span class="label label-default">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {%- endif -%}
   </div>
   <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
     {%- if include.item.quote -%}

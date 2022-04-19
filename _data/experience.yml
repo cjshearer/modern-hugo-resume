@@ -21,6 +21,12 @@
 
     - "- Staying current on developments on  causal inference and ML and how
     those may impact our work."
+  tags:
+    - research
+    - artificial intelligence
+    - machine learning
+    - causal inference
+
 
 - layout: left
   company: Velocity Technology Solutions
@@ -37,3 +43,7 @@
 
     - "- Development of storage optimization solution for Amazon Elastic Block
     Storage."
+  tags:
+    - aws
+    - ec2
+    - java
