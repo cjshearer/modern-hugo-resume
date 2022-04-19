@@ -42,6 +42,10 @@ fieldset {
   padding: 1.5rem;
 }
 
+p.quote {
+  margin-bottom: 0;
+}
+
 .labels {
   margin-bottom: 1rem; 
 }
@@ -50,6 +54,12 @@ fieldset {
   font-size: 100%;
   margin-bottom: 0.2rem;
   display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+  .quote {
+    display: none;
+  }
 }
 
 .qualification-link {
