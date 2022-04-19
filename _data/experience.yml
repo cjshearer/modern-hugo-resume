@@ -9,24 +9,17 @@
     the intersection of artificial intelligence, machine learning, and
     computer systems. 
   descriptions:
-    - "Responsibilities:"
+    - "Analyzed cross-platform performance behavior of deep-learning recommender
+    system in collaboration with Columbia University"
 
-    - "- Analysis of cross-platform performance behavior of Facebook deep-learning
-      recommender systems as part of a collaboration with Columbia University on
-      work to be submitted in the
-      [NSDI'22](https://usenix.org/conference/nsdi22) conference."
+    - "Reproduced results from past research on highly configurable systems."
 
-    - "- Ensuring reproducability of past research on highly configurable
-    systems."
-
-    - "- Staying current on developments on  causal inference and ML and how
-    those may impact our work."
+    - "Researched relevant works on causal inference and machine learning."
   tags:
     - research
     - artificial intelligence
     - machine learning
     - causal inference
-
 
 - layout: left
   company: Velocity Technology Solutions
@@ -36,13 +29,9 @@
   quote: > 
     Cloud Technology Provider
   descriptions:
-    - "Responsibilities and Achievements:"
-
-    - "- Create AWS storage primitive abstracting cloud complexity for high
-    level orchestration."
-
-    - "- Development of storage optimization solution for Amazon Elastic Block
-    Storage."
+    - Created AWS storage primitive abstracting cloud complexity for high level
+      orchestration.
+    - Developed storage optimization solution for Amazon Elastic Block Storage.
   tags:
     - aws
     - ec2

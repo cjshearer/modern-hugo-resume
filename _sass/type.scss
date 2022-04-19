@@ -3,7 +3,7 @@ body {
   font-family: Roboto, sans-serif;
   font-feature-settings: "kern", "liga", "pnum";
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.4;
 
   @media print {
     font-size: 0.9rem;
@@ -23,7 +23,9 @@ h6 {
 }
 
 p {
-  margin: 0 0 0.75rem; }
+  margin: 0 0 0.75rem; 
+  margin-bottom: 1.2rem;
+}
 
 a {
   color: #477dca;
