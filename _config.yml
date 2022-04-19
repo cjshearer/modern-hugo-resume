@@ -45,20 +45,6 @@ linkedin_username: cjshearer
 # About Section
 # about_title: About Me
 about_profile_image: images/profile.jpg
-about_content: | # this will include new lines to allow paragraphs
-  Hi, my name is Cody. I'm a undergraduate studying <mark>computer
-  science</mark> and <mark>mathematics</mark> at the University of South
-  Carolina. I'm also a software development intern at
-  [Krumware](https://www.krum.io/).
-
-  **Languages:**
-  - Python, Java, C++, Matlab
-
-  **Front-end Technologies:**
-  - Vue, Vuetify, Vue-router, Vuex, jQuery, Cypress
-
-  **Misc. Technologies:**
-  - Anaconda, Docker, Make
 
 # Education Section
 # educaton_title: Education
