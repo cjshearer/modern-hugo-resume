@@ -8,6 +8,7 @@ jobs:
     uses: cjshearer/cjshearer.github.io/.github/workflows/build.yaml@main
 
   deploy:
+    needs: use-build
     runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
