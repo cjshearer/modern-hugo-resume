@@ -1,0 +1,13 @@
+defaultContentLanguage: en
+disableKinds:
+  - section
+  - taxonomy
+  - term
+  - RSS
+  - sitemap
+enableEmoji: true
+enableRobotsTXT: true
+languageCode: en-us
+title: "Cody Shearer"
+build:
+  writeStats: true

@@ -1,0 +1,41 @@
+<div class="mt-8 flex flex-wrap whitespace-nowrap text-center sm:flex-nowrap">
+  <div class="mx-auto flex flex-col sm:text-left">
+    <p class="text-4xl font-medium">
+      {{ .name.first }}
+      {{ .name.last }}
+    </p>
+    <div class="flex flex-wrap gap-2 overflow-hidden text-lg font-light">
+      {{ range $titleIndex, $title := .titles }}
+        <p class="mx-auto text-xl font-light sm:ml-0">
+          {{ $title }}
+        </p>
+        {{ if ne (add $titleIndex 1) (len $.titles) }}
+          <hr class="mx-[-2px] h-6 self-center border-l-2 border-neutral-400" />
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+  <div class="grow sm:text-right">
+    <ul class="list-none">
+      {{ range $socialLink := .links }}
+        <li
+          class="inline-block first:pr-1 last:pl-1 [&:not(:first-child):not(:last-child)]:px-1"
+        >
+          <a
+            class="group relative table-cell h-[3.75rem] w-[3.75rem] rounded-full text-center before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:scale-90 before:rounded-[inherit] before:transition-[transform_box-shadow] before:duration-[250ms] before:[box-shadow:inset_0_0_0_3rem_currentColor] hover:before:scale-100 hover:before:[box-shadow:inset_0_0_0_0.125rem_currentColor]"
+            href="{{ .link }}"
+          >
+            <div
+              class="flex h-full w-full items-center justify-center text-neutral-800 group-hover:text-inherit"
+            >
+              {{ partial "svg.html" (dict "src" .svg "size" "2.15rem") }}
+            </div>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+    <a aria-label="{{ .name.first }}'s email" href="mailto:{{ .email }}">
+      {{ .email }}
+    </a>
+  </div>
+</div>

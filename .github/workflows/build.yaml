@@ -1,0 +1,18 @@
+on:
+  workflow_call:
+  push:
+    branches-ignore: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/setup-runner
+      - name: Build
+        run: pnpm build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: build
+          retention-days: 1

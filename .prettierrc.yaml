@@ -1,0 +1,8 @@
+overrides:
+  - files:
+      - "*.html"
+    options:
+      parser: go-template
+plugins:
+  - prettier-plugin-tailwindcss
+  - prettier-plugin-go-template

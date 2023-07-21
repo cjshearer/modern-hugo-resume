@@ -1,0 +1,31 @@
+{{ $data := .Scratch.Get "data" }}
+{{ $googleFontURL := "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" }}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ .Site.Title }}</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="preload" href="{{ $googleFontURL }}" as="style" />
+  <link rel="stylesheet" href="{{ $googleFontURL }}" />
+  <link rel="canonical" href="{{ .Permalink }}" />
+  {{ partialCached "css.html" . }}
+
+  {{ if .Site.Params.enableMetaTags }}
+    <meta property="og:title" content="{{ .Site.Title }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:type" content="website" />
+    {{ with $data.BasicInfo.Photo }}
+      <meta property="og:image" content="{{ . | absURL }}" />
+    {{ end }}
+    {{ with $data.Profile | htmlUnescape | emojify | truncate 200 }}
+      <meta property="og:description" content="{{ . }}" />
+      <meta name="description" content="{{ . }}" />
+    {{ end }}
+  {{ end }}
+
+  {{ if .Site.GoogleAnalytics }}
+    {{ template "_internal/google_analytics.html" . }}
+    {{ template "_internal/google_analytics_async.html" . }}
+  {{ end }}
+</head>

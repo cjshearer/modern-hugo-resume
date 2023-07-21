@@ -1,0 +1,57 @@
+<p
+  class="mb-8 border-b-2 border-dashed border-neutral-400 pb-2 pt-8  text-center text-3xl font-light capitalize"
+>
+  {{ .title }}
+</p>
+{{ range .entries }}
+  <div
+    class="flex-column mb-12 flex flex-wrap gap-8 last-of-type:mb-24 sm:flex-nowrap"
+  >
+    <div
+      class="{{ cond (eq .avatar nil) `sm:w-[15rem]` `w-[15rem]` }} mx-auto min-w-[15rem] sm:mx-0"
+    >
+      {{ with .avatar }}
+        <div class="relative h-52 w-52 overflow-hidden rounded-full">
+          <div
+            class="after:absolute after:top-0 after:block after:h-full after:w-full after:rounded-full after:[box-shadow:inset_0_0_20px_0_theme(colors.neutral.500)]"
+          >
+            {{ partial "imgh.html" (dict "src" .) }}
+          </div>
+        </div>
+      {{ end }}
+      {{ with .title }}
+        <p class="text-center text-2xl font-medium">
+          {{ . | markdownify }}
+        </p>
+      {{ end }}
+      {{ with .name }}
+        <p class="text-center">
+          {{ . | markdownify }}
+        </p>
+      {{ end }}
+      {{ with .date }}
+        <p class="text-center text-neutral-400 ">
+          {{ time.Format "Jan 2006" .start }} -
+          {{ if .end }}
+            {{ time.Format "Jan 2006" .end }}
+          {{ else }}
+            present
+            {{ " " }}
+          {{ end }}
+        </p>
+      {{ end }}
+    </div>
+    <div class="flex-grow">
+      {{ with .quote }}
+        <p class="m-3 hidden text-center italic sm:block">{{ . }}</p>
+      {{ end }}
+      {{ with .description }}
+        <ul>
+          {{ range $_, $item := . }}
+            <li class="mb-4 last:mb-0">{{ $item | markdownify }}</li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
