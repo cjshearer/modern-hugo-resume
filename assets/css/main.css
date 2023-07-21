@@ -1,0 +1,12 @@
+@import url("tailwindcss/base");
+@import url("tailwindcss/utilities");
+
+html {
+  @apply bg-neutral-800;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+
+  @apply text-neutral-200;
+}

@@ -1,0 +1,5 @@
+{{ partial "resume/header" .header }}
+{{ range slice .sections.about .sections.timeline }}
+  {{ partial "resume/section" . }}
+{{ end }}
+{{ partial "resume/footer" .header }}

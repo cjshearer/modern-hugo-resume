@@ -1,0 +1,10 @@
+{{ $css := resources.Get "css/main.css" }}
+{{ $styles := $css | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+{{ if hugo.IsProduction }}
+  {{- with $styles | minify | fingerprint | resources.PostProcess -}}
+		<style>{{- .Content | safeCSS }}</style>
+  {{- end -}}
+{{ else }}
+  {{ $styles = $styles | resources.ExecuteAsTemplate (printf "css/index.dev.%v.css" now.UnixMilli) . }}
+  <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+{{ end }}

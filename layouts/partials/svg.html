@@ -1,0 +1,6 @@
+{{/* Credit to https://bitbanged.com/posts/how-to-use-inline-svgs-with-hugo/ */}}
+
+{{ $svg := .src }}
+{{ $match := "<svg (.*)?>(.*)</svg>" }}
+{{ $replaceWith := printf `<svg fill="currentColor" width="%s" height="%s" ${1}>${2}</svg>` .size .size }}
+{{ return (replaceRE $match $replaceWith (printf "/assets/svg/%s.svg" $svg | readFile) | safeHTML) }}

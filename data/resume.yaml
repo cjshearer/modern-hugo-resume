@@ -1,0 +1,170 @@
+header:
+  name:
+    first: Cody
+    last: Shearer
+  titles:
+    - Software Developer, Krumware
+    - B.S. Computer Science, UofSC
+  email: cjshearer@live.com
+  links:
+    - svg: github
+      link: https://github.com/cjshearer
+    - svg: linkedin
+      link: https://linkedin.com/in/cjshearer
+
+sections:
+  about:
+    title: about me
+    entries:
+      - avatar: avatar.jpg
+        description:
+          - >
+            Hi, my name is Cody. I'm a software developer who is passionate
+            about building tooling to accelerate development of high quality
+            solutions.
+          - >
+            Languages: JavaScript, Python, Java, C++
+          - >
+            Frameworks: [React-Native](https://reactnative.dev/),
+            [Express](https://expressjs.com/), [React](https://reactjs.org/),
+            [Svelte](https://svelte.dev/)
+          - >
+            Testing: [Detox](https://wix.github.io/Detox/),
+            [Jest](https://jestjs.io/), [Mocha](https://mochajs.org/),
+            [Chai](https://www.chaijs.com/), [Sinon](https://sinonjs.org/)"
+          - >
+            Databases: [CouchDB](https://couchdb.apache.org/),
+            [MongoDB](https://www.mongodb.com/)
+          - >
+            Services: [Auth0](https://auth0.com/), [Stripe](https://stripe.com/)
+          - >
+            *I am not a ____________ programmer, I am a problem solver. These
+            skills are not my limits, they are my foundation.*
+
+  timeline:
+    title: timeline
+    entries:
+      - name: >
+          [Krumware](https://krum.io)
+        title: Software Developer
+        date:
+          start: 2021-03-29
+          end: null
+        quote: >
+          Building next generation technologies for partners, their people, &
+          the world.
+        description:
+          - >
+            Designed and developed cross-platform mobile application and
+            back-end for streaming data from Bluetooth device to remote
+            dashboard.
+          - >
+            Enabled customers to independently maintain and develop their
+            applications.
+          - >
+            Facilitated Stripe partnership through reviewal of submission
+            certification.
+        tags:
+          - agile
+          - android
+          - ios
+          - full stack
+          - e2e testing
+          - bluetooth
+
+      - name: >
+          [University of South Carolina](https://sc.edu)
+        date:
+          start: 2017-08-17
+          end: 2021-05-06
+        title: >
+          [BS Computer Science](pdf/uofsc-diploma.pdf)
+        subtitle: Minor Mathematics
+        icon: fa fa-file-pdf
+        quote: >
+          Founded in 1801, Columbia is the flagship research institution of the
+          UofSC System.
+        description:
+          - >
+            My time at UofSC has been fundamental in my development as problem
+            solver and developer. My favorite courses have been Artificial
+            Intelligence and Machine Learning Systems.
+          - >
+            I also spent some of my free time as a member of the *Carolina
+            Movement Club* taking on roles such as *President* and *Treasurer*.
+          - >
+            **Awards**: [Outstanding Senior
+            Award](https://sc.edu/about/signature_events/awards_day/award_recipients.php?search=Cody%20James%20Shearer#recipients),
+            Palmetto Fellows
+          - >
+            **Honors**: [Phi Beta Kappa](https://www.pbk.org/About),
+            [President's
+            List](https://sc.edu/about/signature_events/awards_day/award_recipients.php?search=Cody%20James%20Shearer#recipients),
+            Dean's List
+        tags:
+          - artificial intelligence
+          - machine learning
+          - algorithms
+          - big data
+          - advanced math
+
+      - name: >
+          [AI and Systems Laboratory](https://pooyanjamshidi.github.io/AISys)
+        title: Research Assistant
+        date:
+          start: 2020-08-01
+          end: 2021-04-01
+        quote: >
+          Investigating open problems at the intersection of artificial
+          intelligence, machine learning, and computer systems.
+        description:
+          - >
+            Analyzed cross-platform performance behavior of deep-learning
+            recommender system in collaboration with Columbia University.
+          - >
+            Reproduced results from past research on highly configurable
+            systems.
+          - >
+            Researched relevant works on causal inference and machine learning.
+        tags:
+          - research
+          - artificial intelligence
+          - machine learning
+          - causal inference
+
+      - name: >
+          [Velocity](https://velocitycloud.com)
+        title: Software Dev Intern
+        date:
+          start: 2018-06-01
+          end: 2018-08-01
+        quote: >
+          Cloud Technology Provider
+        description:
+          - >
+            Created AWS storage primitive abstracting cloud complexity for high
+            level orchestration.
+          - >
+            Developed storage optimization solution for Amazon Elastic Block
+            Storage.
+        tags:
+          - aws
+          - ec2
+          - java
+# projects:
+#   - layout: top-middle
+#     name: Senior Capstone Project - EZBag
+#     link: www.github.com/SCCapstone/EZBag
+#     quote: >
+#       A scan-and-go webapp to streamline customers' shopping experiences
+#       and automate a business's inventory tracking.
+#     description: | # this will include new lines to allow paragraphs
+#       My role in this project is to develop a single page application for
+#       customers to scan and pay for items in their shopping cart. To simplify
+#       collaboration for our team with little front-end experience, I selected
+#       Vue as a framework for its component-based architecture and the Vuetify
+#       Library to enforce a consistent UI design.
+#       My biggest takeaway from this project is the importance of consistent
+#       communication and being open to change. In a team of five, there are five
+#       different visions of the final product, so it's important to amicably
+#       resolve these differences as early in the design process as possible.
