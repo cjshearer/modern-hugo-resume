@@ -10,8 +10,8 @@ permissions:
   id-token: write
 
 jobs:
-  use-build:
-    uses: cjshearer/cjshearer.github.io/.github/workflows/build.yaml@main
+  build-and-upload:
+    uses: ./.github/workflows/build.yaml
 
   deploy:
     concurrency:
@@ -20,20 +20,9 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    needs: use-build
+    needs: build-and-upload
     runs-on: ubuntu-latest
     steps:
-      - name: Download use-build artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: build
-          path: build
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: build
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
