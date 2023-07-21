@@ -1,7 +1,6 @@
 on:
+  pull_request:
   workflow_call:
-  push:
-    branches-ignore: main
 
 jobs:
   build:
