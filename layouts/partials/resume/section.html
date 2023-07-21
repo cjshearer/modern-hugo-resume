@@ -11,7 +11,7 @@
       class="{{ cond (eq .avatar nil) `sm:w-[15rem]` `w-[15rem]` }} mx-auto min-w-[15rem] sm:mx-0"
     >
       {{ with .avatar }}
-        <div class="relative h-52 w-52 overflow-hidden rounded-full">
+        <div class="relative mx-auto h-52 w-52 overflow-hidden rounded-full">
           <div
             class="after:absolute after:top-0 after:block after:h-full after:w-full after:rounded-full after:[box-shadow:inset_0_0_20px_0_theme(colors.neutral.500)]"
           >
