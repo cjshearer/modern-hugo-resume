@@ -10,7 +10,9 @@ jobs:
       - uses: ./.github/actions/setup-runner
       - name: Build
         run: pnpm build
-      - uses: actions/upload-artifact@v3
+      - if: github.ref == 'refs/heads/main'
+        name: Upload Artifact
+        uses: actions/upload-pages-artifact@v2
         with:
           name: build
           path: build
