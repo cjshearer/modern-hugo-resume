@@ -46,7 +46,9 @@
         <p class="m-3 hidden text-center italic sm:block">{{ . }}</p>
       {{ end }}
       {{ with .description }}
-        <div class="[&>*]:mt-4 first:[&>*]:mt-0">
+        <div
+          class="[&>*]:mt-4 first:[&>*]:mt-0 [&>ul>li]:pl-2 [&>ul]:mt-0 [&>ul]:list-['-'] [&>ul]:pl-2"
+        >
           {{ . | markdownify }}
         </div>
       {{ end }}
