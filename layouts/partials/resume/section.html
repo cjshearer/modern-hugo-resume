@@ -46,11 +46,9 @@
         <p class="m-3 hidden text-center italic sm:block">{{ . }}</p>
       {{ end }}
       {{ with .description }}
-        <ul>
-          {{ range $_, $item := . }}
-            <li class="mb-4 last:mb-0">{{ $item | markdownify }}</li>
-          {{ end }}
-        </ul>
+        <div class="[&>*]:mt-4 first:[&>*]:mt-0">
+          {{ . | markdownify }}
+        </div>
       {{ end }}
     </div>
   </div>

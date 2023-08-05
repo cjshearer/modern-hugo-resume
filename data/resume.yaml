@@ -17,27 +17,26 @@ sections:
     title: about me
     entries:
       - avatar: avatar.jpg
-        description:
-          - >
-            Hi, I'm Cody, a software developer with a commitment to efficiency
-            and excellence. I'm passionate about enhancing productivity through
-            platform engineering, refactoring to reduce complexity, or any other
-            challenge offered by a full-stack role.
+        description: >
+          Hi, I'm Cody, a software developer with a commitment to efficiency
+          and excellence. I'm passionate about enhancing productivity through
+          platform engineering, refactoring to reduce complexity, or any other
+          challenge offered by a full-stack role.
 
-          - >
-            Rather than simply addressing immediate challenges, I take pride in
-            solving entire classes of problems, seeking to understand their root
-            causes and addressing them holistically.
 
-          - >
-            My toolbox includes `Git, React-Native, TypeScript, Golang, Vue,
-            Hugo, CircleCI, GitHub Actions, Fastlane, MySQL, MongoDB, Docker,
-            Auth0, `and` Stripe`. I'm also eagerly exploring `Rust` and
-            `WebAssembly` as a possible front-end replacement for TypeScript.
+          Rather than simply addressing immediate challenges, I take pride in
+          solving entire classes of problems, seeking to understand their root
+          causes and addressing them holistically.
 
-          - >
-            *I am more than a programmer; I am a problem solver. These tools are
-            not my limits, they are my foundation.*
+
+          My toolbox includes `Git, React-Native, TypeScript, Golang, Vue,
+          Hugo, CircleCI, GitHub Actions, Fastlane, MySQL, MongoDB, Docker,
+          Auth0, `and` Stripe`. I'm also eagerly exploring `Rust` and
+          `WebAssembly` as a possible front-end replacement for TypeScript.
+
+
+          *I am more than a programmer; I am a problem solver. These tools are
+          not my limits, they are my foundation.*
 
   timeline:
     title: timeline
@@ -51,24 +50,18 @@ sections:
         quote: >
           Building next generation technologies for partners, their people, &
           the world.
-        description:
-          - >
-            Designed and developed cross-platform mobile application and
-            back-end for streaming data from Bluetooth device to remote
-            dashboard.
-          - >
-            Enabled customers to independently maintain and develop their
-            applications.
-          - >
-            Facilitated Stripe partnership through reviewal of submission
-            certification.
-        tags:
-          - agile
-          - android
-          - ios
-          - full stack
-          - e2e testing
-          - bluetooth
+        description: >
+          Designed and developed cross-platform mobile application and
+          back-end for streaming data from Bluetooth device to remote
+          dashboard:
+
+
+          Enabled customers to independently maintain and develop their
+          applications.
+
+
+          Facilitated Stripe partnership through reviewal of submission
+          certification.
 
       - name: >
           [University of South Carolina](https://sc.edu)
@@ -82,23 +75,25 @@ sections:
         quote: >
           Founded in 1801, Columbia is the flagship research institution of the
           USC System.
-        description:
-          - >
-            My time at USC has been fundamental in my development as problem
-            solver and developer. My favorite courses have been Artificial
-            Intelligence and Machine Learning Systems.
-          - >
-            I also spent some of my free time as a member of the *Carolina
-            Movement Club* taking on roles such as *President* and *Treasurer*.
-          - >
-            **Awards**: [Outstanding Senior
-            Award](https://sc.edu/about/signature_events/awards_day/award_recipients.php?search=Cody%20James%20Shearer#recipients),
-            Palmetto Fellows
-          - >
-            **Honors**: [Phi Beta Kappa](https://www.pbk.org/About),
-            [President's
-            List](https://sc.edu/about/signature_events/awards_day/award_recipients.php?search=Cody%20James%20Shearer#recipients),
-            Dean's List
+        description: >
+          My time at USC has been fundamental in my development as problem
+          solver and developer. My favorite courses have been Artificial
+          Intelligence and Machine Learning Systems.
+
+
+          I also spent some of my free time as a member of the *Carolina
+          Movement Club* taking on roles such as *President* and *Treasurer*.
+
+
+          **Awards**: [Outstanding Senior
+          Award](https://sc.edu/about/signature_events/awards_day/award_recipients.php?search=Cody%20James%20Shearer#recipients),
+          Palmetto Fellows
+
+
+          **Honors**: [Phi Beta Kappa](https://www.pbk.org/About),
+          [President's
+          List](https://sc.edu/about/signature_events/awards_day/award_recipients.php?search=Cody%20James%20Shearer#recipients),
+          Dean's List
 
       - name: >
           [AI and Systems Laboratory](https://pooyanjamshidi.github.io/AISys)
@@ -109,15 +104,16 @@ sections:
         quote: >
           Investigating open problems at the intersection of artificial
           intelligence, machine learning, and computer systems.
-        description:
-          - >
-            Analyzed cross-platform performance behavior of deep-learning
-            recommender system in collaboration with Columbia University.
-          - >
-            Reproduced results from past research on highly configurable
-            systems.
-          - >
-            Researched relevant works on causal inference and machine learning.
+        description: >
+          Analyzed cross-platform performance behavior of deep-learning
+          recommender system in collaboration with Columbia University.
+
+
+          Reproduced results from past research on highly configurable
+          systems.
+
+
+          Researched relevant works on causal inference and machine learning.
 
       - name: >
           [Velocity](https://velocitycloud.com)
@@ -127,10 +123,10 @@ sections:
           end: 2018-08-01
         quote: >
           Cloud Technology Provider
-        description:
-          - >
-            Created AWS storage primitive abstracting cloud complexity for high
-            level orchestration.
-          - >
-            Developed storage optimization solution for Amazon Elastic Block
-            Storage.
+        description: >
+          Created AWS storage primitive abstracting cloud complexity for high
+          level orchestration.
+
+
+          Developed storage optimization solution for Amazon Elastic Block
+          Storage.
