@@ -4,7 +4,7 @@ header:
     last: Shearer
   titles:
     - Software Developer, Krumware
-    - B.S. Computer Science, UofSC
+    - B.S. Computer Science, USC
   email: cjshearer@live.com
   links:
     - svg: github
@@ -19,27 +19,25 @@ sections:
       - avatar: avatar.jpg
         description:
           - >
-            Hi, my name is Cody. I'm a software developer who is passionate
-            about building tooling to accelerate development of high quality
-            solutions.
+            Hi, I'm Cody, a software developer with a commitment to efficiency
+            and excellence. I'm passionate about enhancing productivity through
+            platform engineering, refactoring to reduce complexity, or any other
+            challenge offered by a full-stack role.
+
           - >
-            Languages: JavaScript, Python, Java, C++
+            Rather than simply addressing immediate challenges, I take pride in
+            solving entire classes of problems, seeking to understand their root
+            causes and addressing them holistically.
+
           - >
-            Frameworks: [React-Native](https://reactnative.dev/),
-            [Express](https://expressjs.com/), [React](https://reactjs.org/),
-            [Svelte](https://svelte.dev/)
+            My toolbox includes `Git, React-Native, TypeScript, Golang, Vue,
+            Hugo, CircleCI, GitHub Actions, Fastlane, MySQL, MongoDB, Docker,
+            Auth0, `and` Stripe`. I'm also eagerly exploring `Rust` and
+            `WebAssembly` as a possible front-end replacement for TypeScript.
+
           - >
-            Testing: [Detox](https://wix.github.io/Detox/),
-            [Jest](https://jestjs.io/), [Mocha](https://mochajs.org/),
-            [Chai](https://www.chaijs.com/), [Sinon](https://sinonjs.org/)"
-          - >
-            Databases: [CouchDB](https://couchdb.apache.org/),
-            [MongoDB](https://www.mongodb.com/)
-          - >
-            Services: [Auth0](https://auth0.com/), [Stripe](https://stripe.com/)
-          - >
-            *I am not a ____________ programmer, I am a problem solver. These
-            skills are not my limits, they are my foundation.*
+            *I am more than a programmer; I am a problem solver. These tools are
+            not my limits, they are my foundation.*
 
   timeline:
     title: timeline
@@ -78,15 +76,15 @@ sections:
           start: 2017-08-17
           end: 2021-05-06
         title: >
-          [BS Computer Science](pdf/uofsc-diploma.pdf)
+          [BS Computer Science](pdf/usc-diploma.pdf)
         subtitle: Minor Mathematics
         icon: fa fa-file-pdf
         quote: >
           Founded in 1801, Columbia is the flagship research institution of the
-          UofSC System.
+          USC System.
         description:
           - >
-            My time at UofSC has been fundamental in my development as problem
+            My time at USC has been fundamental in my development as problem
             solver and developer. My favorite courses have been Artificial
             Intelligence and Machine Learning Systems.
           - >
@@ -101,12 +99,6 @@ sections:
             [President's
             List](https://sc.edu/about/signature_events/awards_day/award_recipients.php?search=Cody%20James%20Shearer#recipients),
             Dean's List
-        tags:
-          - artificial intelligence
-          - machine learning
-          - algorithms
-          - big data
-          - advanced math
 
       - name: >
           [AI and Systems Laboratory](https://pooyanjamshidi.github.io/AISys)
@@ -126,11 +118,6 @@ sections:
             systems.
           - >
             Researched relevant works on causal inference and machine learning.
-        tags:
-          - research
-          - artificial intelligence
-          - machine learning
-          - causal inference
 
       - name: >
           [Velocity](https://velocitycloud.com)
@@ -147,24 +134,3 @@ sections:
           - >
             Developed storage optimization solution for Amazon Elastic Block
             Storage.
-        tags:
-          - aws
-          - ec2
-          - java
-# projects:
-#   - layout: top-middle
-#     name: Senior Capstone Project - EZBag
-#     link: www.github.com/SCCapstone/EZBag
-#     quote: >
-#       A scan-and-go webapp to streamline customers' shopping experiences
-#       and automate a business's inventory tracking.
-#     description: | # this will include new lines to allow paragraphs
-#       My role in this project is to develop a single page application for
-#       customers to scan and pay for items in their shopping cart. To simplify
-#       collaboration for our team with little front-end experience, I selected
-#       Vue as a framework for its component-based architecture and the Vuetify
-#       Library to enforce a consistent UI design.
-#       My biggest takeaway from this project is the importance of consistent
-#       communication and being open to change. In a team of five, there are five
-#       different visions of the final product, so it's important to amicably
-#       resolve these differences as early in the design process as possible.
