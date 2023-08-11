@@ -1,14 +1,14 @@
 <header
-  class="mb-8 flex flex-wrap whitespace-nowrap text-center sm:flex-nowrap"
+  class="mb-8 flex flex-wrap whitespace-nowrap text-center md:flex-nowrap"
 >
-  <div class="mx-auto flex flex-col sm:text-left">
+  <div class="mx-auto flex flex-col md:text-left">
     <p class="text-4xl font-medium">
       {{ .name.first }}
       {{ .name.last }}
     </p>
     <div class="flex flex-wrap gap-2 overflow-hidden text-lg font-light">
       {{ range $titleIndex, $title := .titles }}
-        <p class="mx-auto text-xl font-light sm:ml-0">
+        <p class="mx-auto text-xl font-light md:mx-0">
           {{ $title }}
         </p>
         {{ if ne (add $titleIndex 1) (len $.titles) }}
@@ -17,7 +17,7 @@
       {{ end }}
     </div>
   </div>
-  <div class="grow sm:text-right">
+  <div class="w-full grow md:w-auto md:text-right">
     <ul class="list-none">
       {{ range $socialLink := .links }}
         <li
