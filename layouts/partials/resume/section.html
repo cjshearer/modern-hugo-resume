@@ -1,12 +1,10 @@
 <p
-  class="mb-8 border-b-2 border-dashed border-neutral-400 pb-2 pt-8  text-center text-3xl font-light capitalize"
+  class="mb-8 border-b-2 border-dashed border-neutral-400 pb-2 text-center text-3xl font-light capitalize"
 >
   {{ .title }}
 </p>
 {{ range .entries }}
-  <div
-    class="flex-column mb-12 flex flex-wrap gap-8 last-of-type:mb-24 sm:flex-nowrap"
-  >
+  <div class="flex-column mb-12 flex flex-wrap gap-8 sm:flex-nowrap">
     <div
       class="{{ cond (eq .avatar nil) `sm:w-[15rem]` `w-[15rem]` }} mx-auto min-w-[15rem] sm:mx-0"
     >
