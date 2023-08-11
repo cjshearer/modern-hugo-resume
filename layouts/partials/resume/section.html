@@ -4,9 +4,9 @@
   {{ .title }}
 </p>
 {{ range .entries }}
-  <div class="flex-column mb-12 flex flex-wrap gap-8 sm:flex-nowrap">
+  <div class="flex-column mb-12 flex flex-wrap gap-8 md:flex-nowrap">
     <div
-      class="{{ cond (eq .avatar nil) `sm:w-[15rem]` `w-[15rem]` }} mx-auto min-w-[15rem] sm:mx-0"
+      class="{{ cond (eq .avatar nil) `md:w-[15rem]` `w-[15rem]` }} mx-auto min-w-[15rem] md:mx-0"
     >
       {{ with .avatar }}
         <div class="relative mx-auto h-52 w-52 overflow-hidden rounded-full">
@@ -41,7 +41,7 @@
     </div>
     <div class="flex-grow">
       {{ with .quote }}
-        <p class="m-3 hidden text-center italic sm:block">{{ . }}</p>
+        <p class="m-3 hidden text-center italic md:block">{{ . }}</p>
       {{ end }}
       {{ with .description }}
         <div
