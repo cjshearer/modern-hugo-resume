@@ -13,7 +13,6 @@
     "postcss": "^8.4.26",
     "postcss-cli": "^10.1.0",
     "postcss-html": "^1.5.0",
-    "postcss-import": "^15.1.0",
     "prettier": "^2.8.8",
     "prettier-plugin-go-template": "^0.0.13",
     "prettier-plugin-tailwindcss": "^0.3.0",

@@ -1,5 +1,8 @@
 build:
   writeStats: true
+  cacheBusters:
+    - source: (postcss|tailwind)\.config\.js
+      target: css
 defaultContentLanguage: en
 disableKinds:
   - RSS
