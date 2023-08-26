@@ -4,7 +4,9 @@
   {{ .title }}
 </p>
 {{ range .entries }}
-  <div class="flex-column mb-12 flex flex-wrap gap-8 md:flex-nowrap">
+  <div
+    class="flex-column mb-12 flex break-inside-avoid flex-wrap gap-8 md:flex-nowrap"
+  >
     <div
       class="{{ cond (eq .avatar nil) `md:w-[15rem]` `w-[15rem]` }} mx-auto min-w-[15rem] md:mx-0"
     >
