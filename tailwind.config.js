@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./layouts/**/*.html"],
+  content: ["./hugo_stats.json"],
   plugins: [require("@tailwindcss/typography")],
 };
