@@ -1,5 +1,5 @@
-@import url("tailwindcss/base");
-@import url("tailwindcss/utilities");
+@tailwind base;
+@tailwind utilities;
 
 html {
   @apply bg-neutral-800;
