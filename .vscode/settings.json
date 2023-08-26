@@ -13,5 +13,6 @@
   "eslint.format.enable": true,
   "css.validate": false,
   "stylelint.configFile": ".stylelintrc.yaml",
-  "stylelint.validate": ["css"]
+  "stylelint.validate": ["css"],
+  "yaml.schemaStore.enable": false
 }
