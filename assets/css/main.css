@@ -1,4 +1,5 @@
 @tailwind base;
+@tailwind components;
 @tailwind utilities;
 
 html {
@@ -9,4 +10,12 @@ body {
   font-family: Roboto, sans-serif;
 
   @apply text-neutral-200;
+}
+
+a {
+  @apply underline decoration-1 underline-offset-4 hover:text-neutral-100;
+}
+
+code {
+  @apply whitespace-nowrap rounded-md border border-neutral-500 bg-neutral-900 px-1 text-neutral-200;
 }
