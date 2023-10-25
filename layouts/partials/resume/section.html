@@ -1,5 +1,5 @@
 <p
-  class="mb-8 border-b-2 border-dashed border-neutral-400 pb-2 text-center text-3xl font-light capitalize"
+  class="mb-8 border-b-2 border-dashed border-neutral-400 pb-2 text-center text-3xl font-light capitalize print:mb-4 print:pb-1"
 >
   {{ .title }}
 </p>
@@ -13,24 +13,26 @@
       {{ with .avatar }}
         <div class="relative mx-auto h-52 w-52 overflow-hidden rounded-full">
           <div
-            class="after:absolute after:top-0 after:block after:h-full after:w-full after:rounded-full after:[box-shadow:inset_0_0_20px_0_theme(colors.neutral.500)]"
+            class="after:absolute after:top-0 after:block after:h-full after:w-full after:rounded-full dark:after:[box-shadow:inset_0_0_20px_0_theme(colors.neutral.500)]"
           >
             {{ partial "imgh.html" (dict "src" .) }}
           </div>
         </div>
       {{ end }}
       {{ with .title }}
-        <p class="prose prose-invert text-center text-2xl font-medium">
+        <p
+          class="prose prose-2xl text-center font-medium dark:prose-invert print:prose-lg"
+        >
           {{ . | markdownify }}
         </p>
       {{ end }}
       {{ with .name }}
-        <p class="prose prose-invert text-center">
+        <p class="prose text-center dark:prose-invert print:prose-sm">
           {{ . | markdownify }}
         </p>
       {{ end }}
       {{ with .date }}
-        <p class="text-center">
+        <p class="text-center print:text-sm">
           {{ time.Format "Jan 2006" .start }} -
           {{ if .end }}
             {{ time.Format "Jan 2006" .end }}
@@ -43,10 +45,12 @@
     </div>
     <div class="flex-grow">
       {{ with .quote }}
-        <p class="m-3 hidden text-center italic md:block">{{ . }}</p>
+        <p class="m-3 hidden text-center italic print:text-sm md:block">
+          {{ . }}
+        </p>
       {{ end }}
       {{ with .description }}
-        <div class="prose prose-invert">
+        <div class="print:prose-md prose dark:prose-invert">
           {{ . | markdownify }}
         </div>
       {{ end }}

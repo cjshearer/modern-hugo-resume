@@ -18,7 +18,7 @@
     </div>
   </div>
   <div class="w-full grow md:w-auto md:text-right">
-    <ul class="list-none">
+    <ul class="list-none print:hidden">
       {{ range $socialLink := .links }}
         <li
           class="inline-block first:pr-1 last:pl-1 [&:not(:first-child):not(:last-child)]:px-1"
@@ -28,7 +28,7 @@
             href="{{ .link }}"
           >
             <div
-              class="flex h-full w-full items-center justify-center text-neutral-800 group-hover:text-inherit"
+              class="flex h-full w-full items-center justify-center group-hover:text-inherit dark:text-neutral-800"
             >
               {{ partial "svg.html" (dict "src" .svg "size" "2.15rem") }}
             </div>
@@ -36,8 +36,19 @@
         </li>
       {{ end }}
     </ul>
-    <a aria-label="{{ .name.first }}'s email" href="mailto:{{ .email }}">
-      {{ .email }}
-    </a>
+    <ul>
+      <li>
+        <a aria-label="{{ .name.first }}'s email" href="mailto:{{ .email }}">
+          Email:
+          {{ .email }}
+        </a>
+      </li>
+      <li>
+        <a aria-label="My website" href="{{ .website }}">
+          Website:
+          {{ .website }}
+        </a>
+      </li>
+    </ul>
   </div>
 </header>

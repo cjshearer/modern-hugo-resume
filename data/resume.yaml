@@ -6,6 +6,7 @@ header:
     - Software Developer, Krumware
     - B.S. Computer Science, USC
   email: cjshearer@live.com
+  website: www.cjshearer.dev
   links:
     - svg: github
       link: https://github.com/cjshearer
@@ -18,8 +19,8 @@ sections:
     entries:
       - avatar: avatar.jpg
         description: |
-          Hi, I'm Cody, a software developer with a commitment to efficiency
-          and excellence. I'm passionate about enhancing productivity through
+          Hi, I'm Cody, a software developer with a commitment to efficiency and
+          excellence. I'm passionate about enhancing productivity through
           platform engineering, refactoring to reduce complexity, or any other
           challenge offered by a full-stack role.
 
@@ -29,7 +30,7 @@ sections:
 
           My toolbox includes `Git`, `React-Native`, `TypeScript`, `Golang`,
           `Vue`, `Hugo`, `CircleCI`, `GitHub Actions`, `Fastlane`, `MySQL`,
-          `MongoDB`, `Docker`, `Auth0`, and Stripe. I'm also eagerly exploring
+          `MongoDB`, `Docker`, `Auth0`, and `Stripe`. I'm also eagerly exploring
           `Rust` and `WebAssembly` as a possible front-end replacement for
           `TypeScript`.
 
@@ -41,7 +42,7 @@ sections:
     entries:
       - name: |
           [Krumware](https://krum.io)
-        title: Software Developer
+        title: Full-Stack Developer
         date:
           start: 2021-03-29
           end: null
@@ -49,16 +50,30 @@ sections:
           Building next generation technologies for partners, their people, &
           the world.
         description: |
-          Designed and developed cross-platform mobile application and
-          back-end for streaming data from Bluetooth device to remote
-          dashboard.
+          Led end-to-end development of a new `React-Native` app for
+          [`iOS`](https://apps.apple.com/us/app/rainwalk-pet-insurance/id6447000580)
+          and
+          [`Android`](https://play.google.com/store/apps/details?id=rainwalk.insured),
+          with a heavy focus on `GitOps` to enable rapid delivery with
+          `Fastlane` and `CircleCI` and observability with `Sentry` and
+          `LogRocket`. Generated long-term value by extracting reusable work as
+          template for future projects. Empowered the client's independent
+          maintenance of the app through workshops.
 
-          Enabled customers to independently maintain and develop their
-          applications.
+          Spearheaded the transition of the company's default backend
+          deliverable from `Node.js` to `Golang` for improved type safety and
+          developer experience. Assembled a Golang REST API template with tools
+          and development processes as a platform familiar to Node.js
+          developers. Improved time-to-delivery and synchronization of API and
+          documentation with
+          [`oapi-codegen`](https://github.com/deepmap/oapi-codegen).
 
-          Facilitated Stripe partnership through reviewal of submission
-          certification.
-
+          Developed a `Vue PWA` and `Golang` integration for a construction
+          company. Modernized the client's quality assurance workflow by
+          replacing traditional paper-based forms and manual data entry with an
+          offline-first mobile app. Seamlessly bridged new processes with
+          existing legacy software, enhancing operational efficiency and
+          accuracy.
       - name: |
           [University of South Carolina](https://sc.edu)
         date:
@@ -73,8 +88,8 @@ sections:
           USC System.
         description: |
           My time at USC has been fundamental in my development as problem
-          solver and developer. My favorite courses have been Artificial
-          Intelligence and Machine Learning Systems.
+          solver and developer. My favorite courses were `Artificial
+          Intelligence` and `Machine Learning Systems`.
 
           I also spent some of my free time as a member of the *Carolina
           Movement Club* taking on roles such as *President* and *Treasurer*.
@@ -100,8 +115,7 @@ sections:
           Analyzed cross-platform performance behavior of deep-learning
           recommender system in collaboration with Columbia University.
 
-          Reproduced results from past research on highly configurable
-          systems.
+          Reproduced results from past research on highly configurable systems.
 
           Researched relevant works on causal inference and machine learning.
 
