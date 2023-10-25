@@ -1,7 +1,7 @@
 <header
   class="mb-8 flex flex-wrap whitespace-nowrap text-center md:flex-nowrap"
 >
-  <div class="mx-auto flex flex-col md:text-left">
+  <div class="mx-auto flex flex-col md:ml-0 md:text-left">
     <p class="text-4xl font-medium">
       {{ .name.first }}
       {{ .name.last }}
@@ -17,25 +17,34 @@
       {{ end }}
     </div>
   </div>
-  <div class="w-full grow md:w-auto md:text-right">
-    <ul class="list-none">
-      {{ range $socialLink := .links }}
-        <li
-          class="inline-block first:pr-1 last:pl-1 [&:not(:first-child):not(:last-child)]:px-1"
-        >
-          <a
-            class="group relative table-cell h-[3.75rem] w-[3.75rem] rounded-full text-center before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:scale-90 before:rounded-[inherit] before:transition-[transform_box-shadow] before:duration-[250ms] before:[box-shadow:inset_0_0_0_3rem_currentColor] hover:before:scale-100 hover:before:[box-shadow:inset_0_0_0_0.125rem_currentColor]"
-            href="{{ .link }}"
-          >
-            <div
-              class="flex h-full w-full items-center justify-center text-neutral-800 group-hover:text-inherit"
+  <div class="flex w-full flex-col gap-2 md:w-auto md:text-right">
+    <div class="flex h-[3.75rem] justify-center">
+      <ul class="flex list-none justify-center gap-2">
+        {{ range $socialLink := .links }}
+          <li class="aspect-square">
+            <a
+              class="group relative block h-full w-full rounded-full text-center before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:scale-90 before:rounded-[inherit] before:transition-[transform_box-shadow] before:duration-[250ms] before:[box-shadow:inset_0_0_0_3rem_currentColor] hover:before:scale-100 hover:before:[box-shadow:inset_0_0_0_0.125rem_currentColor]"
+              href="{{ .link }}"
             >
-              {{ partial "svg.html" (dict "src" .svg "size" "2.15rem") }}
+              <div
+                class="flex h-full w-full items-center justify-center text-neutral-800 group-hover:text-inherit"
+              >
+                {{ partial "svg.html" (dict "src" .svg "size" "2.15rem") }}
+              </div>
+            </a>
+          </li>
+        {{ end }}
+        {{ with .avatar }}
+          <li class="relative aspect-square overflow-hidden rounded-full">
+            <div
+              class="after:absolute after:top-0 after:block after:h-full after:w-full after:rounded-full after:[box-shadow:inset_0_0_20px_0_theme(colors.neutral.500)]"
+            >
+              {{ partial "imgh.html" (dict "src" .) }}
             </div>
-          </a>
-        </li>
-      {{ end }}
-    </ul>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
     <a aria-label="{{ .name.first }}'s email" href="mailto:{{ .email }}">
       {{ .email }}
     </a>
