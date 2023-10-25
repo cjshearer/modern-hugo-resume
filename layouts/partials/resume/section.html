@@ -1,55 +1,41 @@
-<p
-  class="mb-8 border-b-2 border-dashed border-neutral-400 pb-2 text-center text-3xl font-light capitalize"
->
-  {{ .title }}
-</p>
-{{ range .entries }}
-  <div
-    class="flex-column mb-12 flex break-inside-avoid flex-wrap gap-8 md:flex-nowrap"
+{{ $dateFormat := "2006" }}
+<section>
+  <h1
+    class="mb-8 border-b-2 border-dashed border-neutral-400 pb-2 text-center text-3xl font-light capitalize"
   >
-    <div
-      class="{{ cond (eq .avatar nil) `md:w-[15rem]` `w-[15rem]` }} mx-auto min-w-[15rem] md:mx-0"
-    >
-      {{ with .avatar }}
-        <div class="relative mx-auto h-52 w-52 overflow-hidden rounded-full">
-          <div
-            class="after:absolute after:top-0 after:block after:h-full after:w-full after:rounded-full after:[box-shadow:inset_0_0_20px_0_theme(colors.neutral.500)]"
-          >
-            {{ partial "imgh.html" (dict "src" .) }}
-          </div>
-        </div>
-      {{ end }}
-      {{ with .title }}
-        <p class="prose prose-invert text-center text-2xl font-medium">
-          {{ . | markdownify }}
-        </p>
-      {{ end }}
-      {{ with .name }}
-        <p class="prose prose-invert text-center">
-          {{ . | markdownify }}
-        </p>
-      {{ end }}
-      {{ with .date }}
-        <p class="text-center">
-          {{ time.Format "Jan 2006" .start }} -
-          {{ if .end }}
-            {{ time.Format "Jan 2006" .end }}
-          {{ else }}
-            present
-            {{ " " }}
+    {{ .title }}
+  </h1>
+  {{ range .entries }}
+    {{ $startDate := "" }}
+    {{ $endDate := "present" }}
+    {{ with .date }}
+      {{ $startDate = time.Format $dateFormat .start }}
+      {{ with .end }}{{ $endDate = time.Format $dateFormat . }}{{ end }}
+    {{ end }}
+    <section class="mb-12 break-inside-avoid gap-2 md:grid md:grid-cols-12">
+      <div class="col-span-11">
+        <div class="flex justify-between">
+          {{ with .name }}
+            <h2 class="text-2xl font-medium">{{ . }}</h2>
           {{ end }}
-        </p>
-      {{ end }}
-    </div>
-    <div class="flex-grow">
-      {{ with .quote }}
-        <p class="m-3 hidden text-center italic md:block">{{ . }}</p>
-      {{ end }}
-      {{ with .description }}
-        <div class="prose prose-invert">
-          {{ . | markdownify }}
+          {{ with .date }}
+            <p class="md:hidden">{{ $startDate }} - {{ $endDate }}</p>
+          {{ end }}
+        </div>
+        {{ with .title }}
+          <h3 class="text-lg">{{ . | markdownify }}</h3>
+        {{ end }}
+        {{ with .description }}
+          <div class="prose prose-invert">{{ . | markdownify }}</div>
+        {{ end }}
+      </div>
+      {{ with .date }}
+        <div class="hidden text-center md:block">
+          <p>{{ $startDate }}</p>
+          <p>|</p>
+          <p>{{ $endDate }}</p>
         </div>
       {{ end }}
-    </div>
-  </div>
-{{ end }}
+    </section>
+  {{ end }}
+</section>
