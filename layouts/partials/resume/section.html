@@ -42,9 +42,6 @@
       {{ end }}
     </div>
     <div class="flex-grow">
-      {{ with .quote }}
-        <p class="m-3 hidden text-center italic md:block">{{ . }}</p>
-      {{ end }}
       {{ with .description }}
         <div class="prose prose-invert">
           {{ . | markdownify }}
