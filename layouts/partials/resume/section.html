@@ -1,10 +1,12 @@
 {{ $dateFormat := "2006" }}
 <section>
-  <h1
-    class="mb-8 border-b-2 border-dashed border-neutral-400 pb-2 text-center text-3xl font-light capitalize"
-  >
-    {{ .title }}
-  </h1>
+  {{ with .title }}
+    <h1
+      class="mb-8 border-b-2 border-dashed border-neutral-400 pb-2 text-center text-3xl font-light capitalize"
+    >
+      {{ . }}
+    </h1>
+  {{ end }}
   {{ range .entries }}
     {{ $startDate := "" }}
     {{ $endDate := "present" }}
