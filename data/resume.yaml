@@ -1,17 +1,63 @@
-header:
-  avatar: avatar.jpg
-  name:
-    first: Cody
-    last: Shearer
-  titles:
-    - Software Developer, Krumware
-    - B.S. Computer Science, USC
-  email: cjshearer@live.com
-  links:
-    - svg: github
-      link: https://github.com/cjshearer
-    - svg: linkedin
-      link: https://linkedin.com/in/cjshearer
+avatar: avatar.jpg
+website: cjshearer.dev
+links:
+  - svg: node_modules/@fortawesome/fontawesome-free/svgs/brands/github
+    link: github.com/cjshearer
+    protocol: https
+  - svg: node_modules/@fortawesome/fontawesome-free/svgs/brands/linkedin
+    link: linkedin.com/in/cjshearer
+    protocol: https
+  - svg: node_modules/@fortawesome/fontawesome-free/svgs/solid/envelope
+    link: cjshearer@live.com
+    protocol: mailto
+name:
+  first: Cody
+  last: Shearer
+summary: |
+  Software developer with ~3 years of experience in full stack web and mobile development.
+footer: |
+  Fully typeset with HTML and CSS. See [github.com/cjshearer/modern-hugo-resume](https://github.com/cjshearer/modern-hugo-resume).
+
+skills:
+  - languages:
+      - TypeScript
+      - Go
+      - SQL
+      - Rust
+      - Python
+      - Java
+      - C++
+  - frameworks:
+      - React
+      - React-Native
+      - TailwindCSS
+      - Vue
+      - Nuxt
+      - Hugo
+  - concepts:
+      - Cloud-Native
+      - Microservices
+      - REST
+      - GitOps
+      - Agile/Scrum
+  - tools:
+      - Git
+      - Docker
+      - ESLint
+      - Postman
+  - ci/cd:
+      - CircleCI
+      - GitHub Actions
+      - Fastlane
+  - databases:
+      - MySQL
+      - PostgreSQL
+      - MongoDB
+  - services:
+      - Auth0
+      - LogRocket
+      - Sentry
+      - Stripe
 
 sections:
   about:
@@ -59,8 +105,7 @@ sections:
         date:
           start: 2017-08-17
           end: 2021-05-06
-        title: |
-          [BS Computer Science](pdf/usc-diploma.pdf)
+        title: BS Computer Science
         subtitle: Minor Mathematics
         icon: fa fa-file-pdf
         description: |

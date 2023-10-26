@@ -1,5 +1,12 @@
-{{ partial "resume/header" .header }}
-{{ range slice .sections.about .sections.timeline }}
-  {{ partial "resume/section" . }}
-{{ end }}
-{{ partial "resume/footer" .header }}
+<div
+  class="relative grid max-w-[8.5in] grid-cols-[min-content_[stack]_1fr] grid-rows-[[stack]_1fr] md:grid-cols-[1fr_min-content_[stack]_min-content] md:gap-5"
+>
+  {{ partial "resume/drawer" . }}
+  <main
+    class="grid px-2 pt-4 [grid-area:stack] md:col-span-2 md:grid-cols-subgrid md:pl-4 md:pr-0"
+  >
+    {{ partial "resume/header" . }}
+    {{ range .sections }}{{ partial "resume/section" . }}{{ end }}
+  </main>
+  {{ partial "resume/footer" . }}
+</div>

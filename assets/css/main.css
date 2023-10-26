@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@media screen {
+  a {
+    text-decoration: underline;
+  }
+}
+
 html {
   @apply bg-neutral-800;
 }
@@ -13,7 +19,7 @@ body {
 }
 
 a {
-  @apply underline decoration-1 underline-offset-4 hover:text-neutral-100;
+  @apply decoration-1 underline-offset-4 hover:text-neutral-100;
 }
 
 code {
