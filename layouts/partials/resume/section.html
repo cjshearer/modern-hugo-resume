@@ -1,9 +1,7 @@
 {{ $dateFormat := "2006" }}
-<section>
+<section class="col-span-2 my-2 gap-x-4 md:grid md:grid-cols-subgrid">
   {{ with .title }}
-    <h1
-      class="mb-8 border-b-2 border-dashed border-neutral-400 pb-2 text-center text-3xl font-light capitalize"
-    >
+    <h1 class="col-span-2 text-xl font-light capitalize">
       {{ . }}
     </h1>
   {{ end }}
@@ -14,33 +12,33 @@
       {{ $startDate = time.Format $dateFormat .start }}
       {{ with .end }}{{ $endDate = time.Format $dateFormat . }}{{ end }}
     {{ end }}
-    <section class="mb-12 break-inside-avoid gap-2 md:grid md:grid-cols-12">
-      <div class="col-span-11">
-        <div class="flex justify-between gap-2">
-          {{ with .name }}
-            <h2 class="text-2xl font-medium">{{ . }}</h2>
-          {{ end }}
-          {{ with .date }}
-            <p class="whitespace-nowrap md:hidden">
-              {{ $startDate }} -
-              {{ $endDate }}
-            </p>
-          {{ end }}
-        </div>
+    <div class="break-inside-avoid-page">
+      <div class="flex items-center justify-between">
         {{ with .title }}
-          <h3 class="text-lg">{{ . | markdownify }}</h3>
+          <h2 class="text-lg font-medium">{{ . }}</h2>
         {{ end }}
-        {{ with .description }}
-          <div class="prose prose-invert">{{ . | markdownify }}</div>
+        {{ with .date }}
+          <p class="whitespace-nowrap text-sm md:hidden">
+            {{ $startDate }} -
+            {{ $endDate }}
+          </p>
         {{ end }}
       </div>
-      {{ with .date }}
-        <div class="hidden text-center md:block">
-          <p>{{ $startDate }}</p>
-          <p>|</p>
-          <p>{{ $endDate }}</p>
+      {{ with .name }}
+        <h3 class="text-base font-light">{{ . }}</h3>
+      {{ end }}
+      {{ with .description }}
+        <div class="prose prose-sm prose-invert">
+          {{ . | markdownify }}
         </div>
       {{ end }}
-    </section>
+    </div>
+    <div class="mx-auto hidden text-center text-sm md:block">
+      {{ with .date }}
+        <p>{{ $endDate }}</p>
+        <p>|</p>
+        <p>{{ $startDate }}</p>
+      {{ end }}
+    </div>
   {{ end }}
 </section>

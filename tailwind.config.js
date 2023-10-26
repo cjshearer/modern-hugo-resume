@@ -5,27 +5,34 @@ module.exports = {
   theme: {
     extend: {
       typography: () => ({
-        DEFAULT:
-          /** @type {import('tailwindcss').Config['theme']} */
-          {
-            css: {
-              a: {
-                color: false,
-                fontWeight: false,
-                textDecoration: false,
-              },
-              "blockquote p:first-of-type::before": false,
-              "blockquote p:last-of-type::after": false,
-              code: {
-                color: false,
-                fontWeight: false,
-              },
-              "code::after": false,
-              "code::before": false,
-              maxWidth: false,
+        DEFAULT: {
+          css: {
+            a: {
+              color: false,
+              fontWeight: false,
+              textDecoration: false,
             },
+            "blockquote p:first-of-type::before": false,
+            "blockquote p:last-of-type::after": false,
+            code: {
+              color: false,
+              fontWeight: false,
+            },
+            "code::after": false,
+            "code::before": false,
+            maxWidth: false,
           },
+        },
       }),
+      // TODO(cjshearer): remove once
+      // https://github.com/tailwindlabs/tailwindcss/pull/12298/files is
+      // released
+      gridTemplateColumns: {
+        subgrid: "subgrid",
+      },
+      gridTemplateRows: {
+        subgrid: "subgrid",
+      },
     },
   },
 };
