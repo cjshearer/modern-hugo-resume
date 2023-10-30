@@ -6,6 +6,7 @@
   html {
     @apply bg-neutral-800 text-neutral-200;
 
+    -webkit-tap-highlight-color: transparent;
     font-family: Roboto, sans-serif;
   }
 
