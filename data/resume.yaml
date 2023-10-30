@@ -2,14 +2,11 @@ avatar: avatar.jpg
 website: cjshearer.dev
 links:
   - svg: node_modules/@fortawesome/fontawesome-free/svgs/brands/github
-    link: github.com/cjshearer
-    protocol: https
+    url: https://github.com/cjshearer
   - svg: node_modules/@fortawesome/fontawesome-free/svgs/brands/linkedin
-    link: linkedin.com/in/cjshearer
-    protocol: https
+    url: https://linkedin.com/in/cjshearer
   - svg: node_modules/@fortawesome/fontawesome-free/svgs/solid/envelope
-    link: cjshearer@live.com
-    protocol: mailto
+    url: mailto:cjshearer@live.com
 name:
   first: Cody
   last: Shearer
