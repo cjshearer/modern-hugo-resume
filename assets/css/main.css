@@ -2,26 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@media screen {
+@layer base {
+  html {
+    @apply bg-neutral-800 text-neutral-200;
+
+    font-family: Roboto, sans-serif;
+  }
+
   a {
-    text-decoration: underline;
+    @apply underline decoration-1 underline-offset-4 hover:text-neutral-100;
+  }
+
+  code {
+    @apply whitespace-nowrap rounded-md border border-neutral-500 bg-neutral-900 px-1;
   }
 }
 
-html {
-  @apply bg-neutral-800;
-}
-
-body {
-  font-family: Roboto, sans-serif;
-
-  @apply text-neutral-200;
-}
-
-a {
-  @apply decoration-1 underline-offset-4 hover:text-neutral-100;
-}
-
-code {
-  @apply whitespace-nowrap rounded-md border border-neutral-500 bg-neutral-900 px-1 text-neutral-200;
+@media print {
+  a {
+    text-decoration: none;
+  }
 }
