@@ -19,8 +19,9 @@
       <ul aria-label="social links">
         {{ range . }}
           <li>
-            <a href="{{ .protocol }}://{{ .link }}" class="text-sm">
-              {{ .link }}
+            <a href="{{ .url }}" class="text-sm">
+              {{ $url := .url | urls.Parse }}
+              {{ $url.Hostname }}{{ $url.RequestURI }}
             </a>
           </li>
         {{ end }}
