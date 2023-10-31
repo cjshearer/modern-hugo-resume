@@ -86,7 +86,6 @@ sections:
         title: Software Developer
         date:
           start: 2021-03-29
-          end: null
         description: |
           Designed and developed cross-platform mobile application and
           back-end for streaming data from Bluetooth device to remote

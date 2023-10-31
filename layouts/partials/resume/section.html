@@ -1,44 +1,41 @@
 {{ $dateFormat := "2006" }}
-<section class="col-span-2 my-2 gap-x-4 md:grid md:grid-cols-subgrid">
+<section class="my-2 grid grid-cols-subgrid col-start-main col-end-date">
   {{ with .title }}
-    <h1 class="col-span-2 text-xl font-light capitalize">
+    <h1 class="text-xl font-light capitalize col-start-main col-end-date">
       {{ . }}
     </h1>
   {{ end }}
   {{ range .entries }}
-    {{ $startDate := "" }}
-    {{ $endDate := "present" }}
-    {{ with .date }}
-      {{ $startDate = time.Format $dateFormat .start }}
-      {{ with .end }}{{ $endDate = time.Format $dateFormat . }}{{ end }}
+    {{ with .title }}
+      <h2 class="text-lg font-medium col-start-main col-end-main">
+        {{ . }}
+      </h2>
     {{ end }}
-    <div class="break-inside-avoid-page">
-      <div class="flex items-center justify-between">
-        {{ with .title }}
-          <h2 class="text-lg font-medium">{{ . }}</h2>
-        {{ end }}
-        {{ with .date }}
-          <p class="whitespace-nowrap text-sm md:hidden">
-            {{ $startDate }} -
-            {{ $endDate }}
-          </p>
-        {{ end }}
-      </div>
-      {{ with .name }}
-        <h3 class="text-base font-light">{{ . }}</h3>
-      {{ end }}
-      {{ with .description }}
-        <div class="prose prose-sm prose-invert">
-          {{ . | markdownify }}
-        </div>
-      {{ end }}
-    </div>
-    <div class="mx-auto hidden text-center text-sm md:block">
-      {{ with .date }}
+    {{ with .date }}
+      <div
+        class="flex flex-row-reverse gap-1 whitespace-nowrap text-center text-sm col-start-date col-end-date md:row-span-3 md:block md:whitespace-normal"
+      >
+        {{ $startDate := time.Format $dateFormat .start }}
+        {{ $endDate := "present" }}
+        {{ with .end }}{{ $endDate = time.Format $dateFormat . }}{{ end }}
         <p>{{ $endDate }}</p>
-        <p>|</p>
+        <div class="before:content-['-'] md:before:content-['|']"></div>
         <p>{{ $startDate }}</p>
-      {{ end }}
+      </div>
+    {{ end }}
+    {{ with .name }}
+      <h3
+        class="text-base font-light col-start-main col-end-date md:col-end-main"
+      >
+        {{ . }}
+      </h3>
+    {{ end }}
+    <div
+      class="{{ if .date }}
+        md:col-end-main
+      {{ end }} prose prose-sm prose-invert col-start-main col-end-date"
+    >
+      {{ .description | markdownify }}
     </div>
   {{ end }}
 </section>
