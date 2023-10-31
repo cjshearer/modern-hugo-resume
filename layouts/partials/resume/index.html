@@ -1,12 +1,16 @@
 <div
-  class="relative mb-4 grid max-w-[8.5in] grid-cols-[min-content_[stack]_1fr] grid-rows-[[stack]_1fr] md:grid-cols-[1fr_min-content_[stack]_min-content] md:gap-5"
+  class="relative grid min-h-screen max-w-[8.5in] grid-cols-resume grid-rows-resume gap-4 grid-areas-resume md:grid-cols-resume-md md:grid-areas-resume-md"
 >
   {{ partial "resume/drawer" . }}
-  <main
-    class="grid px-2 pt-4 [grid-area:stack] md:col-span-2 md:grid-cols-subgrid md:pl-4 md:pr-0"
+  <div
+    class="col-span-full row-span-full grid grid-cols-subgrid grid-rows-subgrid px-2 pb-2 pt-4 md:mx-4"
   >
     {{ partial "resume/header" . }}
-    {{ range .sections }}{{ partial "resume/section" . }}{{ end }}
-  </main>
-  {{ partial "resume/footer" . }}
+    <main
+      class="grid auto-rows-min grid-cols-subgrid row-start-main row-end-main col-start-main col-end-date"
+    >
+      {{ range .sections }}{{ partial "resume/section" . }}{{ end }}
+    </main>
+    {{ partial "resume/footer" . }}
+  </div>
 </div>
