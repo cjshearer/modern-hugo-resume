@@ -1,3 +1,5 @@
+---
+layout: resume
 avatar: avatar.jpg
 website: cjshearer.dev
 links:
@@ -7,9 +9,7 @@ links:
     url: https://linkedin.com/in/cjshearer
   - svg: node_modules/@fortawesome/fontawesome-free/svgs/solid/envelope
     url: mailto:cjshearer@live.com
-name:
-  first: Cody
-  last: Shearer
+name: Cody Shearer
 summary: |
   Software developer with ~3 years of experience in full stack web and mobile development.
 footer: |
@@ -141,3 +141,4 @@ sections:
 
           Developed storage optimization solution for Amazon Elastic Block
           Storage.
+---
