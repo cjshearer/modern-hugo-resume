@@ -57,9 +57,7 @@ skills:
       - Stripe
 
 sections:
-  about:
-    title: about me
-    entries:
+  - "about me":
       - description: |
           Hi, I'm Cody, a software developer with a commitment to efficiency
           and excellence. I'm passionate about enhancing productivity through
@@ -79,9 +77,7 @@ sections:
           *I am more than a programmer; I am a problem solver. These tools are
           not my limits, they are my foundation.*
 
-  timeline:
-    title: timeline
-    entries:
+  - timeline:
       - name: Krumware
         title: Software Developer
         date:

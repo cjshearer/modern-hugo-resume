@@ -9,7 +9,7 @@
     <main
       class="grid auto-rows-min grid-cols-subgrid row-start-main row-end-main col-start-main col-end-date"
     >
-      {{ range .sections }}{{ partial "resume/section" . }}{{ end }}
+      {{ partial "resume/sections" . }}
     </main>
     {{ partial "resume/footer" . }}
   </div>
