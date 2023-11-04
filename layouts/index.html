@@ -4,13 +4,13 @@
   >
     {{ partial "resume/drawer" .Params }}
     <div
-      class="col-span-full row-span-full grid grid-cols-subgrid grid-rows-subgrid px-2 pb-2 pt-4 md:mx-4"
+      class="col-span-full row-span-full mx-2 grid grid-cols-subgrid grid-rows-subgrid px-2 pb-2 pt-4 md:mx-4"
     >
       {{ partial "resume/header.html" .Params }}
       <main
-        class="grid auto-rows-min grid-cols-subgrid row-start-main row-end-main col-start-main col-end-date"
+        class="prose prose-sm prose-invert grid auto-rows-min grid-cols-subgrid row-start-main row-end-main col-start-main col-end-date prose-h2:my-0 prose-h2:font-light prose-h2:col-start-main prose-h2:col-end-date prose-h3:my-0 prose-h3:font-medium prose-h4:my-0 prose-h4:text-base prose-h4:font-light"
       >
-        {{ partial "resume/sections" .Params }}
+        {{ .Content }}
       </main>
       {{ partial "resume/footer" .Params }}
     </div>

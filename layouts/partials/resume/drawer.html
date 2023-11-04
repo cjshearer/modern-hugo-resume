@@ -20,8 +20,7 @@
         {{ range . }}
           <li>
             <a href="{{ .url }}" class="text-sm">
-              {{ $url := .url | urls.Parse }}
-              {{ $url.Hostname }}{{ $url.RequestURI }}
+              {{ partial "plainTextURI.html" .url }}
             </a>
           </li>
         {{ end }}

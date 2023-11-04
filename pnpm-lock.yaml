@@ -29,9 +29,9 @@ devDependencies:
   autoprefixer:
     specifier: ^10.4.16
     version: 10.4.16(postcss@8.4.31)
-  hugo-bin-extended:
-    specifier: ^0.115.4
-    version: 0.115.4
+  hugo-bin:
+    specifier: ^0.116.3
+    version: 0.116.3
   lint-staged:
     specifier: ^13.3.0
     version: 13.3.0
@@ -463,7 +463,7 @@ packages:
     resolution: {integrity: sha512-PB3NeJL8xARZt52yDBupK0dNPn8uIVQDe15qNehUpoeeLWCZyAOam4vGXnoZGz2N9D1VXtjievJuCsXam2TmbQ==}
     engines: {node: ^14.14.0 || >=16.0.0}
     dependencies:
-      file-type: 18.5.0
+      file-type: 18.6.0
     dev: true
 
   /@xhmikosr/bin-check@6.0.0:
@@ -488,7 +488,7 @@ packages:
     resolution: {integrity: sha512-kyWf2hybtQVbWtB+FdRyOT+jyR5jxCNZPLqvQGB7djZj75lrpLUPEmRbyo86AtJ5OEtivpYaNWjCkqSJ8xtRWw==}
     engines: {node: ^14.14.0 || >=16.0.0}
     dependencies:
-      file-type: 18.5.0
+      file-type: 18.6.0
       is-stream: 3.0.0
       tar-stream: 3.1.6
     dev: true
@@ -498,7 +498,7 @@ packages:
     engines: {node: ^14.14.0 || >=16.0.0}
     dependencies:
       '@xhmikosr/decompress-tar': 7.0.0
-      file-type: 18.5.0
+      file-type: 18.6.0
       is-stream: 3.0.0
       seek-bzip: 1.0.6
       unbzip2-stream: 1.4.3
@@ -509,7 +509,7 @@ packages:
     engines: {node: ^14.14.0 || >=16.0.0}
     dependencies:
       '@xhmikosr/decompress-tar': 7.0.0
-      file-type: 18.5.0
+      file-type: 18.6.0
       is-stream: 3.0.0
     dev: true
 
@@ -517,7 +517,7 @@ packages:
     resolution: {integrity: sha512-R1HAkjXLS7RAL74YFLxYY9zYflCcYGssld9KKFDu87PnJ4h4btdhzXfSC8J5i5A2njH3oYIoCzx03RIGTH07Sg==}
     engines: {node: ^14.14.0 || >=16.0.0}
     dependencies:
-      file-type: 18.5.0
+      file-type: 18.6.0
       get-stream: 6.0.1
       yauzl: 2.10.0
     dev: true
@@ -543,7 +543,7 @@ packages:
       '@xhmikosr/decompress': 9.0.1
       content-disposition: 0.5.4
       ext-name: 5.0.0
-      file-type: 18.5.0
+      file-type: 18.6.0
       filenamify: 5.1.1
       get-stream: 6.0.1
       got: 12.6.1
@@ -1274,8 +1274,8 @@ packages:
       flat-cache: 3.1.1
     dev: true
 
-  /file-type@18.5.0:
-    resolution: {integrity: sha512-yvpl5U868+V6PqXHMmsESpg6unQ5GfnPssl4dxdJudBrr9qy7Fddt7EVX1VLlddFfe8Gj9N7goCZH22FXuSQXQ==}
+  /file-type@18.6.0:
+    resolution: {integrity: sha512-uLqXnIAIyy8K9rnvdU9IYi3WIL+6qVBWn24kThYOPlnyU+6yrr2oarn+j7seMLh1wOEG4hEjRP6a30IiKR9OaA==}
     engines: {node: '>=14.16'}
     dependencies:
       readable-web-to-node-stream: 3.0.2
@@ -1586,8 +1586,8 @@ packages:
       resolve-alpn: 1.2.1
     dev: true
 
-  /hugo-bin-extended@0.115.4:
-    resolution: {integrity: sha512-sn1/ug2J9mOky2Dbun/cGhnRZm3iNeEtnhT2ks8EpAgsyuhAK/RvPutZ4m+MCa5uNfkvPp/VWnnRQT2i9bkevg==}
+  /hugo-bin@0.116.3:
+    resolution: {integrity: sha512-FgibDoYLJ0W7z81FA3sqC1XLds/fOzH8nreEo+1gxXGguewuYFk6k7X3FlbiADVWMCkZiY4J4rZfrHovlZbr7g==}
     engines: {node: ^14.14.0 || >=16.0.0}
     hasBin: true
     requiresBuild: true
@@ -2912,8 +2912,8 @@ packages:
       readable-stream: 3.6.2
     dev: true
 
-  /streamx@2.15.1:
-    resolution: {integrity: sha512-fQMzy2O/Q47rgwErk/eGeLu/roaFWV0jVsogDmrszM9uIw8L5OA+t+V93MgYlufNptfjmYR1tOMWhei/Eh7TQA==}
+  /streamx@2.15.2:
+    resolution: {integrity: sha512-b62pAV/aeMjUoRN2C/9F0n+G8AfcJjNC0zw/ZmOHeFsIe4m4GzjVW9m6VHXVjk536NbdU9JRwKMJRfkc+zUFTg==}
     dependencies:
       fast-fifo: 1.3.2
       queue-tick: 1.0.1
@@ -3192,7 +3192,7 @@ packages:
     dependencies:
       b4a: 1.6.4
       fast-fifo: 1.3.2
-      streamx: 2.15.1
+      streamx: 2.15.2
     dev: true
 
   /text-extensions@1.9.0:

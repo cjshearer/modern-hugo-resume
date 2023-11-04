@@ -10,7 +10,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20.8.9",
     "autoprefixer": "^10.4.16",
-    "hugo-bin-extended": "^0.115.4",
+    "hugo-bin": "^0.116.3",
     "lint-staged": "^13.3.0",
     "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
@@ -30,6 +30,9 @@
     "npm": "please-use-pnpm",
     "pnpm": "8.6.7",
     "yarn": "please-use-pnpm"
+  },
+  "hugo-bin": {
+    "buildTags": "extended"
   },
   "keywords": [],
   "lint-staged": {
