@@ -1,0 +1,33 @@
+{{ $dateFormat := .Get "dateformat" | default "2006" }}
+{{ $startDate := .Get "startdate" }}
+{{ $endDate := .Get "enddate" | default "now" }}
+
+{{ with $startDate }}
+  {{ $startDate = time.Format $dateFormat $startDate }}
+{{ end }}
+{{ with .Get "enddate" }}
+  {{ $endDate = time.Format $dateFormat . }}
+{{ end }}
+
+{{ with .Get "name" }}
+  <h3 class="{{ if $startDate }}col-end-main{{ end }}">{{ . }}</h3>
+{{ end }}
+{{ with $startDate }}
+  <div
+    class="not-prose flex flex-row-reverse gap-1 whitespace-nowrap text-center text-sm col-start-date col-end-date md:row-span-3 md:block md:whitespace-normal"
+  >
+    <p>{{ $endDate }}</p>
+    <div class="before:content-['-'] md:before:content-['|']"></div>
+    <p>{{ $startDate }}</p>
+  </div>
+{{ end }}
+{{ with .Get "affiliation" }}
+  <h4 class="{{ if $startDate }}col-end-main{{ end }}">{{ . }}</h4>
+{{ end }}
+<div
+  class="{{ if $startDate }}
+    md:col-end-main
+  {{ end }} prose prose-sm prose-invert mb-2 col-start-main col-end-date"
+>
+  {{ .Inner | markdownify }}
+</div>
