@@ -1,0 +1,16 @@
+{{ .Params.name }}
+-------------------------------------------------------------------------------------------
+Summary
+
+{{ .Params.summary }}
+{{ range .Params.Skills }}
+  {{- range $category, $items := . }}
+    {{- $category | strings.FirstUpper }}: {{ delimit $items ", " }}
+  {{- end }}
+{{ end }}
+{{ .Content -}}
+-------------------------------------------------------------------------------------------
+
+{{ range .Params.links }}
+  {{- .name}}: {{ partial "plainTextURI.html" .url }}
+{{ end }}

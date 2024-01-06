@@ -21,6 +21,18 @@ module:
       target: assets
     - source: hugo_stats.json
       target: assets/watching/hugo_stats.json
+    - source: data
+      target: data
+      excludeFiles: plaintextreplace/LICENSE
+mediaTypes:
+  application/text:
+    suffixes:
+      - txt
+outputFormats:
+  TXT:
+    mediaType: "application/text"
+    baseName: "index"
+    isPlainText: true
 title: "Cody Shearer"
 Params:
   faviconEmoji: 💼

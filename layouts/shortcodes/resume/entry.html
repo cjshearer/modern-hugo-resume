@@ -25,9 +25,9 @@
   <h4 class="{{ if $startDate }}col-end-main{{ end }}">{{ . }}</h4>
 {{ end }}
 <div
-  class="{{ if $startDate }}
+  class="{{ if $startDate -}}
     md:col-end-main
-  {{ end }} prose prose-sm prose-invert mb-2 col-start-main col-end-date"
+  {{- end }} prose prose-sm prose-invert mb-2 col-start-main col-end-date"
 >
-  {{ .Inner | markdownify }}
+  {{ .Inner | .Page.RenderString }}
 </div>

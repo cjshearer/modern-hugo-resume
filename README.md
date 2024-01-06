@@ -62,18 +62,18 @@ pnpm install
 
 ## Local Development
 
-###
-
 To make changes and instantly see them at http://localhost:1313, run:
 
 ```sh
 pnpm dev
 ```
 
-###
-
 To create a production build, run:
 
 ```sh
 pnpm build
 ```
+
+## Note
+
+This project contains a file `article_txt_replace.toml`, which is released under the terms of the Apache License, Version 2.0. A copy of the Apache License is available in the `data/plaintextreplace` directory of this project. Please see the Apache License for details regarding usage and distribution restrictions.

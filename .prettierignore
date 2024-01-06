@@ -2,4 +2,7 @@ resources
 public
 static
 pnpm-lock.yaml
+content/_index.md
+layouts/**/*.md
 layouts/partials/imgh.html
+build
