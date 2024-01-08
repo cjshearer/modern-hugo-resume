@@ -1,8 +1,8 @@
 {{ .Params.name }}
--------------------------------------------------------------------------------------------
-Summary
-
 {{ .Params.summary }}
+-------------------------------------------------------------------------------------------
+SKILLS
+
 {{ range .Params.Skills }}
   {{- range $category, $items := . }}
     {{- $category | strings.FirstUpper }}: {{ delimit $items ", " }}
@@ -10,6 +10,7 @@ Summary
 {{ end }}
 {{ .Content -}}
 -------------------------------------------------------------------------------------------
+LINKS
 
 {{ range .Params.links }}
   {{- .name}}: {{ partial "plainTextURI.html" .url }}

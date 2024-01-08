@@ -6,7 +6,7 @@
 
 ## Overview
 
-_A minimal static resume builder; inspired by [sproogen's modern-resume-theme](https://github.com/sproogen/modern-resume-theme) and [mnjul's html-resume](https://github.com/mnjul/html-resume).Powered by Hugo, Tailwind CSS, and GitHub Pages._
+_A minimal static resume builder; inspired by [sproogen's modern-resume-theme](https://github.com/sproogen/modern-resume-theme) and [mnjul's html-resume](https://github.com/mnjul/html-resume). Powered by Hugo, Tailwind CSS, and GitHub Pages._
 
 _Host your own resume on GitHub for free!_
 

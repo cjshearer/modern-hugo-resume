@@ -111,7 +111,7 @@ Project Highlights:
 
 {{<resume/entry name="BS Computer Science" affiliation="University of South Carolina" startdate="2017-08-17" enddate="2021-05-06">}}
 
-- Graduated [Magna cum Laude](pdf/usc-diploma.pdf) with a mathematics minor
+- Graduated [*magna cum laude*](pdf/usc-diploma.pdf) with a mathematics minor
 - Achieved [Outstanding Senior Award](https://sc.edu/about/offices_and_divisions/leadership_and_service_center/awards_and_recognition/senior-awards/index.php) and the [Palmetto Fellows Scholarship](https://sc.edu/about/offices_and_divisions/financial_aid/scholarships/scholarships_for_sc_residents/palmetto_fellows/index.php)
 - Earned honors including President's List, Dean's List, and [Phi Beta Kappa](https://www.pbk.org/About)
 - Served as President and Treasurer of the Carolina Movement Club (*parkour!*)
