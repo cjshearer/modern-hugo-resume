@@ -25,13 +25,13 @@ module:
       target: data
       excludeFiles: plaintextreplace/LICENSE
 mediaTypes:
-  application/text:
+  text/plain:
     suffixes:
       - txt
 outputFormats:
   TXT:
-    mediaType: "application/text"
-    baseName: "index"
+    mediaType: text/plain
+    baseName: index
     isPlainText: true
 title: "Cody Shearer"
 Params:
