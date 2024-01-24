@@ -1,0 +1,37 @@
+{{- $class := "" -}}
+{{- with .Get "class" -}}
+  {{- $class = . -}}
+{{- end -}}
+{{- $layout := .Get "layout" | default "horizontal" -}}
+{{- with .Page.Params.skills -}}
+  <ul
+    aria-label="skills"
+    class="{{ $class }} {{ if eq "horizontal" $layout -}}
+      grid grid-cols-[min-content_1fr] gap-2
+    {{- else -}}
+      flex flex-col gap-[inherit]
+    {{- end }} not-prose text-sm"
+  >
+    {{- range . -}}
+      {{- range $category, $skills := . -}}
+        {{- if eq "horizontal" $layout -}}
+          <li
+            aria-label="{{ $category }}"
+            class="col-span-full grid grid-cols-subgrid items-baseline gap-[inherit]"
+          >
+            <p>{{- $category | title -}}:</p>
+            <p>
+              {{- delimit $skills ", " -}}
+            </p>
+          </li>
+        {{- else -}}
+          <li aria-label="{{ $category }}">
+            {{- range $skills -}}
+              <p>{{ . }}</p>
+            {{- end -}}
+          </li>
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  </ul>
+{{- end -}}

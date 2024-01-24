@@ -1,0 +1,7 @@
+{{- $class := "" -}}
+{{- with .Get "class" -}}
+  {{- $class = . -}}
+{{- end -}}
+<footer class="{{ $class }} grid-in-footer">
+  {{ .Inner | .Page.RenderString }}
+</footer>

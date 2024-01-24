@@ -1,0 +1,9 @@
+{{- $class := "" -}}
+{{- with .Get "class" -}}
+  {{- $class = . -}}
+{{- end -}}
+
+
+<aside class="{{ $class }} hidden grid-in-drawer md:flex md:flex-col">
+  {{ .Inner | .Page.RenderString }}
+</aside>

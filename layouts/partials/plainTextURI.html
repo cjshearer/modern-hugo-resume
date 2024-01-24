@@ -1,2 +1,0 @@
-{{/* Removes `scheme ":" ["//" authority]` */}}
-{{ return replaceRE ".+:/*(.*)" "$1" . }}
