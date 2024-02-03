@@ -49,6 +49,7 @@
     "build": "pnpm run hugo:build",
     "clean": "pnpm run hugo:clean && rm -rf node_modules",
     "dev": "pnpm run hugo:serve",
+    "dev:tailscale": "./tailscale-dev.sh",
     "format:check": "pnpm format --check",
     "format:fix": "pnpm format --write",
     "format": "pnpm prettier .",

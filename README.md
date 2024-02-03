@@ -68,6 +68,12 @@ To make changes and instantly see them at http://localhost:1313, run:
 pnpm dev
 ```
 
+To make the server accessible over tailscale, run
+
+```sh
+pnpm dev:tailscale
+```
+
 To create a production build, run:
 
 ```sh

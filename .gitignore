@@ -3,3 +3,6 @@ public
 resources
 node_modules
 hugo_stats.json
+
+*.crt
+*.key
