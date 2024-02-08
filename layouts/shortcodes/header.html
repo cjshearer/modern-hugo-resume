@@ -1,0 +1,7 @@
+{{- $class := "" -}}
+{{- with .Get "class" -}}
+  {{- $class = . -}}
+{{- end -}}
+<header class="{{ $class }} grid-in-header">
+  {{ .Inner | .Page.RenderString }}
+</header>

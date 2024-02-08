@@ -1,0 +1,7 @@
+{{ with .Page.Params.Skills }}
+{{ range . }}
+{{ range $category, $items := . }}
+{{- $category | strings.FirstUpper }}: {{ delimit $items ", " }}
+{{- end }}
+{{- end }}
+{{ end }}

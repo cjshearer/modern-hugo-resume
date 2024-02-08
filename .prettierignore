@@ -2,8 +2,7 @@ resources
 public
 static
 pnpm-lock.yaml
-content/_index.md
 layouts/**/*.md
 layouts/partials/imgh.html
-layouts/_default/_markup/render-heading.html
+layouts/resume/_markup/render-heading.html
 build

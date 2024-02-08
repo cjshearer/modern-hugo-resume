@@ -1,0 +1,2 @@
+{{/* Workaround for Hugo requiring evaluation of Inner */}}
+{{- $workaround := .Inner -}}

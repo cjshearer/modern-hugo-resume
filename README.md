@@ -1,11 +1,5 @@
 # modern-hugo-resume
 
-[![Hugo](https://img.shields.io/badge/Hugo-%5E0.115.3-ff4088?style=round-square&logo=hugo)](https://gohugo.io/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-%5E3.3.3-38B2AC?style=round-square&logo=tailwind-css)](https://tailwindcss.com/)
-[![Prettier](https://img.shields.io/badge/Prettier-%5E2.8.8-c596c7?style=round-square&logo=prettier)](https://prettier.io/)
-[![Stylelint](https://img.shields.io/badge/Stylelint-%5E15.10.2-3578e5?style=round-square&logo=stylelint)](https://stylelint.io)
-
-## Overview
-
 _A minimal static resume builder; inspired by [sproogen's modern-resume-theme](https://github.com/sproogen/modern-resume-theme) and [mnjul's html-resume](https://github.com/mnjul/html-resume). Powered by Hugo, Tailwind CSS, and GitHub Pages._
 
 _Host your own resume on GitHub for free!_
@@ -68,12 +62,14 @@ To make changes and instantly see them at http://localhost:1313, run:
 pnpm dev
 ```
 
+To make the server accessible over tailscale, run
+
+```sh
+pnpm dev:tailscale
+```
+
 To create a production build, run:
 
 ```sh
 pnpm build
 ```
-
-## Note
-
-This project contains a file `article_txt_replace.toml`, which is released under the terms of the Apache License, Version 2.0. A copy of the Apache License is available in the `data/plaintextreplace` directory of this project. Please see the Apache License for details regarding usage and distribution restrictions.

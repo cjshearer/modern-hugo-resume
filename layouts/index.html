@@ -1,18 +1,9 @@
-{{ define "main" }}
-  <div
-    class="relative mx-auto grid min-h-screen max-w-[8.5in] grid-cols-resume grid-rows-resume gap-4 grid-areas-resume md:grid-cols-resume-md md:grid-areas-resume-md"
+<!DOCTYPE html>
+<html lang="en">
+  {{ partialCached "head.html" . }}
+  <body
+    class="mx-auto grid min-h-screen max-w-[8.5in] grid-cols-resume grid-rows-resume gap-4 px-4 pb-2 pt-4 grid-areas-resume md:grid-cols-resume-md md:grid-areas-resume-md"
   >
-    {{ partial "resume/drawer" .Params }}
-    <div
-      class="col-span-full row-span-full mx-2 grid grid-cols-subgrid grid-rows-subgrid px-2 pb-2 pt-4 md:mx-4"
-    >
-      {{ partial "resume/header.html" .Params }}
-      <main
-        class="prose prose-sm prose-invert grid auto-rows-min grid-cols-subgrid row-start-main row-end-main col-start-main col-end-date prose-h2:my-0 prose-h2:font-light prose-h2:col-start-main prose-h2:col-end-date prose-h3:my-0 prose-h3:font-medium prose-h4:my-0 prose-h4:text-base prose-h4:font-light"
-      >
-        {{ .Content }}
-      </main>
-      {{ partial "resume/footer" .Params }}
-    </div>
-  </div>
-{{ end }}
+    {{ .Content }}
+  </body>
+</html>

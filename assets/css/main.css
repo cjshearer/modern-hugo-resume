@@ -3,15 +3,17 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    @apply bg-neutral-800 text-neutral-200;
-
+  body {
+    /* TODO(cjshearer): remove when we update to tailwind >= v3.4.0
+    https://github.com/tailwindlabs/tailwindcss/pull/12299 */
     -webkit-tap-highlight-color: transparent;
-    font-family: Roboto, sans-serif;
+
+    @apply prose prose-sm prose-invert prose-resume font-[Roboto,_sans-serif];
+    @apply bg-neutral-800;
   }
 
   a {
-    @apply underline decoration-1 underline-offset-4 hover:text-neutral-100;
+    @apply underline decoration-1 underline-offset-4 hover:text-neutral-100 print:no-underline;
   }
 
   code {
@@ -19,8 +21,27 @@
   }
 }
 
-@media print {
-  a {
-    text-decoration: none;
+@layer components {
+  .avatar {
+    @apply relative aspect-square overflow-hidden rounded-full;
+
+    /* after */
+    @apply after:absolute after:top-0 after:block after:h-full after:w-full after:rounded-full after:[box-shadow:inset_0_0_20px_0_theme(colors.neutral.500)];
+  }
+
+  .button {
+    @apply relative flex h-12 w-12 items-center justify-center rounded-full;
+
+    /* before */
+    @apply before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:scale-90 before:rounded-full before:duration-[250ms] before:[box-shadow:inset_0_0_0_3rem_currentColor];
+
+    /* hover:before */
+    @apply hover:before:scale-100 hover:before:[box-shadow:inset_0_0_0_0.125rem_currentColor];
+
+    /* svg */
+    @apply [&_svg]:inline [&_svg]:h-[58%] [&_svg]:w-[58%] [&_svg]:fill-current [&_svg]:text-neutral-800;
+
+    /* hover:svg */
+    @apply [&_svg]:hover:text-inherit;
   }
 }
