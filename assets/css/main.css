@@ -13,7 +13,7 @@
   }
 
   a {
-    @apply underline decoration-1 underline-offset-4 hover:text-neutral-100 print:no-underline;
+    @apply underline hover:text-neutral-100 print:no-underline;
   }
 
   code {
