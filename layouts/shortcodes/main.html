@@ -3,7 +3,7 @@
   {{- $class = . -}}
 {{- end -}}
 <main
-  class="{{ $class }} grid grid-cols-subgrid items-baseline grid-in-[main/main/main/date] [&>*:not(#date-range)]:col-start-main [&>*:not(h3):not(#date-range)]:break-before-avoid [&>*:not(h3)]:col-end-date md:[&>*:not(h3)]:col-end-[unset] [&_h2]:col-span-full"
+  class="{{ $class }} grid grid-cols-subgrid items-baseline grid-in-[main/main/main/date] [&>*:not(#date-range)]:col-start-main [&>*:not(h1,h2,h3,h4,h5,h6,#date-range)]:break-before-avoid [&>*:not(h3)]:col-end-date md:[&>*:not(h3)]:col-end-[unset] [&_h2]:col-span-full"
 >
   {{ .Inner | .Page.RenderString }}
 </main>
