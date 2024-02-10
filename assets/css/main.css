@@ -8,16 +8,16 @@
     https://github.com/tailwindlabs/tailwindcss/pull/12299 */
     -webkit-tap-highlight-color: transparent;
 
-    @apply prose prose-sm prose-invert prose-resume font-[Roboto,_sans-serif];
-    @apply bg-neutral-800;
+    @apply prose prose-sm prose-resume font-[Roboto,_sans-serif] dark:prose-invert;
+    @apply dark:bg-neutral-800;
   }
 
   a {
-    @apply underline hover:text-neutral-100 print:no-underline;
+    @apply underline dark:hover:text-neutral-100 print:no-underline;
   }
 
   code {
-    @apply whitespace-nowrap rounded-md border border-neutral-500 bg-neutral-900 px-1;
+    @apply whitespace-nowrap rounded-md border px-1 dark:border-neutral-500 dark:bg-neutral-900;
   }
 }
 
@@ -26,22 +26,22 @@
     @apply relative aspect-square overflow-hidden rounded-full;
 
     /* after */
-    @apply after:absolute after:top-0 after:block after:h-full after:w-full after:rounded-full after:[box-shadow:inset_0_0_20px_0_theme(colors.neutral.500)];
+    @apply after:absolute after:top-0 after:block after:h-full after:w-full after:rounded-full after:[box-shadow:inset_0_0_20px_0_theme(colors.neutral.800)] dark:after:[box-shadow:inset_0_0_20px_0_theme(colors.neutral.500)];
   }
 
   .button {
     @apply relative flex h-12 w-12 items-center justify-center rounded-full;
 
     /* before */
-    @apply before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:scale-90 before:rounded-full before:duration-[250ms] before:[box-shadow:inset_0_0_0_3rem_currentColor];
+    @apply before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:scale-90 before:rounded-full before:duration-[250ms] before:[box-shadow:inset_0_0_0_0.125rem_currentColor] dark:before:[box-shadow:inset_0_0_0_3rem_currentColor];
 
     /* hover:before */
-    @apply hover:before:scale-100 hover:before:[box-shadow:inset_0_0_0_0.125rem_currentColor];
+    @apply hover:before:scale-100 hover:before:[box-shadow:inset_0_0_0_3rem_currentColor] dark:hover:before:[box-shadow:inset_0_0_0_0.125rem_currentColor];
 
     /* svg */
-    @apply [&_svg]:inline [&_svg]:h-[58%] [&_svg]:w-[58%] [&_svg]:fill-current [&_svg]:text-neutral-800;
+    @apply [&_svg]:inline [&_svg]:h-[58%] [&_svg]:w-[58%] [&_svg]:fill-current [&_svg]:text-inherit [&_svg]:transition-colors dark:[&_svg]:text-neutral-800;
 
     /* hover:svg */
-    @apply [&_svg]:hover:text-inherit;
+    @apply [&_svg]:hover:text-white dark:[&_svg]:hover:text-inherit;
   }
 }
