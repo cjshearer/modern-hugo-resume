@@ -41,5 +41,3 @@ outputFormats:
     mediaType: text/plain
     baseName: index
     isPlainText: true
-Params:
-  faviconEmoji: 💼

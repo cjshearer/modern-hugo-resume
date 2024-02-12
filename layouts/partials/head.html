@@ -10,8 +10,16 @@
   <link rel="preload" href="{{ $googleFontURL }}" as="style" />
   <link rel="stylesheet" href="{{ $googleFontURL }}" />
   <link rel="canonical" href="{{ .Permalink }}" />
-  {{ if .Site.Params.faviconEmoji }}
-    {{ $favicon := resources.Get "images/faviconEmojiTemplate.svg" | resources.Minify | resources.ExecuteAsTemplate "images/favicon.svg" . }}
+  {{ with .Page.Params.faviconText }}
+    {{ $faviconString := print
+      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">`
+      `<text y="0.9em" font-size="80">` . `</text>
+      </svg>`
+    }}
+    {{ $favicon := $faviconString
+      | resources.FromString (print "images/" (md5 $faviconString) ".svg")
+      | resources.Minify
+    }}
     <link
       rel="icon"
       href="data:{{ $favicon.MediaType.Type }};base64,{{ $favicon.Content | base64Encode }}"
