@@ -4,6 +4,7 @@ dateformat:
   short: Jan. 2006
   long: January 2006
 title: Resume
+faviconText: 💼
 skills:
   - languages:
       - TypeScript
