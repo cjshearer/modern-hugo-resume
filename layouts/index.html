@@ -2,7 +2,7 @@
 <html lang="en">
   {{ partialCached "head.html" . }}
   <body
-    class="mx-auto grid min-h-screen max-w-[8.5in] grid-cols-resume grid-rows-resume gap-4 px-4 pb-2 pt-4 grid-areas-resume md:grid-cols-resume-md md:grid-areas-resume-md"
+    class="m-4 mb-2 print:m-0 [&>*]:mx-auto [&>*]:max-w-[8.5in] print:[&>*]:max-w-none"
   >
     {{ .Content }}
   </body>

@@ -1,91 +1,83 @@
 ---
-outputs: [html, txt]
-dateformat:
-  short: Jan. 2006
-  long: January 2006
-title: Resume
+title: Software Developer
+description: Full Stack Software Developer Resume
 faviconText: 💼
-skills:
-  - languages:
-      - TypeScript
-      - JavaScript
-      - HTML
-      - CSS
-      - Golang
-      - Node.js
-      - SQL
-      - Rust
-      - Python
-      - Java
-      - C++
-  - frameworks:
-      - React
-      - React-Native
-      - Vue
-      - Nuxt
-      - Hugo
-      - TailwindCSS
-      - Storybook
-  - concepts:
-      - Agile (Scrum)
-      - RESTful APIs
-      - Material Design
-      - Cloud Native
-      - GitOps
-      - CI/CD
-  - tools:
-      - Git
-      - Linux
-      - Docker
-      - Tailscale
-      - Postman
-  - databases:
-      - MySQL
-      - PostgreSQL
-      - MongoDB
-  - services:
-      - Auth0
-      - LogRocket
-      - Sentry
-      - Stripe
-      - SendGrid
 ---
 
-{{<header class="text-center md:text-left">}}
+<header class="mb-4 text-center md:text-left print:text-left">
+
+![](avatar.jpg "A close-up photo of me wearing a suit and tie")
+{ class="avatar not-prose float-right hidden h-24 print:hidden md:block" sizes="256"}
 
 # Cody Shearer
 
 Software Developer with 3 Years of Experience in Full Stack Web and Mobile Development
-{class="font-light mb-2"}
+{ class="mb-2"}
 
-[![GitHub: github.com/cjshearer](svgs/brands/github.svg)](https://github.com/cjshearer "GitHub")
-[![LinkedIn: cjshearer.dev](svgs/brands/linkedin.svg)](https://linkedin.com/in/cjshearer "LinkedIn")
-[![Email: cjshearer@live.com](svgs/solid/envelope.svg)](mailto:cjshearer@live.com "Email")
-{class="[&>*]:button [&>*]:inline-flex [&>*]:mr-1 md:hidden"}
+<!-- prettier-ignore -->
+- [![](svgs/brands/github.svg)cjshearer](https://github.com/cjshearer "My GithHub")
+- [![](svgs/brands/linkedin.svg)in/cjshearer](https://linkedin.com/in/cjshearer "My LinkedIn")
+- [![](svgs/solid/house.svg)cjshearer.dev](https://cjshearer.dev "My Website")
+- [![](svgs/solid/envelope.svg)cjshearer@live.com](mailto:cjshearer@live.com "My Email")
+{ class="not-prose [&>*]:inline-svg inline-flex w-fit flex-wrap justify-center gap-4 whitespace-nowrap [&_svg]:mr-1"}
 
-{{</header>}}
+</header>
 
-{{<aside class="not-prose gap-4">}}
+<main class="[&>*:is(h2,h3,p)]:break-after-avoid-page [&>*:is(p,ul)]:break-inside-avoid-page">
 
-![](avatar.jpg "A close-up photo of me wearing a suit and tie")
-{class="avatar w-24" sizes="256"}
+## Skills {class="md:hidden"}
 
-[![](svgs/brands/github.svg) GitHub](https://github.com/cjshearer)
-[![](svgs/brands/linkedin.svg) LinkedIn](https://linkedin.com/in/cjshearer)
-[![](svgs/solid/envelope.svg) Email](mailto:cjshearer@live.com)
-{class="[&_a]:mb-2 [&_a]:inline-flex [&_a]:items-center last-of-type:[&_a]:mb-0 [&_svg]:mx-1 [&_svg]:h-[1em] [&_svg]:w-[1em] [&_svg]:fill-current"}
-
-{{<skills layout="vertical">}}
-
-{{</aside>}}
-
-{{<main>}}
+<!-- prettier-ignore -->
+- Languages:
+    - TypeScript
+    - JavaScript
+    - HTML
+    - CSS
+    - Golang
+    - Node.js
+    - SQL
+    - Rust
+    - Python
+    - Java
+    - C++
+- Frameworks:
+    - React
+    - React-Native
+    - Vue
+    - Nuxt
+    - Hugo
+    - TailwindCSS
+    - Storybook
+- Concepts:
+    - Agile (Scrum)
+    - RESTful APIs
+    - Material Design
+    - Cloud Native
+    - GitOps
+    - CI/CD
+- Tools:
+    - Git
+    - Linux
+    - Docker
+    - Tailscale
+    - Postman
+- Databases:
+    - MySQL
+    - PostgreSQL
+    - MongoDB
+- Services:
+    - Auth0
+    - LogRocket
+    - Sentry
+    - Stripe
+    - SendGrid
+{ class="table pl-0 md:float-right md:block print:md:float-none print:md:table [&>li>*]:table-cell md:[&>li>*]:block print:md:[&>li>*]:table-cell [&>li>ul>li]:inline md:[&>li>ul>li]:block print:md:[&>li>ul>li]:inline [&>li>ul]:list-none md:[&>li>ul]:list-disc [&>li]:table-row"}
 
 ## Experience
 
 ### Software Developer – Full Stack, Krumware
 
-{{<date-range start="2021-03-29" end="2023-10-20">}}
+March 2021 to October 2023
 
 - Collaborated in cross-functional team following agile (scrum) methodologies
 - Improved time-to-market by up to 20% with project templates
@@ -113,7 +105,7 @@ Project Highlights:
 
 ### Research Assistant, AI and Systems Laboratory
 
-{{<date-range start="2020-08-01" end="2021-04-01">}}
+August 2020 to April 2021
 
 - Analyzed cross-platform performance behavior of deep-learning recommender system
 - Reproduced results from past research on highly configurable systems
@@ -121,7 +113,7 @@ Project Highlights:
 
 ### Software Developer – Intern, Velocity
 
-{{<date-range start="2018-06-01" end="2018-08-01">}}
+June 2018 to August 2018
 
 - Created AWS storage primitive abstracting cloud complexity for high level orchestration
 - Developed storage optimization solution for Amazon Elastic Block Storage
@@ -130,25 +122,17 @@ Project Highlights:
 
 ### BS Computer Science, University of South Carolina
 
-{{<date-range start="2017-08-17" end="2021-05-06">}}
+August 2017 to May 2021
 
 - Graduated [_magna cum laude_](pdf/usc-diploma.pdf) with a mathematics minor
 - Achieved [Outstanding Senior Award](https://sc.edu/about/offices_and_divisions/leadership_and_service_center/awards_and_recognition/senior-awards/index.php) and the [Palmetto Fellows Scholarship](https://sc.edu/about/offices_and_divisions/financial_aid/scholarships/scholarships_for_sc_residents/palmetto_fellows/index.php)
 - Earned honors including President's List, Dean's List, and [Phi Beta Kappa](https://www.pbk.org/About)
 - Served as President and Treasurer of the Carolina Movement Club (_parkour!_)
 
-## Skills {.md:hidden}
+</main>
 
-{{<skills class="md:hidden">}}
+<footer class="h-5 text-center print:fixed print:bottom-0 print:w-full">
 
-{{</main>}}
+_Cody Shearer - cjshearer@live.com - References available on request_
 
-{{<footer class="text-center">}}
-
-_Is HTML too fancy for you? [See it in plain text](/index.txt)._
-{class="print:hidden"}
-
-_Fully typeset with HTML and CSS — see [github.com/cjshearer/modern-hugo-resume](https://github.com/cjshearer/modern-hugo-resume)_
-{class="hidden print:block"}
-
-{{</footer>}}
+</footer>

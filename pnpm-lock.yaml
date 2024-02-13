@@ -17,9 +17,6 @@ devDependencies:
   '@fullhuman/postcss-purgecss':
     specifier: ^5.0.0
     version: 5.0.0(postcss@8.4.31)
-  '@savvywombat/tailwindcss-grid-areas':
-    specifier: ^3.1.0
-    version: 3.1.0(tailwindcss@3.3.5)
   '@tailwindcss/typography':
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.3.5)
@@ -381,16 +378,6 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
-    dev: true
-
-  /@savvywombat/tailwindcss-grid-areas@3.1.0(tailwindcss@3.3.5):
-    resolution: {integrity: sha512-CaNoCS7Zr3OeDDhCSXXU7dnqYjehdjNmDy6NdFxkLAyDcxA8YTI3rjPm6X+bTWyYINHXr+RONG3UKWrSv2UYSw==}
-    engines: {node: '>=14.18.2'}
-    peerDependencies:
-      tailwindcss: ^3.0.1
-    dependencies:
-      lodash: 4.17.21
-      tailwindcss: 3.3.5(ts-node@10.9.1)
     dev: true
 
   /@sindresorhus/is@5.6.0:
