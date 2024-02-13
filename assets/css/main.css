@@ -4,11 +4,7 @@
 
 @layer base {
   body {
-    /* TODO(cjshearer): remove when we update to tailwind >= v3.4.0
-    https://github.com/tailwindlabs/tailwindcss/pull/12299 */
-    -webkit-tap-highlight-color: transparent;
-
-    @apply prose prose-sm prose-resume font-[Roboto,_sans-serif] dark:prose-invert;
+    @apply prose prose-sm prose-neutral prose-resume font-[Roboto_Flex,_sans-serif] dark:prose-invert;
     @apply dark:bg-neutral-800;
   }
 
@@ -29,19 +25,12 @@
     @apply after:absolute after:top-0 after:block after:h-full after:w-full after:rounded-full after:[box-shadow:inset_0_0_20px_0_theme(colors.neutral.800)] dark:after:[box-shadow:inset_0_0_20px_0_theme(colors.neutral.500)];
   }
 
-  .button {
-    @apply relative flex h-12 w-12 items-center justify-center rounded-full;
-
-    /* before */
-    @apply before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:scale-90 before:rounded-full before:duration-[250ms] before:[box-shadow:inset_0_0_0_0.125rem_currentColor] dark:before:[box-shadow:inset_0_0_0_3rem_currentColor];
-
-    /* hover:before */
-    @apply hover:before:scale-100 hover:before:[box-shadow:inset_0_0_0_3rem_currentColor] dark:hover:before:[box-shadow:inset_0_0_0_0.125rem_currentColor];
-
-    /* svg */
-    @apply [&_svg]:inline [&_svg]:h-[58%] [&_svg]:w-[58%] [&_svg]:fill-current [&_svg]:text-inherit [&_svg]:transition-colors dark:[&_svg]:text-neutral-800;
-
-    /* hover:svg */
-    @apply [&_svg]:hover:text-white dark:[&_svg]:hover:text-inherit;
+  .inline-svg {
+    @apply inline-block [&_svg]:inline-block [&_svg]:h-[1em] [&_svg]:w-[1em] [&_svg]:fill-current [&_svg]:align-[calc(0.5cap-0.5em)];
   }
+}
+
+@page {
+  margin: 3rem;
+  margin-bottom: 1.5rem;
 }

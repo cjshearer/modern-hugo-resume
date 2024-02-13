@@ -3,10 +3,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./hugo_stats.json"],
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("@savvywombat/tailwindcss-grid-areas"),
-  ],
+  plugins: [require("@tailwindcss/typography")],
   theme: {
     extend: {
       typography: {
@@ -56,32 +53,6 @@ module.exports = {
             },
           },
         },
-      },
-      // TODO(cjshearer): remove subgrid once
-      // https://github.com/tailwindlabs/tailwindcss/pull/12298/files is
-      // released
-      gridTemplateColumns: {
-        "resume-md": "1fr min-content min-content",
-        resume: "1fr min-content",
-        subgrid: "subgrid",
-      },
-      gridTemplateRows: {
-        resume: "repeat(3, min-content)",
-        subgrid: "subgrid",
-      },
-      // https://savvywombat.com.au/tailwind-css/grid-areas
-      gridTemplateAreas: {
-        "resume-md": [
-          "header header drawer",
-          "main date drawer",
-          "footer footer footer",
-        ],
-        // prettier-ignore
-        resume: [
-          "header header",
-          "main date",
-          "footer footer",
-        ],
       },
     },
   },

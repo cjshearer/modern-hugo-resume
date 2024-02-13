@@ -13,7 +13,6 @@ disableKinds:
   - taxonomy
   - term
 enableEmoji: true
-enableRobotsTXT: true
 languageCode: en-us
 markup:
   goldmark:
@@ -32,12 +31,3 @@ module:
       target: assets/watching/hugo_stats.json
     - source: node_modules/@fortawesome/fontawesome-free/svgs
       target: assets/svgs
-mediaTypes:
-  text/plain:
-    suffixes:
-      - txt
-outputFormats:
-  TXT:
-    mediaType: text/plain
-    baseName: index
-    isPlainText: true
