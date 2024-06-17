@@ -6,3 +6,6 @@ layouts/**/*.md
 layouts/partials/imgh.html
 layouts/resume/_markup/render-heading.html
 build
+
+.direnv
+result

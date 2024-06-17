@@ -6,17 +6,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-runner
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
       - name: Build
-        run: pnpm build --baseURL ${{ steps.pages.outputs.base_url }}
+        # HACK: https://github.com/NixOS/nix/issues/5663#issuecomment-2010521981
+        # see baseURL input in flake.nix for more details
+        run: nix build --override-input baseURL file+file://<(printf %s "${{ steps.pages.outputs.base_url }}")
       - if: github.ref == 'refs/heads/main'
         name: Upload Artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           name: build
-          path: build
+          path: result
           retention-days: 1

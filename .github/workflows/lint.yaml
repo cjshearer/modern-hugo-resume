@@ -5,8 +5,8 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-runner
       - name: Check Linting and Formatting
-        run: |
-          pnpm lint:check & pnpm format:check
+        shell: bash
+        run: nix develop .#default --command bash -c "pnpm format:check && pnpm lint"

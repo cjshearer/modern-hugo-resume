@@ -7,9 +7,7 @@
     "@fortawesome/fontawesome-free": "^6.4.2",
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/node": "^20.8.9",
     "autoprefixer": "^10.4.16",
-    "hugo-bin": "^0.116.3",
     "lint-staged": "^13.3.0",
     "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
@@ -27,13 +25,9 @@
   "engines": {
     "node": ">=20.2.0",
     "npm": "please-use-pnpm",
-    "pnpm": "8.6.7",
+    "pnpm": "9.1.1",
     "yarn": "please-use-pnpm"
   },
-  "hugo-bin": {
-    "buildTags": "extended"
-  },
-  "keywords": [],
   "lint-staged": {
     "*": [
       "pnpm prettier --write --ignore-unknown"
@@ -42,21 +36,20 @@
       "pnpm stylelint --fix"
     ]
   },
-  "name": "cjshearer.github.io",
-  "packageManager": "pnpm@8.6.7",
+  "name": "modern-hugo-resume",
+  "packageManager": "pnpm@9.1.1",
   "scripts": {
     "build": "pnpm run hugo:build",
     "clean": "pnpm run hugo:clean && rm -rf node_modules",
     "dev": "pnpm run hugo:serve",
-    "dev:tailscale": "./tailscale-dev.sh",
+    "format": "pnpm prettier .",
     "format:check": "pnpm format --check",
     "format:fix": "pnpm format --write",
-    "format": "pnpm prettier .",
     "hugo:build": "hugo -d build --minify",
     "hugo:clean": "rm -rf build resources public",
     "hugo:serve": "hugo server",
-    "lint:fix": "pnpm lint --fix",
     "lint": "pnpm stylelint **/*.{html,css}",
+    "lint:fix": "pnpm lint --fix",
     "prepare": "simple-git-hooks"
   },
   "simple-git-hooks": {
