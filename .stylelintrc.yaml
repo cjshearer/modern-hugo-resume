@@ -12,7 +12,6 @@ rules:
         - responsive
         - screen
   color-function-notation: null
-  declaration-block-trailing-semicolon:
   no-descending-specificity:
 
 ignoreFiles:

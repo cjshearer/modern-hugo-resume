@@ -15,7 +15,6 @@ if (process.env.HUGO_ENVIRONMENT === "production") {
     /** @type {import('@fullhuman/postcss-purgecss').UserDefinedOptions} */
     "@fullhuman/postcss-purgecss": {
       content: ["./hugo_stats.json"],
-      dynamicAttributes: ["data-open"],
       defaultExtractor: (content) => {
         const els = JSON.parse(content).htmlElements;
         return Object.values(els).reduce((acc, val) => acc.concat(val), []);

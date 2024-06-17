@@ -30,7 +30,7 @@
 
           pnpmDeps = pnpm.fetchDeps {
             inherit (finalAttrs) pname src;
-            hash = "sha256-LopdAXf7EScCbyXQ0op6xohdv6vRPdNQrVzIRxOvAG0=";
+            hash = "sha256-R/u7mpumGoR3Y7yHST8ksX8oHKQyIwJ33t3dz+JbT2w=";
           };
 
           postBuild = ''
@@ -47,6 +47,12 @@
           '';
         });
 
-        devShell = pkgs.mkShell { inherit nativeBuildInputs; };
+        devShell = pkgs.mkShell {
+          inherit nativeBuildInputs;
+
+          shellHook = ''
+            pnpm install
+          '';
+        };
       });
 }
