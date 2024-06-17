@@ -3,12 +3,6 @@ description: Install dependencies shared by all jobs
 runs:
   using: "composite"
   steps:
-    - run: corepack enable
-      shell: bash
-    - name: Install Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version-file: package.json
-        cache: pnpm
-    - run: pnpm install --frozen-lockfile
-      shell: bash
+    - uses: DeterminateSystems/nix-installer-action@v12
+    - uses: DeterminateSystems/magic-nix-cache-action@v7
+    - uses: DeterminateSystems/flake-checker-action@v8

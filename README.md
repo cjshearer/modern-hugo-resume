@@ -4,72 +4,36 @@ _A minimal static resume builder; inspired by [sproogen's modern-resume-theme](h
 
 _Host your own resume on GitHub for free!_
 
-## Repository Setup
+## Setup
+
+### Remote Repository
 
 1. [Fork](https://github.com/cjshearer/modern-hugo-resume/fork) this repository, naming it `<your_username>.github.io`.
 2. In your new repository, go to `Settings > Pages` and under "Build and deployment" select "GitHub Actions" as the source.
-3. Go to `Actions` and click "Enable workflows".
+3. Go to `Actions` and click "Enable workflows". When you next push to the `main` branch of your repository, the resume site will automatically be built and deployed to `https://<your_username>.github.io`.
 
-When you update the `main` branch of your repository with your information, the resume will automatically be built and deployed to `https://<your_username>.github.io`.
+> [!TIP]
+> You can also trigger the workflow to build and deploy the website by going to `Actions > ./github/workflows/deploy.yaml` and clicking "run workflow".
 
-4. [optional] If you just want to see the page deployed now, without updating the resume content, you can manually trigger the build and deploy workflow by going to `Actions > ./github/workflows/deploy.yaml` and clicking "run workflow".
+### Local Repository
 
-## Local Usage
+#### With [Nix](https://nixos.org/download/)
 
-### Prerequisites
+Run `nix develop` (or install [nix-direnv](https://github.com/nix-community/nix-direnv)).
 
-#### Node
+#### Without Nix
 
-We recommend installing the latest version (or at least 16) of Node with [nvm](https://github.com/nvm-sh/nvm).
+1. Install [`hugo`](https://gohugo.io/installation/) 1.27.0+extended.
+2. Install `node` >= 20.2.0 with [nvm](https://github.com/nvm-sh/nvm).
+3. Install `pnpm` with `corepack enable`.
+4. Run `pnpm install`.
 
-[Windows]: You'll need to use [nvm-windows](https://github.com/coreybutler/nvm-windows) if you want to use nvm.
+## Development
 
-#### Git
+### Rebuild on file change
 
-You probably already have this.
+To rebuild changes automatically, run `pnpm dev`.
 
-[Windows]: Install with `winget install -e --id Git.Git`
+### Build
 
-### Setup
-
-Clone the repository:
-
-```sh
-git clone git@github.com:<your_username>/<your_username>.github.io.git
-```
-
-We use [corepack](https://nodejs.org/api/corepack.html) (comes with Node >= 16)
-to manage `pnpm`. To install, run the following from the project's root
-directory.
-
-[Windows]: You may need to run the following with elevated privileges. For a convenient way to do this, install gsudo with `winget install -e --id gerardog.gsudo` and prepend `gsudo` to the following command:
-
-```sh
-corepack enable
-```
-
-To install the project dependencies, run the following command from the project's root directory:
-
-```sh
-pnpm install
-```
-
-## Local Development
-
-To make changes and instantly see them at http://localhost:1313, run:
-
-```sh
-pnpm dev
-```
-
-To make the server accessible over tailscale, run
-
-```sh
-pnpm dev:tailscale
-```
-
-To create a production build, run:
-
-```sh
-pnpm build
-```
+To create a production build, run `pnpm build`.
