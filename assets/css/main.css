@@ -28,6 +28,10 @@
   .inline-svg {
     @apply inline-block [&_svg]:inline-block [&_svg]:h-[1em] [&_svg]:w-[1em] [&_svg]:fill-current [&_svg]:align-[calc(0.5cap-0.5em)];
   }
+
+  .skills-table {
+    @apply pl-0 [&>li>*]:table-cell [&>li>ul>li]:inline [&>li>ul]:list-none [&>li]:table-row;
+  }
 }
 
 @page {

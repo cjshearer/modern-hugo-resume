@@ -27,6 +27,7 @@ Software Developer with 3 Years of Experience in Full Stack Web and Mobile Devel
 
 ## Skills {class="md:hidden"}
 
+<!-- for some reason, classes aren't applied without this extra spacing -->
 <!-- prettier-ignore -->
 - Languages:
     - TypeScript
@@ -71,7 +72,7 @@ Software Developer with 3 Years of Experience in Full Stack Web and Mobile Devel
     - Sentry
     - Stripe
     - SendGrid
-{ class="table pl-0 md:float-right md:block print:md:float-none print:md:table [&>li>*]:table-cell md:[&>li>*]:block print:md:[&>li>*]:table-cell [&>li>ul>li]:inline md:[&>li>ul>li]:block print:md:[&>li>ul>li]:inline [&>li>ul]:list-none md:[&>li>ul]:list-disc [&>li]:table-row"}
+{ class="max-md:skills-table md:float-right print:md:float-none"}
 
 ## Experience
 
