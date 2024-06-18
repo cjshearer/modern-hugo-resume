@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply prose prose-sm prose-neutral prose-resume font-[Roboto_Flex,_sans-serif] dark:prose-invert;
+    @apply prose prose-sm prose-neutral prose-resume font-[Roboto_Flex] dark:prose-invert;
     @apply dark:bg-neutral-800;
   }
 
