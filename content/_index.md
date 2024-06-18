@@ -72,7 +72,7 @@ Software Developer with 3 Years of Experience in Full Stack Web and Mobile Devel
     - Sentry
     - Stripe
     - SendGrid
-{ class="max-md:skills-table md:float-right print:md:float-none"}
+{ class="max-md:skills-table md:float-right [&>li]:list-none print:md:float-none"}
 
 ## Experience
 
