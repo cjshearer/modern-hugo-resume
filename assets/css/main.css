@@ -30,7 +30,7 @@
   }
 
   .skills-table {
-    @apply pl-0 [&>li>*]:table-cell [&>li>ul>li]:inline [&>li>ul]:list-none [&>li]:table-row;
+    @apply pl-0 [&>li>*]:table-cell [&>li>ul>li]:inline-block [&>li>ul]:list-none [&>li]:table-row;
   }
 }
 
