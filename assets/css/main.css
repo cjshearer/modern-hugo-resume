@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply prose prose-sm prose-neutral prose-resume font-[Roboto_Flex,_sans-serif] dark:prose-invert;
+    @apply prose prose-sm prose-neutral prose-resume font-[Roboto_Flex] dark:prose-invert;
     @apply dark:bg-neutral-800;
   }
 
@@ -27,6 +27,10 @@
 
   .inline-svg {
     @apply inline-block [&_svg]:inline-block [&_svg]:h-[1em] [&_svg]:w-[1em] [&_svg]:fill-current [&_svg]:align-[calc(0.5cap-0.5em)];
+  }
+
+  .skills-table {
+    @apply pl-0 [&>li>*]:table-cell [&>li>ul>li]:inline-block [&>li>ul]:list-none [&>li]:table-row;
   }
 }
 
