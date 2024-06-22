@@ -12,9 +12,7 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
       - name: Build
-        # HACK: https://github.com/NixOS/nix/issues/5663#issuecomment-2010521981
-        # see baseURL input in flake.nix for more details
-        run: nix build --override-input baseURL file+file://<(printf %s "${{ steps.pages.outputs.base_url }}")
+        run: nix build
       - if: github.ref == 'refs/heads/main'
         name: Upload Artifact
         uses: actions/upload-pages-artifact@v3

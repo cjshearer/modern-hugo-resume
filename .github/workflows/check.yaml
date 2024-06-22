@@ -1,0 +1,12 @@
+on:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-runner
+      - uses: DeterminateSystems/flake-checker-action@v8
+      - shell: bash
+        run: nix flake check
