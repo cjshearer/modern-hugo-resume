@@ -1,11 +1,13 @@
 build
-result
 public
 resources
 node_modules
 hugo_stats.json
+.hugo_build.lock
 
 *.crt
 *.key
 
 .direnv
+.pre-commit-config.yaml
+result

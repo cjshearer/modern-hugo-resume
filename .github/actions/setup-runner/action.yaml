@@ -5,4 +5,3 @@ runs:
   steps:
     - uses: DeterminateSystems/nix-installer-action@v12
     - uses: DeterminateSystems/magic-nix-cache-action@v7
-    - uses: DeterminateSystems/flake-checker-action@v8

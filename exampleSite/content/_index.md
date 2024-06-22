@@ -2,6 +2,7 @@
 title: Software Developer
 description: Full Stack Software Developer Resume
 faviconText: 💼
+layout: modern-hugo-resume
 ---
 
 <header class="mb-4 text-center md:text-left print:text-left">
@@ -14,7 +15,6 @@ faviconText: 💼
 Software Developer with 3 Years of Experience in Full Stack Web and Mobile Development
 { class="mb-2"}
 
-<!-- prettier-ignore -->
 - [![](svgs/brands/github.svg)cjshearer](https://github.com/cjshearer "My GithHub")
 - [![](svgs/brands/linkedin.svg)in/cjshearer](https://linkedin.com/in/cjshearer "My LinkedIn")
 - [![](svgs/solid/house.svg)cjshearer.dev](https://cjshearer.dev "My Website")
@@ -27,51 +27,49 @@ Software Developer with 3 Years of Experience in Full Stack Web and Mobile Devel
 
 ## Skills {class="md:hidden"}
 
-<!-- for some reason, classes aren't applied without this extra spacing -->
-<!-- prettier-ignore -->
 - Languages:
-    - TypeScript
-    - JavaScript
-    - HTML
-    - CSS
-    - Golang
-    - Node.js
-    - SQL
-    - Rust
-    - Python
-    - Java
-    - C++
+  - TypeScript
+  - JavaScript
+  - HTML
+  - CSS
+  - Golang
+  - Node.js
+  - SQL
+  - Rust
+  - Python
+  - Java
+  - C++
 - Frameworks:
-    - React
-    - React-Native
-    - Vue
-    - Nuxt
-    - Hugo
-    - TailwindCSS
-    - Storybook
+  - React
+  - React-Native
+  - Vue
+  - Nuxt
+  - Hugo
+  - TailwindCSS
+  - Storybook
 - Concepts:
-    - Agile (Scrum)
-    - RESTful APIs
-    - Material Design
-    - Cloud Native
-    - GitOps
-    - CI/CD
+  - Agile (Scrum)
+  - RESTful APIs
+  - Material Design
+  - Cloud Native
+  - GitOps
+  - CI/CD
 - Tools:
-    - Git
-    - Linux
-    - Docker
-    - Tailscale
-    - Postman
+  - Git
+  - Linux
+  - Docker
+  - Tailscale
+  - Postman
 - Databases:
-    - MySQL
-    - PostgreSQL
-    - MongoDB
+  - MySQL
+  - PostgreSQL
+  - MongoDB
 - Services:
-    - Auth0
-    - LogRocket
-    - Sentry
-    - Stripe
-    - SendGrid
+  - Auth0
+  - LogRocket
+  - Sentry
+  - Stripe
+  - SendGrid
 { class="max-md:skills-table md:float-right [&>li]:list-none print:md:float-none"}
 
 ## Experience

@@ -1,9 +1,14 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+// HACK(cjshearer): this enables us to get the node_modules installed by the consumer of a theme.
+// This may only be necessary for npm/pnpm installed from nixpkgs, but it should work the same for a
+// normal install.
+const node_modules = `${process.env.PWD}/node_modules`;
+
+const defaultTheme = require(`${node_modules}/tailwindcss/defaultTheme`);
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./hugo_stats.json"],
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require(`${node_modules}/@tailwindcss/typography`)],
   theme: {
     extend: {
       typography: {
@@ -43,9 +48,9 @@ module.exports = {
               marginTop: 0,
             },
             h4: {
-              fontSize: defaultTheme.fontSize["base"][0],
+              fontSize: defaultTheme.fontSize.base[0],
               fontWeight: defaultTheme.fontWeight.light,
-              lineHeight: defaultTheme.fontSize["base"][1].lineHeight,
+              lineHeight: defaultTheme.fontSize.base[1].lineHeight,
             },
             p: {
               marginBottom: 0,
