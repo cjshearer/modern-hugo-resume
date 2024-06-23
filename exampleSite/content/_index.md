@@ -123,7 +123,7 @@ June 2018 to August 2018
 
 August 2017 to May 2021
 
-- Graduated [_magna cum laude_](pdf/usc-diploma.pdf) with a mathematics minor
+- Graduated _magna cum laude_ with a mathematics minor
 - Achieved [Outstanding Senior Award](https://sc.edu/about/offices_and_divisions/leadership_and_service_center/awards_and_recognition/senior-awards/index.php) and the [Palmetto Fellows Scholarship](https://sc.edu/about/offices_and_divisions/financial_aid/scholarships/scholarships_for_sc_residents/palmetto_fellows/index.php)
 - Earned honors including President's List, Dean's List, and [Phi Beta Kappa](https://www.pbk.org/About)
 - Served as President and Treasurer of the Carolina Movement Club (_parkour!_)

@@ -1,10 +1,8 @@
 {
-  "name": "exampleSite",
   "scripts": {
     "build": "pnpm run hugo:build",
     "dev": "pnpm run hugo:serve",
-    "hugo:build": "hugo -d build --minify",
+    "hugo:build": "hugo --minify",
     "hugo:serve": "hugo server"
-  },
-  "version": "0.1.0"
+  }
 }

@@ -1,22 +1,12 @@
 # modern-hugo-resume
 
-A responsive, minimal, print-friendly resume builder. Fork it as a standalone website, or use as a theme in a new or existing Hugo site. Powered by Hugo, Tailwind CSS, Nix, and GitHub Pages.
+A responsive, minimal, print-friendly resume builder. Powered by Hugo, Tailwind CSS, Nix, and GitHub Pages.
 
 _Host your own resume on GitHub for free!_
 
-## Requirements
-
-Can be installed manually, or with `nix develop`:
-
-1. Install [`hugo`](https://gohugo.io/installation/) 1.27.0+extended.
-2. Install [`go`](https://go.dev/dl/) >= 1.22.3.
-3. Install `node` >= 20.2.0 with [nvm](https://github.com/nvm-sh/nvm).
-4. Install `pnpm` with `corepack enable`.
-5. Run `pnpm install`.
-
 ## Quick Start
 
-Follow this guide to quickly deploy your resume to github pages.
+This guide helps you quickly test the theme and deploy it to github pages. If, when finished, you decide to keep using it, we suggest continuing with the [Extended Setup](#extended-setup) to convert your fork into something more maintainable.
 
 ### 1. Fork this repository
 
@@ -30,78 +20,87 @@ Under `(your repo) > Settings > Pages > Build and Deployment > Source`, select "
 
 Go to `(your repo) > Actions` and click "Enable workflows". These are disabled by default on forks, to prevent unintended workflow runs.
 
-### 4. Edit the Resume to Deploy the Site
+### 4. Deploy your Customized Resume
 
 Edit the resume at `(your repo) > exampleSite/content/_index.md` using the github editor. When you commit it, the resume site will automatically be built and deployed to `https://<your_username>.github.io`.
 
 > [!TIP]
 > You can skip editing the resume and trigger the build and deploy workflow manually by going to `Actions > ./github/workflows/deploy.yaml` and clicking "run workflow".
 
-## Minimal Setup
+## Extended Setup
 
-Follow this guide if you want to handle deployment yourself. 
+The fork you created in the [Quick Start](#quick-start) won't be easy to keep up-to-date. Follow this guide to convert your forked `exampleSite` into something more maintainable.
 
-> [!TIP] 
-> Feel free to adapt our nix-based `.github` workflows to your website. An example of this will be available on my [my website's repo](https://github.com/cjshearer/cjshearer.dev).   
+### 5. Extract the Example Site and Supporting Files
 
-### 1. Create and Clone Your New Repository 
+Clone your forked repository and modify it as follows:
 
-[Create a new repository](https://github.com/new), naming it `<your_username>.github.io` and cloning it locally.
-
-### 2. Initialize a Hugo Module
-
-Inside your local git repository, create a `go.mod` file with:
-
-```sh
-hugo mod init github.com/<your username>/<your repo name>
-```
-
-### 3. Import this Theme
-
-Copy our `exampleSite/hugo.toml` to your repo's root directory, deleting the `replacements` line and editing the `baseURL`.
+1. Delete files and folders marked with a (-).
+2. Moving the files from `exampleSite` up a level with `mv exampleSite/* .` (ignore the error).
 
 ```diff
-- baseURL = "https://cjshearer.github.io/modern-hugo-resume"
-+ baseURL = "https://<your_username>.github.io/<your_repo_name>"
-...
-[module]
-- replacements = "github.com/cjshearer/modern-hugo-resume -> ../.."
-
-  [[module.imports]]
-  path = "github.com/cjshearer/modern-hugo-resume"
-...
+ $ tree -av --dirsfirst -L 1 --gitignore
+ .
+ ├── .git
+ ├── .github
+ ├── .vscode
+-├── assets
++├── exampleSite/* # move its files to the root dir
+-├── layouts
+ ├── .envrc
+ ├── .gitignore
+ ├── LICENSE
+ ├── README.md
+ ├── biome.json
+ ├── flake.lock
+ ├── flake.nix
+-├── go.mod
+-├── go.sum
+-├── hugo.toml
+-├── package.hugo.json
+-├── postcss.config.js
+-└── tailwind.config.js
 ```
 
-### 4. Install Node Dependencies
+### 6. Modify your Hugo Module
 
-Some of our dependencies (e.g. `tailwindcss`) are sourced from `npm`. Generate a `package.json` for these dependencies and install them with your preferred node package manager:
+Rename your module and remove the replacement directive to change `modern-hugo-resume` from a local to a remote dependency:
+
+```diff
+// go.mod (originally from `exampleSite/go.mod`)
+- module github.com/cjshearer/modern-hugo-resume/exampleSite
++ module github.com/<your username>/<your repo>
+
+...
+- // We use this for local development. Remove it if you're
+- // extracting the exampleSite to your own repository.
+- replace github.com/cjshearer/modern-hugo-resume => ../
+```
+
+### 7. Update Hash for Vendored Hugo Dependencies
+
+Nix to builds the site in GitHub Actions, and it requires that the expected hash of downloaded dependencies be declared. Now that you have added `modern-hugo-resume` as an additional remote dependency, you will need to update this hash. See the instructions above `outputHash` in [`flake.nix`](./flake.nix).
+
+### 8. Commit and Push
+
+Commit and push your changes to your main branch.
 
 ```sh
-hugo mod npm pack
-pnpm install
-```
-
-### 5. Write your Resume
-
-Add your resume as a markdown file located in `content/_index.md`. See `exampleSite/content/_index.md` for an example. Be sure to include the frontmatter:
-```yaml
----
-title: Software Developer
-description: Full Stack Software Developer Resume
-faviconText: 💼
-layout: modern-hugo-resume
----
-```
-
-### 6. Run your Site
-
-```sh
-hugo server
+git add .
+git commit -m "build: use hugo module"
+git push
 ```
 
 ## Local Development
 
-Development of this repository uses the following commands frequently.
+### Requirements 
+Can be installed manually, or automatically with [nix](https://github.com/DeterminateSystems/nix-installer?tab=readme-ov-file#the-determinate-nix-installer) by running `nix develop`:
+
+1. Install [`hugo`](https://gohugo.io/installation/) 1.27.0+extended.
+2. Install [`go`](https://go.dev/dl/) >= 1.22.3.
+3. Install `node` >= 20.2.0 with [nvm](https://github.com/nvm-sh/nvm).
+4. Install `pnpm` with `corepack enable`.
+5. Run `pnpm install`.
 
 ### Common Nix Commands
 ```sh
