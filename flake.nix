@@ -19,7 +19,7 @@
         nodejs = pkgs.nodejs_22;
         pnpm = pkgs.pnpm;
         nativeBuildInputs = [ go hugo nodejs pnpm ];
-        sourceRoot = "exampleSite";
+        buildFolder = "exampleSite";
       in
       {
         checks = {
@@ -38,13 +38,28 @@
           # TODO: remove `name` once I get around to versioning this
           name = finalAttrs.pname;
 
-          src = ./.;
-          setSourceRoot = "sourceRoot=$(echo *-source/${sourceRoot})";
+          src = with pkgs.lib.fileset; (toSource {
+            root = ./.;
+            fileset = difference
+              (gitTracked ./.)
+              (unions [
+                ./.github
+                ./.vscode
+                ./.envrc
+                ./.gitignore
+                ./biome.json
+                ./LICENSE
+                ./README.md
+              ])
+            ;
+          });
+
+          sourceRoot = "${finalAttrs.src.name}/${buildFolder}";
 
           nativeBuildInputs = nativeBuildInputs ++ [ pnpm.configHook ];
 
           pnpmDeps = pnpm.fetchDeps {
-            inherit (finalAttrs) pname src setSourceRoot;
+            inherit (finalAttrs) pname src sourceRoot;
             hash = "sha256-RvE4R277Kam3s32XbGUIQTToG0cpbhpTaLEU5HsNZZ4=";
           };
 
@@ -52,7 +67,7 @@
             let
               hugoVendor = pkgs.stdenv.mkDerivation {
                 name = "${finalAttrs.pname}-hugoVendor";
-                inherit (finalAttrs) src setSourceRoot;
+                inherit (finalAttrs) src sourceRoot;
                 nativeBuildInputs = [ go hugo git ];
 
                 buildPhase = ''
@@ -88,7 +103,7 @@
           ];
 
           shellHook = self.checks.${system}.pre-commit-check.shellHook + ''
-            pushd ${sourceRoot}
+            pushd ${buildFolder}
             
             pnpm install
 
