@@ -82,12 +82,12 @@ GitHub Actions is configured to build the site using Nix. Now that your site is 
 
 Nix also requires the expected hash of downloaded dependencies. Now that `modern-hugo-resume` is imported, you will need to update this hash. Follow the instructions above `outputHash` in [`flake.nix`](./flake.nix).
 
-See [`cjshearer.dev/flake.nix`](https://github.com/cjshearer/cjshearer.dev/blob/77b6e94990ca1f7168760a41ea3ee7e9b3745b17/flake.nix) for reference.
+See [`cjshearer.dev/flake.nix`](https://github.com/cjshearer/cjshearer.dev/blob/9b49eaef33ed9fb4d8726f6578085d76145c3d1a/flake.nix) for reference.
 
 ```diff
 # flake.nix
-- sourceRoot = "exampleSite";
-+ sourceRoot = ".";
+- buildFolder = "exampleSite";
++ buildFolder = ".";
 ...
 - pname = "modern-hugo-resume-exampleSite"
 + pname = "<your username>.github.io"
