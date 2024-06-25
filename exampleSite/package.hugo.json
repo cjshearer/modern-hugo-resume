@@ -1,8 +1,1 @@
-{
-  "scripts": {
-    "build": "pnpm run hugo:build",
-    "dev": "pnpm run hugo:serve",
-    "hugo:build": "hugo --minify",
-    "hugo:serve": "hugo server"
-  }
-}
+{}
