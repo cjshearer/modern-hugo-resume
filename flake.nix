@@ -19,6 +19,7 @@
         nodejs = pkgs.nodejs_22;
         pnpm = pkgs.pnpm;
         nativeBuildInputs = [ go hugo nodejs pnpm ];
+        sourceRoot = "exampleSite";
       in
       {
         checks = {
@@ -33,11 +34,12 @@
         };
 
         packages.default = pkgs.stdenv.mkDerivation (finalAttrs: {
-          pname = "modern-hugo-resume-exampleSite"; # remove once I get around to versioning this
-          name = finalAttrs.pname; # remove once I get around to versioning this
+          pname = "modern-hugo-resume-exampleSite";
+          # TODO: remove `name` once I get around to versioning this
+          name = finalAttrs.pname;
 
           src = ./.;
-          setSourceRoot = "sourceRoot=$(echo */exampleSite)";
+          setSourceRoot = "sourceRoot=$(echo *-source/${sourceRoot})";
 
           nativeBuildInputs = nativeBuildInputs ++ [ pnpm.configHook ];
 
@@ -65,14 +67,14 @@
                 outputHashAlgo = "sha256";
                 # To get a new hash:
                 # 1. Invalidate the current hash (change any character between "sha256-" and "=")
-                # 2. Run`nix build` (it will fail with a hash-mismatch and provide the actual hash)
-                # 3. Substitute the correct hash (`nix build` should now work)
+                # 2. Run `nix build` or push to GitHub (it will fail and provide the new hash)
+                # 3. Substitute the new hash (`nix build` should now work)
                 outputHash = "sha256-szsB5HwBznoZ1+qtj/yGgDQeUJxVdgtJ/4O1I25s4UE=";
               };
             in
             ''
               ln -s ${hugoVendor} _vendor
-              pnpm build -d $out
+              hugo --minify -d $out
             '';
 
           dontInstall = true;
@@ -86,7 +88,7 @@
           ];
 
           shellHook = self.checks.${system}.pre-commit-check.shellHook + ''
-            pushd exampleSite 
+            pushd ${sourceRoot}
             
             pnpm install
 

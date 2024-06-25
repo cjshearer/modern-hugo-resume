@@ -6,7 +6,7 @@ _Host your own resume on GitHub for free!_
 
 ## Quick Start
 
-This guide helps you quickly test the theme and deploy it to github pages. If, when finished, you decide to keep using it, we suggest continuing with the [Extended Setup](#extended-setup) to convert your fork into something more maintainable.
+This guide helps you quickly test the theme and deploy your resume to github pages. If you like it, we suggest continuing with the [Extended Setup](#extended-setup).
 
 ### 1. Fork this repository
 
@@ -29,9 +29,9 @@ Edit the resume at `(your repo) > exampleSite/content/_index.md` using the githu
 
 ## Extended Setup
 
-The fork you created in the [Quick Start](#quick-start) won't be easy to keep up-to-date. Follow this guide to convert your forked `exampleSite` into something more maintainable.
+The fork you created in the [Quick Start](#quick-start) contains a _copy_ of the theme, which won't be easy to update. Follow this guide to convert your forked hugo site into one which _imports_ the theme.
 
-### 5. Extract the Example Site and Supporting Files
+### 5. Remove Theme Source Code
 
 Clone your forked repository and modify it as follows:
 
@@ -40,29 +40,29 @@ Clone your forked repository and modify it as follows:
 
 ```diff
  $ tree -av --dirsfirst -L 1 --gitignore
- .
- ├── .git
- ├── .github
- ├── .vscode
--├── assets
-+├── exampleSite/* # move its files to the root dir
--├── layouts
- ├── .envrc
- ├── .gitignore
- ├── LICENSE
- ├── README.md
- ├── biome.json
- ├── flake.lock
- ├── flake.nix
--├── go.mod
--├── go.sum
--├── hugo.toml
--├── package.hugo.json
--├── postcss.config.js
--└── tailwind.config.js
+  .
+  ├── .git
+  ├── .github
+  ├── .vscode
+- ├── assets
++ ├── exampleSite/* # move its files to the root dir
+- ├── layouts
+  ├── .envrc
+  ├── .gitignore
+  ├── LICENSE
+  ├── README.md
+  ├── biome.json
+  ├── flake.lock
+  ├── flake.nix
+- ├── go.mod
+- ├── go.sum
+- ├── hugo.toml
+- ├── package.hugo.json
+- ├── postcss.config.js
+- └── tailwind.config.js
 ```
 
-### 6. Modify your Hugo Module
+### 6. Rename your Hugo Module and Import Theme
 
 Rename your module and remove the replacement directive to change `modern-hugo-resume` from a local to a remote dependency:
 
@@ -71,15 +71,30 @@ Rename your module and remove the replacement directive to change `modern-hugo-r
 - module github.com/cjshearer/modern-hugo-resume/exampleSite
 + module github.com/<your username>/<your repo>
 
-...
 - // We use this for local development. Remove it if you're
 - // extracting the exampleSite to your own repository.
 - replace github.com/cjshearer/modern-hugo-resume => ../
 ```
 
-### 7. Update Hash for Vendored Hugo Dependencies
+### 7. Update Build Path, Name, and Dependency Hash
 
-Nix to builds the site in GitHub Actions, and it requires that the expected hash of downloaded dependencies be declared. Now that you have added `modern-hugo-resume` as an additional remote dependency, you will need to update this hash. See the instructions above `outputHash` in [`flake.nix`](./flake.nix).
+GitHub Actions is configured to build the site using Nix. Now that your site is built from the root directory (not `exampleSite`), you should update its build path and name.
+
+Nix also requires the expected hash of downloaded dependencies. Now that `modern-hugo-resume` is imported, you will need to update this hash. Follow the instructions above `outputHash` in [`flake.nix`](./flake.nix).
+
+See [`cjshearer.dev/flake.nix`](https://github.com/cjshearer/cjshearer.dev/blob/77b6e94990ca1f7168760a41ea3ee7e9b3745b17/flake.nix) for reference.
+
+```diff
+# flake.nix
+- sourceRoot = "exampleSite";
++ sourceRoot = ".";
+...
+- pname = "modern-hugo-resume-exampleSite"
++ pname = "<your username>.github.io"
+...
+- outputHash = "sha256-someOldHash=
++ outputHash = "sha256-someNewHash=
+```
 
 ### 8. Commit and Push
 
@@ -93,27 +108,22 @@ git push
 
 ## Local Development
 
-### Requirements 
-Can be installed manually, or automatically with [nix](https://github.com/DeterminateSystems/nix-installer?tab=readme-ov-file#the-determinate-nix-installer) by running `nix develop`:
+### Requirements
+
+These can be installed manually, or automatically with [nix](https://github.com/DeterminateSystems/nix-installer?tab=readme-ov-file#the-determinate-nix-installer) by running `nix develop`:
 
 1. Install [`hugo`](https://gohugo.io/installation/) 1.27.0+extended.
 2. Install [`go`](https://go.dev/dl/) >= 1.22.3.
 3. Install `node` >= 20.2.0 with [nvm](https://github.com/nvm-sh/nvm).
 4. Install `pnpm` with `corepack enable`.
-5. Run `pnpm install`.
+5. Run `pnpm install` within `exampleSite`.
 
-### Common Nix Commands
+### Common Commands
 ```sh
+nix develop     # open a development environment, with all requirements satisfied
 nix build       # build the production site, exactly the same way it's done in CI
 nix flake check # run formatter/linter checks, exactly the same way it's done in CI
-nix develop     # open a development environment with requirements satisfied
-```
 
-#### Common pnpm Commands
-
-```sh
-cd exampleSite # <- don't forget this
-
-pnpm dev       # rebuild changes automatically 
-pnpm build     # create a production build
+hugo server     # serve to localhost and rebuild changes automatically
+hugo --minify   # build static site for production
 ```
