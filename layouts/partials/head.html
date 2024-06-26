@@ -39,12 +39,21 @@
     <link rel="icon" href="data:image/svg;," />
   {{ end }}
 
-  {{ $styles := resources.Get "css/main.css" | resources.PostCSS }}
-  {{ if hugo.IsProduction }}
-    {{- with $styles | minify | fingerprint | resources.PostProcess -}}
-		<style>{{- .Content | safeCSS }}</style>
-    {{- end -}}
-  {{ else }}
-    <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+  {{ with (templates.Defer (dict "key" "global")) }}
+    {{ with resources.Get "css/main.css" }}
+      {{ $opts := dict
+        "inlineImports" true
+        "optimize" hugo.IsProduction
+      }}
+      {{ with . | css.TailwindCSS $opts }}
+        {{ if hugo.IsDevelopment }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" />
+        {{ else }}
+          {{ with . | minify | fingerprint }}
+            <style>{{- .Content | safeCSS }}</style>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
   {{ end }}
 </head>

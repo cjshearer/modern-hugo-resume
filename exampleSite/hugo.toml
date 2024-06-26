@@ -7,7 +7,7 @@ languageCode = "en-us"
 enable = true
 
 [[build.cacheBusters]]
-source = "assets/watching/hugo_stats.json"
+source = "assets/notwatching/hugo_stats.json"
 target = "main.css"
 
 [markup.goldmark.renderer]
@@ -16,13 +16,14 @@ unsafe = true
 [markup.goldmark.parser]
 wrapStandAloneImageWithinParagraph = false
 
-  [markup.goldmark.parser.attribute]
-  block = true
-  title = true
+[markup.goldmark.parser.attribute]
+block = true
+title = true
 
 [[module.imports]]
 path = "github.com/cjshearer/modern-hugo-resume"
 
 [[module.mounts]]
+disableWatch = true
 source = "hugo_stats.json"
-target = "assets/watching/hugo_stats.json"
+target = "assets/notwatching/hugo_stats.json"
