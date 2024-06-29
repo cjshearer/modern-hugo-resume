@@ -78,19 +78,23 @@ Rename your module and remove the replacement directive to change `modern-hugo-r
 
 ### 7. Update Build Path, Name, and Dependency Hash
 
-GitHub Actions is configured to build the site using Nix. Now that your site is built from the root directory (not `exampleSite`), you should update its build path and name.
+GitHub Actions is configured to build the site using Nix. Now that your site is built from the root directory (not `exampleSite`), you should update its `pname` and remove the custom `sourceRoot`.
 
-Nix also requires the expected hash of downloaded dependencies. Now that `modern-hugo-resume` is imported, you will need to update this hash. Follow the instructions above `outputHash` in [`flake.nix`](./flake.nix).
+Nix also requires the expected hash of downloaded dependencies, which now includes `modern-hugo-resume`, so you will need to update this hash. Follow the instructions above `outputHash` in [`flake.nix`](./flake.nix).
 
 See [`cjshearer.dev/flake.nix`](https://github.com/cjshearer/cjshearer.dev/blob/9b49eaef33ed9fb4d8726f6578085d76145c3d1a/flake.nix) for reference.
 
 ```diff
 # flake.nix
-- buildFolder = "exampleSite";
-+ buildFolder = ".";
 ...
 - pname = "modern-hugo-resume-exampleSite"
 + pname = "<your username>.github.io"
+...
+- sourceRoot = "${finalAttrs.src.name}/exampleSite";
+...
+  name = "${finalAttrs.pname}-hugoVendor";
+- inherit (finalAttrs) src sourceRoot;
++ inherit (finalAttrs) src;
 ...
 - outputHash = "sha256-someOldHash=
 + outputHash = "sha256-someNewHash=
@@ -112,11 +116,9 @@ git push
 
 These can be installed manually, or automatically with [nix](https://github.com/DeterminateSystems/nix-installer?tab=readme-ov-file#the-determinate-nix-installer) by running `nix develop`:
 
-1. Install [`hugo`](https://gohugo.io/installation/) 1.27.0+extended.
+1. Install [`hugo`](https://gohugo.io/installation/) >= 1.28.0+extended.
 2. Install [`go`](https://go.dev/dl/) >= 1.22.3.
-3. Install `node` >= 20.2.0 with [nvm](https://github.com/nvm-sh/nvm).
-4. Install `pnpm` with `corepack enable`.
-5. Run `pnpm install` within `exampleSite`.
+3. Install [`tailwindcss`](https://github.com/tailwindlabs/tailwindcss/releases) >= 3.4.4.
 
 ### Common Commands
 ```sh

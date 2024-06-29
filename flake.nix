@@ -15,11 +15,54 @@
         commitlint = pkgs.commitlint;
         git = pkgs.git;
         go = pkgs.go;
-        hugo = pkgs.hugo;
-        nodejs = pkgs.nodejs_22;
-        pnpm = pkgs.pnpm;
-        nativeBuildInputs = [ go hugo nodejs pnpm ];
-        buildFolder = "exampleSite";
+        hugo = pkgs.hugo.override {
+          # awaiting hugo: 0.127.0 -> 0.128.0: https://github.com/NixOS/nixpkgs/pull/322536
+          buildGoModule = args: pkgs.buildGoModule (args // {
+            version = "0.128.0";
+            src = pkgs.fetchFromGitHub {
+              owner = "gohugoio";
+              repo = "hugo";
+              rev = "refs/tags/v0.128.0";
+              hash = "sha256-dyiCEWOiUtRppKgpqI68kC7Hv1AMK76kvCEaS8nIIJM=";
+            };
+            vendorHash = "sha256-iNI/5uAYMG+bfndpD17dp1v3rGbFdHnG9oQv/grb/XY=";
+          });
+        };
+        tailwindcss = pkgs.stdenv.mkDerivation (finalAttrs: {
+          pname = "tailwindcss";
+          version = "4.0.0-alpha.16";
+          src = pkgs.fetchFromGitHub {
+            owner = "tailwindlabs";
+            repo = "tailwindcss";
+            rev = "c711903af5a42bb1dee5062937857995792cd202";
+            hash = "sha256-+Ut5AUImjpZstS5anK/ObP6AlnPjfD9/WSYeSfSf4i4=";
+          };
+
+          pnpmDeps = pkgs.pnpm.fetchDeps {
+            inherit (finalAttrs) pname src;
+            hash = "sha256-bonSClGUtICBuvv4gV0yl5jDUcWqNYARHIZkZfsHeZk=";
+          };
+
+          nativeBuildInputs = [
+            pkgs.cargo
+            pkgs.cacert
+            pkgs.nodejs_20
+            pkgs.pnpm
+            pkgs.tree
+            pkgs.cargo
+            pkgs.turbo
+            pkgs.napi-rs-cli
+          ];
+
+          buildPhase = ''
+            cd crates/node
+            napi build --platform --release --no-const-enum
+            # pnpm run build --filter ./crates/node
+            ls -la
+            tree
+          '';
+        });
+        nativeBuildInputs = [ go hugo tailwindcss ];
       in
       {
         checks = {
@@ -34,6 +77,8 @@
         };
 
         packages.default = pkgs.stdenv.mkDerivation (finalAttrs: {
+          inherit nativeBuildInputs;
+
           pname = "modern-hugo-resume-exampleSite";
           # TODO: remove `name` once I get around to versioning this
           name = finalAttrs.pname;
@@ -54,14 +99,7 @@
             ;
           });
 
-          sourceRoot = "${finalAttrs.src.name}/${buildFolder}";
-
-          nativeBuildInputs = nativeBuildInputs ++ [ pnpm.configHook ];
-
-          pnpmDeps = pnpm.fetchDeps {
-            inherit (finalAttrs) pname src sourceRoot;
-            hash = "sha256-RvE4R277Kam3s32XbGUIQTToG0cpbhpTaLEU5HsNZZ4=";
-          };
+          sourceRoot = "${finalAttrs.src.name}/exampleSite";
 
           buildPhase =
             let
@@ -84,7 +122,7 @@
                 # 1. Invalidate the current hash (change any character between "sha256-" and "=")
                 # 2. Run `nix build` or push to GitHub (it will fail and provide the new hash)
                 # 3. Substitute the new hash (`nix build` should now work)
-                outputHash = "sha256-szsB5HwBznoZ1+qtj/yGgDQeUJxVdgtJ/4O1I25s4UE=";
+                outputHash = "sha256-SQjQAFcoUt+X+3KVMS1ji1Av4TbV6fYnKf2Gv2tGImo=";
               };
             in
             ''
@@ -101,14 +139,6 @@
             biome
             self.checks.${system}.pre-commit-check.enabledPackages
           ];
-
-          shellHook = self.checks.${system}.pre-commit-check.shellHook + ''
-            pushd ${buildFolder}
-            
-            pnpm install
-
-            popd
-          '';
         };
       });
 }

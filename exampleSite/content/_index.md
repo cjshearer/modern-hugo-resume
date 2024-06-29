@@ -8,18 +8,18 @@ layout: modern-hugo-resume
 <header class="mb-4 text-center md:text-left print:text-left">
 
 ![](avatar.jpg "A close-up photo of me wearing a suit and tie")
-{ class="avatar not-prose float-right hidden h-24 print:hidden md:block" sizes="256"}
+{class="avatar not-prose float-right hidden h-24 print:hidden md:block" sizes="256"}
 
 # Cody Shearer
 
 Software Developer with 3 Years of Experience in Full Stack Web and Mobile Development
-{ class="mb-2"}
+{class="mb-2"}
 
 - [![](svgs/brands/github.svg)cjshearer](https://github.com/cjshearer "My GithHub")
 - [![](svgs/brands/linkedin.svg)in/cjshearer](https://linkedin.com/in/cjshearer "My LinkedIn")
 - [![](svgs/solid/house.svg)cjshearer.dev](https://cjshearer.dev "My Website")
 - [![](svgs/solid/envelope.svg)cjshearer@live.com](mailto:cjshearer@live.com "My Email")
-{ class="not-prose *:inline-svg inline-flex w-fit flex-wrap justify-center gap-4 whitespace-nowrap [&_svg]:mr-1"}
+{class="pl-0 my-0 not-prose inline-flex list-none w-fit flex-wrap justify-center gap-4 whitespace-nowrap [&_svg]:inline-svg [&_svg]:mr-1"}
 
 </header>
 
@@ -70,7 +70,7 @@ Software Developer with 3 Years of Experience in Full Stack Web and Mobile Devel
   - Sentry
   - Stripe
   - SendGrid
-{ class="max-md:skills-table md:float-right [&>li]:list-none print:md:float-none"}
+{class="max-md:skills-table md:float-right [&>li]:list-none print:md:float-none"}
 
 ## Experience
 
