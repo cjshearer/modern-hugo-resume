@@ -28,7 +28,40 @@
             vendorHash = "sha256-iNI/5uAYMG+bfndpD17dp1v3rGbFdHnG9oQv/grb/XY=";
           });
         };
-        tailwindcss = pkgs.tailwindcss;
+        tailwindcss = pkgs.stdenv.mkDerivation (finalAttrs: {
+          pname = "tailwindcss";
+          version = "4.0.0-alpha.16";
+          src = pkgs.fetchFromGitHub {
+            owner = "tailwindlabs";
+            repo = "tailwindcss";
+            rev = "c711903af5a42bb1dee5062937857995792cd202";
+            hash = "sha256-+Ut5AUImjpZstS5anK/ObP6AlnPjfD9/WSYeSfSf4i4=";
+          };
+
+          pnpmDeps = pkgs.pnpm.fetchDeps {
+            inherit (finalAttrs) pname src;
+            hash = "sha256-bonSClGUtICBuvv4gV0yl5jDUcWqNYARHIZkZfsHeZk=";
+          };
+
+          nativeBuildInputs = [
+            pkgs.cargo
+            pkgs.cacert
+            pkgs.nodejs_20
+            pkgs.pnpm
+            pkgs.tree
+            pkgs.cargo
+            pkgs.turbo
+            pkgs.napi-rs-cli
+          ];
+
+          buildPhase = ''
+            cd crates/node
+            napi build --platform --release --no-const-enum
+            # pnpm run build --filter ./crates/node
+            ls -la
+            tree
+          '';
+        });
         nativeBuildInputs = [ go hugo tailwindcss ];
       in
       {

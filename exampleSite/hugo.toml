@@ -10,6 +10,10 @@ enable = true
 source = "assets/notwatching/hugo_stats.json"
 target = "main.css"
 
+[[build.cacheBusters]]
+source = "tailwind.config.mjs"
+target = "main.css"
+
 [markup.goldmark.renderer]
 unsafe = true
 
