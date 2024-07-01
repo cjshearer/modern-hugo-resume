@@ -7,7 +7,7 @@ const defaultTheme = require(`${node_modules}/tailwindcss/defaultTheme`);
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./hugo_stats.json"],
+  content: [`${process.env.PWD}/hugo_stats.json`],
   plugins: [require(`${node_modules}/@tailwindcss/typography`)],
   theme: {
     extend: {

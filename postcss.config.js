@@ -2,6 +2,8 @@
 // This may only be necessary for npm/pnpm installed from nixpkgs, but it should work the same for a
 // normal install.
 const node_modules = `${process.env.PWD}/node_modules`;
+// const purgeHtml = require("purgecss-from-html");
+
 module.exports = {
   plugins: {
     [`${node_modules}/tailwindcss`]: {
@@ -11,16 +13,18 @@ module.exports = {
   },
 };
 
-if (process.env.HUGO_ENVIRONMENT === "production") {
-  Object.assign(module.exports.plugins, {
-    /** @type {import('@fullhuman/postcss-purgecss').UserDefinedOptions} */
-    [`${node_modules}/@fullhuman/postcss-purgecss`]: {
-      content: ["./hugo_stats.json"],
-      defaultExtractor: (content) => {
-        const els = JSON.parse(content).htmlElements;
-        return Object.values(els).reduce((acc, val) => acc.concat(val), []);
-      },
-      variables: true,
-    },
-  });
-}
+// if (process.env.HUGO_ENVIRONMENT === "production") {
+Object.assign(module.exports.plugins, {
+  /** @type {import('@fullhuman/postcss-purgecss').UserDefinedOptions} */
+  [`${node_modules}/@fullhuman/postcss-purgecss`]: {
+    // content: [`${process.env.PWD}/hugo_stats.json`],
+    content: [`${process.env.PWD}/public/index.html`],
+    // defaultExtractor: (content) => {
+    //   const els = JSON.parse(content).htmlElements;
+    //   return Object.values(els).reduce((acc, val) => acc.concat(val), []);
+    // },
+    defaultExtractor: require(`${node_modules}/purgecss-from-html`),
+    variables: true,
+  },
+});
+// }
