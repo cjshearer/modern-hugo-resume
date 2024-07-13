@@ -1,5 +1,4 @@
 {{ $data := .Scratch.Get "data" }}
-{{ $googleFontURL := "https://fonts.googleapis.com/css2?family=Roboto+Flex&display=swap" }}
 <head>
   {{ with (.Page.Title | default $.Site.Title) }}
     <title>{{ . }}</title>
@@ -11,9 +10,6 @@
   {{ end }}
   <base href="{{ .Site.BaseURL }}" />
   <link rel="canonical" href="{{ .Permalink }}" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link rel="preload" href="{{ $googleFontURL }}" as="style" />
-  <link rel="stylesheet" href="{{ $googleFontURL }}" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:locale" content="en_US" />
