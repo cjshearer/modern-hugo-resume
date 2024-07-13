@@ -3,7 +3,6 @@
     "dependencies": {},
     "devDependencies": {
       "@fullhuman/postcss-purgecss": "project",
-      "@tailwindcss/typography": "project",
       "autoprefixer": "project",
       "postcss": "project",
       "postcss-cli": "project",
@@ -13,7 +12,6 @@
   "dependencies": {},
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
-    "@tailwindcss/typography": "^0.5.13",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
