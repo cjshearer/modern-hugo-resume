@@ -4,33 +4,163 @@
 
 @layer base {
   body {
-    @apply prose prose-sm prose-neutral prose-resume font-[Roboto_Flex] dark:prose-invert;
-    @apply dark:bg-neutral-800;
+    color: var(--body);
+    background-color: var(--background);
+  }
+
+  :root {
+    --background: theme(colors.white);
+    --body: theme(colors.gray.700);
+    --bullets: theme(colors.gray.300);
+    --headings: theme(colors.gray.900);
+    --link-hover: var(--body);
+    --shadow: theme(colors.gray.800);
+    --invert-background: theme(colors.neutral.800);
+    --invert-body: theme(colors.gray.300);
+    --invert-bullets: theme(colors.gray.600);
+    --invert-headings: theme(colors.white);
+    --invert-link-hover: theme(colors.gray.100);
+    --invert-shadow: theme(colors.gray.500);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root{
+      --background: var(--invert-background);
+      --body: var(--invert-body);
+      --bullets: var(--invert-bullets);
+      --headings: var(--invert-headings);
+      --link-hover: var(--invert-link-hover);
+      --shadow: var(--invert-shadow);
+    }
+  }
+
+  h1, h2, h3 {
+    color: var(--headings);
+  }
+
+  h2 + *,
+  h3 + * {
+    margin-top: theme(margin.0);
+  }
+
+  h1 {
+    font-size: theme(fontSize.2xl);
+    font-weight: theme(fontWeight.medium);
+    line-height: theme(lineHeight.8);
+  }
+
+  h2 {
+    font-size: theme(fontSize.xl);
+    font-weight: theme(fontWeight.medium);
+    line-height: theme(lineHeight.7);
+    margin-bottom: theme(margin[2.5]);
+  }
+
+  h3 {
+    font-size: theme(fontSize.lg);
+    font-weight: theme(fontWeight.medium);
+    line-height: theme(lineHeight.7);
+  }
+
+  a, p, li{
+    font-size: theme(fontSize.sm);
+    line-height: theme(lineHeight.6);
+  }
+
+  ul {
+    list-style-type: disc;
+    margin-bottom: theme(margin.4);
+    margin-top: theme(margin.4);
+    padding-inline-start: 22px;
+
+    ul {
+      margin-bottom: theme(margin.2);
+      margin-top: theme(margin.2);
+    }
+
+    > li {
+      margin-bottom: theme(margin.1);
+      margin-top: theme(margin.1);
+      padding-inline-start: theme(padding[1.5]);
+
+      &::marker {
+        color: var(--bullets);
+      }
+    }
   }
 
   a {
-    @apply underline dark:hover:text-neutral-100 print:no-underline;
+    text-decoration-line: underline;
   }
 
-  code {
-    @apply whitespace-nowrap rounded-md border px-1 dark:border-neutral-500 dark:bg-neutral-900;
+  a:hover {
+    color: var(--link-hover);
+  }
+
+  @media print {
+    a {
+      text-decoration-line: none;
+    }
+
+    h2, h3, p {
+      break-after: avoid-page;
+    }
+  
+    p, ul {
+      break-inside: avoid-page;
+    }
   }
 }
 
 @layer components {
   .avatar {
-    @apply relative aspect-square overflow-hidden rounded-full;
+    aspect-ratio: theme(aspectRatio.square);
+    border-radius: theme(borderRadius.full);
+    overflow: hidden;
+    position: relative;
 
-    /* after */
-    @apply after:absolute after:top-0 after:block after:h-full after:w-full after:rounded-full after:[box-shadow:inset_0_0_20px_0_theme(colors.neutral.800)] dark:after:[box-shadow:inset_0_0_20px_0_theme(colors.neutral.500)];
+    &::after {
+      border-radius: theme(borderRadius.full);
+      box-shadow: inset 0 0 theme(inset.5) 0 var(--shadow);
+      content: "";
+      display: block;
+      height: theme(height.full);
+      position: absolute;
+      top: 0;
+      width: theme(width.full);
+    }
   }
 
   .inline-svg {
-    @apply inline-block [&_svg]:inline-block [&_svg]:h-[1em] [&_svg]:w-[1em] [&_svg]:fill-current [&_svg]:align-[calc(0.5cap-0.5em)];
+    display: inline-block;
   }
 
-  .skills-table {
-    @apply pl-0 [&>li>*]:table-cell [&>li>ul>li]:inline-block [&>li>ul]:list-none [&>li]:table-row;
+  .inline-svg svg {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+    vertical-align: calc(0.5cap - 0.5em);
+  }
+
+  .list-as-table {
+    padding-left: 0;
+  }
+
+  .list-as-table > li {
+    display: table-row;
+  }
+
+  .list-as-table > li > * {
+    display: table-cell;
+  }
+  
+  .list-as-table > li > ul {
+    list-style-type: none;
+  }
+
+  .list-as-table > li > ul > li {
+    display: inline-block;
   }
 }
 

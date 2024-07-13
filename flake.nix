@@ -60,7 +60,7 @@
 
           pnpmDeps = pnpm.fetchDeps {
             inherit (finalAttrs) pname src sourceRoot;
-            hash = "sha256-RvE4R277Kam3s32XbGUIQTToG0cpbhpTaLEU5HsNZZ4=";
+            hash = "sha256-jFiE82KDRGsc7n2N2sWZITd+R42L9rLLPmUXKohmhYo=";
           };
 
           buildPhase =
@@ -84,7 +84,7 @@
                 # 1. Invalidate the current hash (change any character between "sha256-" and "=")
                 # 2. Run `nix build` or push to GitHub (it will fail and provide the new hash)
                 # 3. Substitute the new hash (`nix build` should now work)
-                outputHash = "sha256-szsB5HwBznoZ1+qtj/yGgDQeUJxVdgtJ/4O1I25s4UE=";
+                outputHash = "sha256-F+hhvh063csfBfpjwQQOdjB+EP4ntwmHwzBxQN7LSMM=";
               };
             in
             ''
