@@ -16,10 +16,8 @@
         git = pkgs.git;
         go = pkgs.go;
         hugo = pkgs.hugo;
-        nodejs = pkgs.nodejs_22;
-        pnpm = pkgs.pnpm;
-        nativeBuildInputs = [ go hugo nodejs pnpm ];
-        buildFolder = "exampleSite";
+        tailwindcss = pkgs.tailwindcss;
+        nativeBuildInputs = [ go hugo tailwindcss ];
       in
       {
         checks = {
@@ -34,6 +32,8 @@
         };
 
         packages.default = pkgs.stdenv.mkDerivation (finalAttrs: {
+          inherit nativeBuildInputs;
+
           pname = "modern-hugo-resume-exampleSite";
           # TODO: remove `name` once I get around to versioning this
           name = finalAttrs.pname;
@@ -54,14 +54,7 @@
             ;
           });
 
-          sourceRoot = "${finalAttrs.src.name}/${buildFolder}";
-
-          nativeBuildInputs = nativeBuildInputs ++ [ pnpm.configHook ];
-
-          pnpmDeps = pnpm.fetchDeps {
-            inherit (finalAttrs) pname src sourceRoot;
-            hash = "sha256-jFiE82KDRGsc7n2N2sWZITd+R42L9rLLPmUXKohmhYo=";
-          };
+          sourceRoot = "${finalAttrs.src.name}/exampleSite";
 
           buildPhase =
             let
@@ -84,7 +77,7 @@
                 # 1. Invalidate the current hash (change any character between "sha256-" and "=")
                 # 2. Run `nix build` or push to GitHub (it will fail and provide the new hash)
                 # 3. Substitute the new hash (`nix build` should now work)
-                outputHash = "sha256-F+hhvh063csfBfpjwQQOdjB+EP4ntwmHwzBxQN7LSMM=";
+                outputHash = "sha256-wBVHv3PNdaDjeXd7E3DfnXRddM9bfWPTp6ROQApPjsc=";
               };
             in
             ''
@@ -97,18 +90,11 @@
         });
 
         devShell = pkgs.mkShell {
+          inherit (self.checks.${system}.pre-commit-check) shellHook;
           nativeBuildInputs = nativeBuildInputs ++ [
             biome
             self.checks.${system}.pre-commit-check.enabledPackages
           ];
-
-          shellHook = self.checks.${system}.pre-commit-check.shellHook + ''
-            pushd ${buildFolder}
-            
-            pnpm install
-
-            popd
-          '';
         };
       });
 }
