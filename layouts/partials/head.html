@@ -15,7 +15,7 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ .Permalink }}" />
-  {{ with .Page.Params.faviconText }}
+  {{- with .Page.Params.faviconText -}}
     {{ $faviconString := print
       `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">`
       `<text y="0.9em" font-size="80">` . `</text>
@@ -30,17 +30,26 @@
       href="data:{{ $favicon.MediaType.Type }};base64,{{ $favicon.Content | base64Encode }}"
       type="{{ $favicon.MediaType.Type }}"
     />
-  {{ else }}
+  {{- else -}}
     {{/* disable favicon request */}}
     <link rel="icon" href="data:image/svg;," />
-  {{ end }}
+  {{- end -}}
 
-  {{ $styles := resources.Get "css/main.css" | resources.PostCSS }}
-  {{ if hugo.IsProduction }}
-    {{- with $styles | minify | fingerprint | resources.PostProcess -}}
-		<style>{{- .Content | safeCSS }}</style>
+  {{- with (templates.Defer (dict "key" "global")) -}}
+    {{- with resources.Get "css/main.css" -}}
+      {{ $opts := dict
+        "inlineImports" true
+        "optimize" hugo.IsProduction
+      }}
+      {{- with . | css.TailwindCSS $opts -}}
+        {{- if hugo.IsDevelopment -}}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" />
+        {{- else -}}
+          {{- with . | minify | fingerprint -}}
+            <style>{{- .Content | safeCSS }}</style>
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
     {{- end -}}
-  {{ else }}
-    <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
-  {{ end }}
+  {{- end -}}
 </head>
