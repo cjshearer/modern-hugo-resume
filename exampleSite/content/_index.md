@@ -2,7 +2,7 @@
 title: Software Developer
 description: Full Stack Software Developer Resume
 faviconText: 💼
-layout: modern-hugo-resume
+type: modern-hugo-resume
 ---
 
 <header class="mb-3 text-center md:text-left print:text-left">

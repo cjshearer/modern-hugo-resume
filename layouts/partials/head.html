@@ -36,7 +36,7 @@
   {{- end -}}
 
   {{- with (templates.Defer (dict "key" "global")) -}}
-    {{- with resources.Get "css/main.css" -}}
+    {{- with resources.Get "css/modern-hugo-resume.css" -}}
       {{ $opts := dict
         "inlineImports" true
         "optimize" hugo.IsProduction
