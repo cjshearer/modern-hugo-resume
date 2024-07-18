@@ -61,52 +61,46 @@ Clone your forked repository and modify it as follows:
 
 ### 6. Rename your Hugo Module and Import Theme
 
-Rename your module and remove the replacement directive to change `modern-hugo-resume` from a local to a remote dependency, then fetch the latest version with `hugo mod get -u github.com/cjshearer/modern-hugo-resume`.
+Rename your module, remove the `noVendor` and `replacements` configs, then import the theme from GitHub with `hugo mod get -u github.com/cjshearer/modern-hugo-resume`.
 
 ```diff
 // go.mod (originally from `exampleSite/go.mod`)
 - module github.com/cjshearer/modern-hugo-resume/exampleSite
 + module github.com/<your username>/<your repo>
 
-- // We use this for local development. Remove it if you're
-- // extracting the exampleSite to your own repository.
-- replace github.com/cjshearer/modern-hugo-resume => ../
+# hugo.toml (originally from `exampleSite/hugo.toml`)
+- [module]
+- noVendor = "github.com/cjshearer/modern-hugo-resume"
+- replacements = "github.com/cjshearer/modern-hugo-resume -> ../.."
 ```
 
 ### 7. Update Build Path, Name, and Dependency Hash
 
 GitHub Actions is configured to build the site using Nix. Now that your site is built from the root directory (not `exampleSite`), you should update its `pname` and remove the custom `sourceRoot`.
 
-Nix also requires the expected hash of downloaded dependencies, which now includes `modern-hugo-resume`, so you will need to update this hash. Follow the instructions above `outputHash` in [`flake.nix`](./flake.nix).
-
-See [`cjshearer.dev/flake.nix`](https://github.com/cjshearer/cjshearer.dev/blob/9b49eaef33ed9fb4d8726f6578085d76145c3d1a/flake.nix) for reference.
+As Nix requires the expected hash of downloaded dependencies, which now includes `modern-hugo-resume`, you will need to update this hash. Follow the instructions above `outputHash` in [`flake.nix`](./flake.nix).
 
 ```diff
 # flake.nix
 ...
+
 - pname = "modern-hugo-resume-exampleSite"
 + pname = "<your username>.github.io"
+
 ...
+
 - sourceRoot = "${finalAttrs.src.name}/exampleSite";
+
 ...
+
   name = "${finalAttrs.pname}-hugoVendor";
 - inherit (finalAttrs) src sourceRoot;
 + inherit (finalAttrs) src;
+
 ...
-- # We remove our vendored hugo module to avoid updating the outputHash every time
-- # we change modern-hugo-resume. If only Go supported partial vendoring...
-- rm -rf _vendor/github.com/cjshearer/modern-hugo-resume
-...
+
 - outputHash = "sha256-someOldHash=
 + outputHash = "sha256-someNewHash=
-...
-- # We substitute our vendored hugo module we removed with a symlink to the root.
-- cp -rs ${hugoVendor} _vendor
-+ ln -s ${hugoVendor} _vendor
-- chmod +w _vendor/github.com/cjshearer
-- rm -rf _vendor/github.com/cjshearer/modern-hugo-resume
-- ln -s $src _vendor/github.com/cjshearer/modern-hugo-resume
-...
 ```
 
 ### 8. Commit and Push
