@@ -4,7 +4,7 @@ description: Full Stack Software Developer Resume
 faviconText: 💼
 type: modern-hugo-resume
 ---
-
+<body class="m-4 mb-2 mx-auto max-w-[8.5in]">
 <header class="mb-3 text-center md:text-left print:text-left">
 
 ![](avatar.jpg "A close-up photo of me wearing a suit and tie")
@@ -135,3 +135,4 @@ August 2017 to May 2021
 _Cody Shearer - cjshearer@live.com - References available on request_
 
 </footer>
+</body>

@@ -1,7 +1,58 @@
 <!doctype html>
-<html lang="en">
-  {{ partialCached "head.html" . }}
-  <body class="m-4 mb-2 *:mx-auto *:max-w-[8.5in] print:m-0 print:*:max-w-none">
-    {{ .Content }}
-  </body>
+<html>
+  <head>
+    {{ with (.Page.Title | default $.Site.Title) }}
+      <title>{{ . }}</title>
+      <meta property="og:title" content="{{ . }}" />
+    {{ end }}
+    {{ with .Page.Description }}
+      <meta property="og:description" content="{{ . }}" />
+      <meta name="description" content="{{ . }}" />
+    {{ end }}
+    <base href="{{ .Site.BaseURL }}" />
+    <link rel="canonical" href="{{ .Permalink }}" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    {{- with .Page.Params.faviconText -}}
+      {{ $faviconString := print
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">`
+        `<text y="0.9em" font-size="80">` . `</text>
+        </svg>`
+      }}
+      {{ $favicon := $faviconString
+        | resources.FromString (print "images/" (md5 $faviconString) ".svg")
+        | resources.Minify
+      }}
+      <link
+        rel="icon"
+        href="data:{{ $favicon.MediaType.Type }};base64,{{ $favicon.Content | base64Encode }}"
+        type="{{ $favicon.MediaType.Type }}"
+      />
+    {{- else -}}
+      {{/* disable favicon request */}}
+      <link rel="icon" href="data:image/svg;," />
+    {{- end -}}
+
+    {{- with (templates.Defer (dict "key" "global")) -}}
+      {{- with resources.Get "css/modern-hugo-resume.css" -}}
+        {{ $opts := dict
+          "inlineImports" true
+          "optimize" hugo.IsProduction
+        }}
+        {{- with . | css.TailwindCSS $opts -}}
+          {{- if hugo.IsDevelopment -}}
+            <link rel="stylesheet" href="{{ .RelPermalink }}" />
+          {{- else -}}
+            {{- with . | minify | fingerprint -}}
+              <style>{{- .Content | safeCSS }}</style>
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  </head>
+  {{ .Content }}
 </html>
