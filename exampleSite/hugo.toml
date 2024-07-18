@@ -20,6 +20,10 @@ wrapStandAloneImageWithinParagraph = false
 block = true
 title = true
 
+[module]
+noVendor = "github.com/cjshearer/modern-hugo-resume"
+replacements = "github.com/cjshearer/modern-hugo-resume -> ../.."
+
 [[module.imports]]
 path = "github.com/cjshearer/modern-hugo-resume"
 
