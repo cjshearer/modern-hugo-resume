@@ -61,7 +61,7 @@ Clone your forked repository and modify it as follows:
 
 ### 6. Rename your Hugo Module and Import Theme
 
-Rename your module and remove the replacement directive to change `modern-hugo-resume` from a local to a remote dependency:
+Rename your module and remove the replacement directive to change `modern-hugo-resume` from a local to a remote dependency, then fetch the latest version with `hugo mod get -u github.com/cjshearer/modern-hugo-resume`.
 
 ```diff
 // go.mod (originally from `exampleSite/go.mod`)
@@ -93,8 +93,20 @@ See [`cjshearer.dev/flake.nix`](https://github.com/cjshearer/cjshearer.dev/blob/
 - inherit (finalAttrs) src sourceRoot;
 + inherit (finalAttrs) src;
 ...
+- # We remove our vendored hugo module to avoid updating the outputHash every time
+- # we change modern-hugo-resume. If only Go supported partial vendoring...
+- rm -rf _vendor/github.com/cjshearer/modern-hugo-resume
+...
 - outputHash = "sha256-someOldHash=
 + outputHash = "sha256-someNewHash=
+...
+- # We substitute our vendored hugo module we removed with a symlink to the root.
+- cp -rs ${hugoVendor} _vendor
++ ln -s ${hugoVendor} _vendor
+- chmod +w _vendor/github.com/cjshearer
+- rm -rf _vendor/github.com/cjshearer/modern-hugo-resume
+- ln -s $src _vendor/github.com/cjshearer/modern-hugo-resume
+...
 ```
 
 ### 8. Commit and Push
@@ -111,7 +123,7 @@ git push
 
 ### Requirements
 
-These can be installed manually, or automatically with [nix](https://github.com/DeterminateSystems/nix-installer?tab=readme-ov-file#the-determinate-nix-installer) by running `nix develop`:
+These can be installed manually, or automatically with [nix](https://nixos.org/download/) by running `nix develop`:
 
 1. Install [`hugo`](https://gohugo.io/installation/) >= 1.28.0+extended.
 2. Install [`go`](https://go.dev/dl/) >= 1.22.3.
