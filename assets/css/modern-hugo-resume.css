@@ -139,26 +139,6 @@
     vertical-align: calc(0.5cap - 0.5em);
     width: 1em;
   }
-
-  .list-as-table {
-    padding-left: 0;
-  }
-
-  .list-as-table > li {
-    display: table-row;
-  }
-
-  .list-as-table > li > * {
-    display: table-cell;
-  }
-
-  .list-as-table > li > ul {
-    list-style-type: none;
-  }
-
-  .list-as-table > li > ul > li {
-    display: inline-block;
-  }
 }
 
 @page {
