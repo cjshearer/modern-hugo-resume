@@ -26,53 +26,6 @@ Software Developer with 3 Years of Experience in Full Stack Web and Mobile Devel
 
 <main>
 
-## Skills {class="md:hidden"}
-
-- Languages:
-  - TypeScript
-  - JavaScript
-  - HTML
-  - CSS
-  - Golang
-  - Node.js
-  - SQL
-  - Rust
-  - Python
-  - Java
-  - C++
-- Frameworks:
-  - React
-  - React-Native
-  - Vue
-  - Nuxt
-  - Hugo
-  - TailwindCSS
-  - Storybook
-- Concepts:
-  - Agile (Scrum)
-  - RESTful APIs
-  - Material Design
-  - Cloud Native
-  - GitOps
-  - CI/CD
-- Tools:
-  - Git
-  - Linux
-  - Docker
-  - Tailscale
-  - Postman
-- Databases:
-  - MySQL
-  - PostgreSQL
-  - MongoDB
-- Services:
-  - Auth0
-  - LogRocket
-  - Sentry
-  - Stripe
-  - SendGrid
-{class="max-md:list-as-table mt-0 md:float-right print:md:float-none [&>li]:list-none"}
-
 ## Experience
 
 ### Software Developer – Full Stack, Krumware
@@ -128,6 +81,20 @@ August 2017 to May 2021
 - Achieved [Outstanding Senior Award](https://sc.edu/about/offices_and_divisions/leadership_and_service_center/awards_and_recognition/senior-awards/index.php) and the [Palmetto Fellows Scholarship](https://sc.edu/about/offices_and_divisions/financial_aid/scholarships/scholarships_for_sc_residents/palmetto_fellows/index.php)
 - Earned honors including President's List, Dean's List, and [Phi Beta Kappa](https://www.pbk.org/About)
 - Served as President and Treasurer of the Carolina Movement Club (_parkour!_)
+
+## Skills
+
+**Languages**: TypeScript JavaScript HTML CSS Golang Node.js SQL Rust Python
+
+**Concepts**: Agile (Scrum) RESTful APIs Material Design Cloud Native GitOps CI/CD
+
+**Frameworks**: React React-Native Vue Nuxt Hugo TailwindCSS Storybook
+
+**Services**: Auth0 LogRocket Sentry Stripe SendGrid
+
+**Tools**: Git Linux Docker Tailscale Postman
+
+**Databases**: MySQL PostgreSQL MongoDB
 
 </main>
 
