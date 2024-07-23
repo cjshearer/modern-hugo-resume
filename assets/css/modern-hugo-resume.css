@@ -138,6 +138,17 @@
 }
 
 @layer components {
+  .inline-list {
+    padding-left: theme("padding.6");
+    text-indent: calc(-1 * theme("textIndent.6"));
+    word-spacing: 0.6em;
+
+    span {
+      white-space: nowrap;
+      word-spacing: initial;
+    }
+  }
+
   .inline-svg svg {
     display: inline-block;
     fill: currentcolor;

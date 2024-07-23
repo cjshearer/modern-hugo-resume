@@ -77,17 +77,21 @@ August 2017 to May 2021
 
 ## Skills
 
-**Languages**: TypeScript JavaScript HTML CSS Golang Node.js SQL Rust Python
+<div class="inline-list">
 
-**Concepts**: Agile (Scrum) RESTful APIs Material Design Cloud Native GitOps CI/CD
+**Languages**: TypeScript JavaScript HTML CSS Golang Node.js SQL Rust Python
 
-**Frameworks**: React React-Native Vue Nuxt Hugo TailwindCSS Storybook
+**Concepts**: <span>Agile (Scrum)</span> <span>RESTful APIs</span> <span>Material Design</span> <span>Cloud Native</span> GitOps <span>CI/CD</span>
 
-**Services**: Auth0 LogRocket Sentry Stripe SendGrid
+**Frameworks**: React <span>React-Native</span> Vue Nuxt Hugo TailwindCSS Storybook
 
-**Tools**: Git Linux Docker Tailscale Postman
+**Services**: Auth0 LogRocket Sentry Stripe SendGrid
 
-**Databases**: MySQL PostgreSQL MongoDB
+**Tools**: Git Linux Docker Tailscale Postman
+
+**Databases**: MySQL PostgreSQL MongoDB
+
+</div>
 
 </main>
 
