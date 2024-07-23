@@ -4,19 +4,23 @@ description: Full Stack Software Developer Resume
 faviconText: 💼
 type: modern-hugo-resume
 ---
-<body class="m-4 mb-2 mx-auto max-w-[8.5in]">
+<style>
+:root {
+  --page-width: 8.5in;
+  --page-height: 11in;
+  --page-margin: 0.4in;
+  --page-count: 2;
+  /* ^ places <footer> on the bottom of this page */
+}
+</style>
+
+<body class="mt-4">
 <header class="mb-3 text-center md:text-left print:text-left">
 
 # Cody Shearer
 
 Software Developer with 3 Years of Experience in Full Stack Web and Mobile Development
 {class="mb-1"}
-
-- [![](svgs/brands/github.svg)cjshearer](https://github.com/cjshearer "My GithHub")
-- [![](svgs/brands/linkedin.svg)in/cjshearer](https://linkedin.com/in/cjshearer "My LinkedIn")
-- [![](svgs/solid/house.svg)cjshearer.dev](https://cjshearer.dev "My Website")
-- [![](svgs/solid/envelope.svg)cjshearer@live.com](mailto:cjshearer@live.com "My Email")
-{class="*:inline-svg my-0 inline-flex w-fit flex-wrap justify-center gap-4 whitespace-nowrap ps-0 *:ps-0 [&_svg]:mr-1"}
 
 </header>
 
@@ -127,9 +131,13 @@ August 2017 to May 2021
 
 </main>
 
-<footer class="h-5 text-center print:fixed print:bottom-0 print:w-full">
+<footer>
 
-_Cody Shearer - cjshearer@live.com - References available on request_
+[![](svgs/brands/github.svg)cjshearer](https://github.com/cjshearer "My GithHub")
+[![](svgs/brands/linkedin.svg)in/cjshearer](https://linkedin.com/in/cjshearer "My LinkedIn")
+[![](svgs/solid/house.svg)cjshearer.dev](https://cjshearer.dev "My Website")
+[![](svgs/solid/envelope.svg)cjshearer@live.com](mailto:cjshearer@live.com "My Email")
+{class="inline-svg flex flex-wrap justify-center gap-4 whitespace-nowrap print:mb-0"}
 
 </footer>
 </body>
