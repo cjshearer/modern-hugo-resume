@@ -14,13 +14,11 @@
     --bullets: theme("colors.gray.300");
     --headings: theme("colors.gray.900");
     --link-hover: var(--body);
-    --shadow: theme("colors.gray.800");
     --invert-background: theme("colors.neutral.800");
     --invert-body: theme("colors.gray.300");
     --invert-bullets: theme("colors.gray.600");
     --invert-headings: theme("colors.white");
     --invert-link-hover: theme("colors.gray.100");
-    --invert-shadow: theme("colors.gray.500");
   }
 
   @media (prefers-color-scheme: dark) {
@@ -30,7 +28,6 @@
       --bullets: var(--invert-bullets);
       --headings: var(--invert-headings);
       --link-hover: var(--invert-link-hover);
-      --shadow: var(--invert-shadow);
     }
   }
 
@@ -120,23 +117,6 @@
 }
 
 @layer components {
-  .avatar {
-    aspect-ratio: theme("aspectRatio.square");
-    border-radius: theme("borderRadius.full");
-    overflow: hidden;
-    position: relative;
-
-    &::after {
-      border-radius: theme("borderRadius.full");
-      box-shadow: inset 0 0 theme("inset.5") 0 var(--shadow);
-      content: "";
-      display: block;
-      height: theme("height.full");
-      position: absolute;
-      top: 0;
-      width: theme("width.full");
-    }
-  }
 
   .inline-svg {
     display: inline-block;
