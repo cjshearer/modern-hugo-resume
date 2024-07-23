@@ -16,12 +16,10 @@
   :root {
     --background: theme("colors.white");
     --body: theme("colors.gray.700");
-    --bullets: theme("colors.gray.300");
     --headings: theme("colors.gray.900");
     --link-hover: var(--body);
     --invert-background: theme("colors.neutral.800");
     --invert-body: theme("colors.gray.300");
-    --invert-bullets: theme("colors.gray.500");
     --invert-headings: theme("colors.white");
     --invert-link-hover: theme("colors.gray.100");
   }
@@ -30,7 +28,6 @@
     :root {
       --background: var(--invert-background);
       --body: var(--invert-body);
-      --bullets: var(--invert-bullets);
       --headings: var(--invert-headings);
       --link-hover: var(--invert-link-hover);
     }
@@ -87,10 +84,6 @@
       margin-bottom: theme("margin.1");
       margin-top: theme("margin.1");
       padding-inline-start: theme("padding[1.5]");
-
-      &::marker {
-        color: var(--bullets);
-      }
     }
   }
 
