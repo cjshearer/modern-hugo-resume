@@ -9,8 +9,6 @@ type: modern-hugo-resume
   --page-width: 8.5in;
   --page-height: 11in;
   --page-margin: 0.4in;
-  --page-count: 2;
-  /* ^ places <footer> on the bottom of this page */
 }
 </style>
 
@@ -99,7 +97,7 @@ August 2017 to May 2021
 [![](svgs/brands/linkedin.svg)in/cjshearer](https://linkedin.com/in/cjshearer "My LinkedIn")
 [![](svgs/solid/house.svg)cjshearer.dev](https://cjshearer.dev "My Website")
 [![](svgs/solid/envelope.svg)cjshearer@live.com](mailto:cjshearer@live.com "My Email")
-{class="inline-svg flex flex-wrap justify-center gap-4 whitespace-nowrap print:mb-0"}
+{class="inline-svg flex flex-wrap justify-center gap-4 whitespace-nowrap mb-0"}
 
 </footer>
 </body>

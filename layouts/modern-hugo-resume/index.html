@@ -55,4 +55,40 @@
     {{- end -}}
   </head>
   {{ .Content }}
+  <script defer>
+    (() => {
+      const main = document.getElementsByTagName("main")?.[0];
+      const footer = document.getElementsByTagName("footer")?.[0];
+    
+      if (!(footer && main)) return;
+    
+      // referencePage helps calculate which page to place the footer on when printing
+      const referencePage = document.createElement("div");
+      referencePage.style.height = "var(--page-height)";
+      referencePage.style.margin = "var(--page-margin)";
+      referencePage.style.position = "absolute";
+      referencePage.style.top = "-9999px";
+      document.body.appendChild(referencePage);
+    
+      // dummyFooter prevents the real footer from overlapping the main document
+      const dummyFooter = document.createElement("div");
+      dummyFooter.style.height = getComputedStyle(footer).height;
+    
+      const referencePageStyles = window.getComputedStyle(referencePage);
+      const documentHeight =
+        document.body.scrollHeight - 2 * Number.parseFloat(dummyFooter.style.height);
+      const effectivePageHeight =
+        Number.parseFloat(referencePageStyles.height) -
+        Number.parseFloat(referencePageStyles.marginTop) -
+        Number.parseFloat(referencePageStyles.marginBottom);
+    
+      document.documentElement.style.setProperty(
+        "--page-count",
+        Math.ceil(documentHeight / effectivePageHeight),
+      );
+    
+      onbeforeprint = () => main.appendChild(dummyFooter);
+      onafterprint = () => main.removeChild(dummyFooter);
+    })();    
+  </script>
 </html>

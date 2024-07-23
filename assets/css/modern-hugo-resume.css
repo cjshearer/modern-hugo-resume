@@ -12,8 +12,12 @@
     padding: var(--page-margin);
   }
 
-  main > *:first-child {
-    margin-top: 0;
+  main {
+    padding-bottom: var(--page-margin);
+
+    & > *:first-child {
+      margin-top: 0;
+    }
   }
 
   :root {
@@ -105,6 +109,10 @@
   @media print {
     body {
       padding: 0;
+    }
+
+    main {
+      padding-bottom: 0;
     }
 
     a {
