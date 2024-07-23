@@ -7,9 +7,6 @@ type: modern-hugo-resume
 <body class="m-4 mb-2 mx-auto max-w-[8.5in]">
 <header class="mb-3 text-center md:text-left print:text-left">
 
-![](avatar.jpg "A close-up photo of me wearing a suit and tie")
-{class="avatar float-right hidden h-24 print:hidden md:block" sizes="256"}
-
 # Cody Shearer
 
 Software Developer with 3 Years of Experience in Full Stack Web and Mobile Development
