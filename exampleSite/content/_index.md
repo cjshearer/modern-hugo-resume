@@ -14,17 +14,12 @@ type: modern-hugo-resume
 }
 </style>
 
-<body class="mt-4">
-<header class="mb-3 text-center md:text-left print:text-left">
+<body>
+<main>
 
 # Cody Shearer
 
-Software Developer with 3 Years of Experience in Full Stack Web and Mobile Development
-{class="mb-1"}
-
-</header>
-
-<main>
+Software Developer with 3 Years of Full Stack Web and Mobile Experience
 
 ## Experience
 
