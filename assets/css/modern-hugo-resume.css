@@ -4,8 +4,13 @@
 
 @layer base {
   body {
-    color: var(--body);
     background-color: var(--background);
+    color: var(--body);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--page-width);
+    padding-left: theme("padding.4");
+    padding-right: theme("padding.4");
   }
 
   :root {
@@ -98,6 +103,10 @@
     color: var(--link-hover);
   }
 
+  footer {
+    width: theme("width.full");
+  }
+
   @media print {
     a {
       text-decoration-line: none;
@@ -113,21 +122,22 @@
     ul {
       break-inside: avoid-page;
     }
+
+    footer {
+      position: absolute;
+      bottom: calc((1 - var(--page-count)) * 100%);
+    }
   }
 }
 
 @layer components {
-
-  .inline-svg {
-    display: inline-block;
-  }
-
   .inline-svg svg {
     display: inline-block;
-    height: 1em;
-    width: 1em;
     fill: currentcolor;
+    height: 1em;
+    margin-right: theme("margin.2");
     vertical-align: calc(0.5cap - 0.5em);
+    width: 1em;
   }
 
   .list-as-table {
@@ -152,6 +162,6 @@
 }
 
 @page {
-  margin: 3rem;
-  margin-bottom: 1.5rem;
+  margin: var(--page-margin);
+  size: var(--page-width) var(--page-height);
 }
