@@ -68,26 +68,34 @@
       referencePage.style.margin = "var(--page-margin)";
       referencePage.style.position = "absolute";
       referencePage.style.top = "-9999px";
+
       document.body.appendChild(referencePage);
+      const referencePageStyles = window.getComputedStyle(referencePage);
+      const effectivePageHeight =
+      Number.parseFloat(referencePageStyles.height) -
+      Number.parseFloat(referencePageStyles.marginTop) -
+      Number.parseFloat(referencePageStyles.marginBottom);
+      document.body.removeChild(referencePage);
     
       // dummyFooter prevents the real footer from overlapping the main document
       const dummyFooter = document.createElement("div");
-      dummyFooter.style.height = getComputedStyle(footer).height;
-    
-      const referencePageStyles = window.getComputedStyle(referencePage);
-      const documentHeight =
-        document.body.scrollHeight - 2 * Number.parseFloat(dummyFooter.style.height);
-      const effectivePageHeight =
-        Number.parseFloat(referencePageStyles.height) -
-        Number.parseFloat(referencePageStyles.marginTop) -
-        Number.parseFloat(referencePageStyles.marginBottom);
-    
-      document.documentElement.style.setProperty(
-        "--page-count",
-        Math.ceil(documentHeight / effectivePageHeight),
-      );
-    
-      onbeforeprint = () => main.appendChild(dummyFooter);
+
+      onbeforeprint = () => {
+        main.appendChild(dummyFooter);
+
+        // the page width must be fixed to reliably get the height of printed elements on the page
+        const originalDocumentWidth = document.body.style.width;
+        document.body.style.width = 'max-content';
+        dummyFooter.style.height = getComputedStyle(footer).height;
+        const printedDocumentHeight =
+          document.body.scrollHeight - Number.parseFloat(dummyFooter.style.height);
+        document.body.style.width = originalDocumentWidth;
+        
+        document.documentElement.style.setProperty(
+          "--page-count",
+          Math.ceil(printedDocumentHeight / effectivePageHeight),
+        );
+      };
       onafterprint = () => main.removeChild(dummyFooter);
     })();    
   </script>
