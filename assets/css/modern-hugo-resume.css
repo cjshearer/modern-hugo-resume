@@ -9,14 +9,27 @@
     margin-left: auto;
     margin-right: auto;
     max-width: var(--page-width);
+    /* css padding emulates PDF margins */
     padding: var(--page-margin);
+
+    @media not all and (min-width: theme("screens.sm")) {
+      padding: theme("margin.3");
+    }
+
+    @media print {
+      padding: 0;
+    }
   }
 
   main {
-    padding-bottom: var(--page-margin);
+    margin-bottom: var(--page-margin);
 
     & > *:first-child {
       margin-top: 0;
+    }
+
+    @media print {
+      margin-bottom: 0;
     }
   }
 
@@ -29,10 +42,8 @@
     --invert-body: theme("colors.gray.300");
     --invert-headings: theme("colors.white");
     --invert-link-hover: theme("colors.gray.100");
-  }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
+    @media (prefers-color-scheme: dark) {
       --background: var(--invert-background);
       --body: var(--invert-body);
       --headings: var(--invert-headings);
@@ -42,11 +53,15 @@
 
   h1,
   h2,
-  h3 {
+  h3,
+  h4,
+  h5,
+  h6 {
     color: var(--headings);
     margin-bottom: theme("margin.4");
     margin-top: theme("margin.6");
     line-height: 1.25;
+    break-after: avoid-page;
   }
 
   h1 {
@@ -64,6 +79,9 @@
     font-weight: theme("fontWeight.semibold");
   }
 
+  h4,
+  h5,
+  h6,
   a,
   p,
   li {
@@ -75,6 +93,7 @@
   ul,
   ol {
     margin-bottom: theme("margin.4");
+    break-inside: avoid-page;
   }
 
   ul {
@@ -96,43 +115,22 @@
 
   a {
     text-decoration-line: underline;
-  }
 
-  a:hover {
-    color: var(--link-hover);
+    &:hover {
+      color: var(--link-hover);
+    }
+
+    @media print {
+      text-decoration-line: none;
+    }
   }
 
   footer {
-    width: theme("width.full");
-  }
-
-  @media print {
-    body {
-      padding: 0;
-    }
-
-    main {
-      padding-bottom: 0;
-    }
-
-    a {
-      text-decoration-line: none;
-    }
-
-    h2,
-    h3,
-    p {
-      break-after: avoid-page;
-    }
-
-    p,
-    ul {
-      break-inside: avoid-page;
-    }
-
-    footer {
-      position: absolute;
+    @media print {
       bottom: calc((1 - var(--page-count)) * 100%);
+      position: absolute;
+      /* used to calculate dummyFooter height */
+      width: inherit;
     }
   }
 }
