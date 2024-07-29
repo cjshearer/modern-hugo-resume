@@ -50,66 +50,12 @@
         <style>{{- $style.Content | safeCSS }}</style>
       {{- end -}}
     {{- end -}}
+    {{- with resources.Get "js/modern-hugo-resume.js" -}}
+      {{- $defines := dict "import.meta.env.MODE" (printf `"%s"` hugo.Environment) -}}
+      {{- $opts := dict "format" "esm" "defines" $defines -}}
+      {{- $js := . | js.Build $opts -}}
+      <script type="module">{{- $js.Content | safeJS -}}</script>
+    {{- end -}}
   </head>
   {{ .Content }}
-  <script defer>
-    (() => {
-      const main = document.getElementsByTagName("main")?.[0];
-      const footer = document.getElementsByTagName("footer")?.[0];
-    
-      if (!(footer && main)) return;
-    
-      // referencePage helps calculate which page to place the footer on when printing
-      const referencePage = document.createElement("div");
-      referencePage.style.height = "var(--page-height)";
-      // css padding emulates PDF margins
-      referencePage.style.padding = "var(--page-margin)";
-      referencePage.style.position = "absolute";
-      referencePage.style.top = "-9999px";
-    
-      document.body.appendChild(referencePage);
-      const referencePageStyles = window.getComputedStyle(referencePage);
-      const effectivePageHeight =
-        Number.parseFloat(referencePageStyles.height) -
-        Number.parseFloat(referencePageStyles.paddingTop) -
-        Number.parseFloat(referencePageStyles.paddingBottom);
-      document.body.removeChild(referencePage);
-    
-      // dummyFooter prevents the real footer from overlapping the main document
-      const dummyFooter = document.createElement("div");
-    
-      onbeforeprint = () => {
-        // temporarily enable "@media print" to reliably get the height of the elements
-        for (style of document.getElementsByTagName("style")) {
-          style.innerText = 
-            style.innerText.replace(/@media print {/gi, "@media screen { /*print*/");
-        }
-    
-        // temporarily fix width and padding to reliably get the height of elements
-        document.body.style.width = "var(--page-width)";
-        document.body.style.padding = "var(--page-margin)";
-    
-        dummyFooter.style.height = getComputedStyle(footer).height;
-        const printedDocumentHeight = document.body.scrollHeight;
-    
-        // reset document styling
-        document.body.style.width = "";
-        document.body.style.padding = "";
-        for (style of document.getElementsByTagName("style")) {
-          style.innerText = style.innerText.replace(
-            /@media screen { \/\*print\*\//gi,
-            "@media print {",
-          );
-        }
-    
-        document.documentElement.style.setProperty(
-          "--page-count",
-          Math.ceil(printedDocumentHeight / effectivePageHeight),
-        );
-    
-        main.appendChild(dummyFooter);
-      };
-      onafterprint = () => main.removeChild(dummyFooter);
-    })();
-  </script>
 </html>

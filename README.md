@@ -1,6 +1,6 @@
 # modern-hugo-resume
 
-A responsive, minimal, print-friendly resume builder. Powered by Hugo, Tailwind CSS, Nix, and GitHub Pages.
+A responsive, minimal, print-friendly resume builder. Powered by Hugo, Tailwind CSS, Paged.js, Nix, and GitHub Pages.
 
 _Host your own resume on GitHub for free!_
 

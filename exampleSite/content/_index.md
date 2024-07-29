@@ -101,7 +101,7 @@ Software Developer with 3 Years of Full Stack Web and Mobile Experience
 [![](svgs/brands/linkedin.svg)in/cjshearer](https://linkedin.com/in/cjshearer "My LinkedIn")
 [![](svgs/solid/house.svg)cjshearer.dev](https://cjshearer.dev "My Website")
 [![](svgs/solid/envelope.svg)cjshearer@live.com](mailto:cjshearer@live.com "My Email")
-{class="inline-svg flex flex-wrap gap-4 whitespace-nowrap mb-0"}
+{class="inline-svg flex flex-wrap justify-center gap-4 whitespace-nowrap mb-0"}
 
 </footer>
 </body>

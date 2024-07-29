@@ -9,7 +9,6 @@
     margin-left: auto;
     margin-right: auto;
     max-width: var(--page-width);
-    /* css padding emulates PDF margins */
     padding: var(--page-margin);
 
     @media not all and (min-width: theme("screens.sm")) {
@@ -21,16 +20,8 @@
     }
   }
 
-  main {
-    margin-bottom: var(--page-margin);
-
-    & > *:first-child {
-      margin-top: 0;
-    }
-
-    @media print {
-      margin-bottom: 0;
-    }
+  main > *:first-child {
+    margin-top: 0;
   }
 
   :root {
@@ -61,7 +52,7 @@
     margin-bottom: theme("margin.4");
     margin-top: theme("margin.6");
     line-height: 1.25;
-    break-after: avoid-page;
+    break-after: avoid;
   }
 
   h1 {
@@ -93,7 +84,7 @@
   ul,
   ol {
     margin-bottom: theme("margin.4");
-    break-inside: avoid-page;
+    break-inside: avoid;
   }
 
   ul {
@@ -126,11 +117,11 @@
   }
 
   footer {
+    padding-top: var(--page-margin);
+    position: running(footer);
+
     @media print {
-      bottom: calc((1 - var(--page-count)) * 100%);
-      position: absolute;
-      /* used to calculate dummyFooter height */
-      width: inherit;
+      padding-top: 0;
     }
   }
 }
@@ -158,6 +149,7 @@
 }
 
 @page {
-  margin: var(--page-margin);
-  size: var(--page-width) var(--page-height);
+  @bottom-center {
+    content: element(footer);
+  }
 }
