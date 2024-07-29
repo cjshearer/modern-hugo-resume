@@ -1,10 +1,14 @@
-import("https://unpkg.com/pagedjs@0.4.3/dist/paged.min.js");
+const pagedJS = "https://unpkg.com/pagedjs@0.4.3/dist/paged.min.js";
+import(pagedJS);
 
 async function initializePagedJS() {
-  await new Promise((resolve) => {
-    if (document.readyState !== "loading") resolve();
-    document.addEventListener("DOMContentLoaded", () => resolve());
-  });
+  await Promise.all([
+    import(pagedJS),
+    new Promise((resolve) => {
+      if (document.readyState !== "loading") resolve();
+      document.addEventListener("DOMContentLoaded", () => resolve());
+    }),
+  ]);
 
   // Workaround for using custom properties with @page rules. For background on why this is an
   // issue, see: https://stackoverflow.com/a/44738574
