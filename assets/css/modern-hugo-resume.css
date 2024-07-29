@@ -10,14 +10,18 @@
     margin-right: auto;
     max-width: var(--page-width);
     padding: var(--page-margin);
+
+    @media not all and (min-width: theme("screens.sm")) {
+      padding: theme("margin.3");
+    }
+
+    @media print {
+      padding: 0;
+    }
   }
 
-  main {
-    padding-bottom: var(--page-margin);
-
-    & > *:first-child {
-      margin-top: 0;
-    }
+  main > *:first-child {
+    margin-top: 0;
   }
 
   :root {
@@ -29,10 +33,8 @@
     --invert-body: theme("colors.gray.300");
     --invert-headings: theme("colors.white");
     --invert-link-hover: theme("colors.gray.100");
-  }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
+    @media (prefers-color-scheme: dark) {
       --background: var(--invert-background);
       --body: var(--invert-body);
       --headings: var(--invert-headings);
@@ -42,11 +44,15 @@
 
   h1,
   h2,
-  h3 {
+  h3,
+  h4,
+  h5,
+  h6 {
     color: var(--headings);
     margin-bottom: theme("margin.4");
     margin-top: theme("margin.6");
     line-height: 1.25;
+    break-after: avoid;
   }
 
   h1 {
@@ -64,6 +70,9 @@
     font-weight: theme("fontWeight.semibold");
   }
 
+  h4,
+  h5,
+  h6,
   a,
   p,
   li {
@@ -75,6 +84,7 @@
   ul,
   ol {
     margin-bottom: theme("margin.4");
+    break-inside: avoid;
   }
 
   ul {
@@ -96,43 +106,22 @@
 
   a {
     text-decoration-line: underline;
-  }
 
-  a:hover {
-    color: var(--link-hover);
+    &:hover {
+      color: var(--link-hover);
+    }
+
+    @media print {
+      text-decoration-line: none;
+    }
   }
 
   footer {
-    width: theme("width.full");
-  }
+    padding-top: var(--page-margin);
+    position: running(footer);
 
-  @media print {
-    body {
-      padding: 0;
-    }
-
-    main {
-      padding-bottom: 0;
-    }
-
-    a {
-      text-decoration-line: none;
-    }
-
-    h2,
-    h3,
-    p {
-      break-after: avoid-page;
-    }
-
-    p,
-    ul {
-      break-inside: avoid-page;
-    }
-
-    footer {
-      position: absolute;
-      bottom: calc((1 - var(--page-count)) * 100%);
+    @media print {
+      padding-top: 0;
     }
   }
 }
@@ -160,6 +149,7 @@
 }
 
 @page {
-  margin: var(--page-margin);
-  size: var(--page-width) var(--page-height);
+  @bottom-center {
+    content: element(footer);
+  }
 }
