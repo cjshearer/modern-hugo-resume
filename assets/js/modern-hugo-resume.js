@@ -1,11 +1,10 @@
+import("https://unpkg.com/pagedjs@0.4.3/dist/paged.min.js");
+
 async function initializePagedJS() {
-  await Promise.all([
-    import("https://unpkg.com/pagedjs@0.4.3/dist/paged.min.js"),
-    new Promise((resolve) => {
-      if (document.readyState !== "loading") resolve();
-      document.addEventListener("DOMContentLoaded", () => resolve());
-    }),
-  ]);
+  await new Promise((resolve) => {
+    if (document.readyState !== "loading") resolve();
+    document.addEventListener("DOMContentLoaded", () => resolve());
+  });
 
   // Workaround for using custom properties with @page rules. For background on why this is an
   // issue, see: https://stackoverflow.com/a/44738574
@@ -31,11 +30,11 @@ async function initializePagedJS() {
   await previewer.preview();
 }
 
-function showPrintPage() {
+async function showPrintPage() {
   const url = new URL(window.location.href);
   url.searchParams.set("print", "true");
   history.pushState({}, "", url);
-  initializePagedJS();
+  await initializePagedJS();
 }
 
 if (new URL(window.location.href).searchParams.has("print")) {
