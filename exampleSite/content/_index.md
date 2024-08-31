@@ -4,13 +4,6 @@ description: Full Stack Software Developer Resume
 faviconText: 💼
 type: modern-hugo-resume
 ---
-<style>
-:root {
-  --page-width: 8.5in;
-  --page-height: 11in;
-  --page-margin: 0.4in;
-}
-</style>
 
 <body>
 <main>

@@ -38,3 +38,8 @@ target = "assets/svgs"
 disableWatch = true
 source = "hugo_stats.json"
 target = "assets/notwatching/hugo_stats.json"
+
+[params.page]
+width = "8.5in"
+height = "11in"
+margin = "0.4in"
