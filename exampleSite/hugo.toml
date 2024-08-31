@@ -8,7 +8,7 @@ enable = true
 
 [[build.cacheBusters]]
 source = "assets/notwatching/hugo_stats.json"
-target = "modern-hugo-resume.css"
+target = "tailwind.css"
 
 [markup.goldmark.renderer]
 unsafe = true

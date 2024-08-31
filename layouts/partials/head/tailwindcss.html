@@ -1,0 +1,25 @@
+<style>
+  :root {
+    --page-width: {{ .Param "page.width" }};
+    --page-height: {{ .Param "page.height" }};
+    --page-margin: {{ .Param "page.margin" }};
+  }
+</style>
+{{- with (templates.Defer (dict "key" "global")) -}}
+{{- with resources.Get "tailwind.css" -}}
+  {{ 
+    $opts := dict
+    "inlineImports" true
+    "optimize" hugo.IsProduction
+  }}
+  {{- $style := . | css.TailwindCSS $opts -}}
+  {{- if hugo.IsProduction -}}
+    {{- $style = $style | minify | fingerprint -}}
+  {{- end -}}
+  <link
+    rel="stylesheet"
+    href="{{ $style.RelPermalink }}"
+    integrity="{{ $style.Data.Integrity }}"
+  />
+{{- end -}}
+{{- end -}}
