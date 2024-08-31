@@ -59,7 +59,11 @@
       {{- if hugo.IsProduction -}}
         {{- $style = $style | minify | fingerprint -}}
       {{- end -}}
-        <style>{{- $style.Content | safeCSS }}</style>
+      <link
+        rel="stylesheet"
+        href="{{ $style.RelPermalink }}"
+        integrity="{{ $style.Data.Integrity }}"
+      />
     {{- end -}}
     {{- end -}}
     {{- with resources.Get "js/modern-hugo-resume.js" -}}
