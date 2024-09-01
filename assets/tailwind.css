@@ -118,7 +118,6 @@
 
   footer {
     padding-top: var(--page-margin);
-    position: running(footer);
 
     @media print {
       padding-top: 0;
@@ -145,11 +144,5 @@
     margin-right: theme("margin.2");
     vertical-align: calc(0.5cap - 0.5em);
     width: 1em;
-  }
-}
-
-@page {
-  @bottom-center {
-    content: element(footer);
   }
 }
