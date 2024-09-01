@@ -8,7 +8,6 @@ type: posts
 layout: fullscreen
 ---
 
-<body>
 <main>
 
 # Cody Shearer
@@ -100,4 +99,3 @@ Software Developer with 3 Years of Full Stack Web and Mobile Experience
 {class="inline-svg flex flex-wrap justify-center gap-4 whitespace-nowrap mb-0"}
 
 </footer>
-</body>
