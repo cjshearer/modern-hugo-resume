@@ -4,7 +4,8 @@ description: Full Stack Software Developer Resume
 params:
   favicon:
     text: 💼
-type: modern-hugo-resume
+type: posts
+layout: fullscreen
 ---
 
 <body>
