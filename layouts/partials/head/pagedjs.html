@@ -13,6 +13,17 @@
   }
 </style>
 {{- with resources.Get "paged.js" -}}
-{{- $js := . | js.Build (dict "format" "esm") -}}
-<script type="module">{{- $js.Content | safeJS -}}</script>
+  {{- $opts:= dict
+      "format" "esm"
+      "minify" hugo.IsProduction
+  -}}
+  {{- $js := . | js.Build $opts -}}
+  {{- if hugo.IsProduction -}}
+    {{- $js = $js | minify | fingerprint -}}
+  {{- end -}}
+  <script
+    type="module"
+    src="{{ $js.RelPermalink }}"
+    integrity="{{ $js.Data.Integrity }}"
+  ></script>
 {{- end -}}
