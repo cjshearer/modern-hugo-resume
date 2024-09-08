@@ -3,9 +3,5 @@
     "editor.defaultFormatter": "jnoortheen.nix-ide"
   },
   "css.validate": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit"
-  },
-  "editor.defaultFormatter": "biomejs.biome",
-  "editor.formatOnSave": true
+  "editor.defaultFormatter": "biomejs.biome"
 }
