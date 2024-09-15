@@ -127,14 +127,18 @@
 
 @layer components {
   .inline-list {
-    padding-left: theme("padding.6");
-    text-indent: calc(-1 * theme("textIndent.6"));
-    word-spacing: 0.6em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: theme("gap.2");
+    list-style-type: none;
+    padding-left: 0;
+  }
 
-    span {
-      white-space: nowrap;
-      word-spacing: initial;
-    }
+  .inline-list > li {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-inline-start: 0;
+    white-space: nowrap;
   }
 
   .inline-svg svg {
