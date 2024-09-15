@@ -72,19 +72,54 @@ Software Developer with 3 Years of Full Stack Web and Mobile Experience
 
 ## Skills
 
-<div class="inline-list">
+<div class="[&>ul]:inline-list mt-6 grid grid-cols-[min-content_1fr] gap-4 *:mb-0 max-sm:grid-cols-1 [&>h3]:mt-0">
 
-**Languages**: TypeScript JavaScript HTML CSS Golang Node.js SQL Rust Python
+### Languages
+- TypeScript
+- JavaScript
+- HTML
+- CSS
+- Golang
+- Node.js
+- SQL
+- Rust
+- Python
 
-**Concepts**: <span>Agile (Scrum)</span> <span>RESTful APIs</span> <span>Material Design</span> <span>Cloud Native</span> GitOps <span>CI/CD</span>
+### Concepts
+- Agile (Scrum)
+- RESTful APIs
+- Material Design
+- Cloud Native
+- GitOps
+- CI/CD
 
-**Frameworks**: React <span>React-Native</span> Vue Nuxt Hugo TailwindCSS Storybook
+### Frameworks
+- React
+- React-Native
+- Vue
+- Nuxt
+- Hugo
+- TailwindCSS
+- Storybook
 
-**Services**: Auth0 LogRocket Sentry Stripe SendGrid
+### Services
+- Auth0
+- LogRocket
+- Sentry
+- Stripe
+- SendGrid
 
-**Tools**: Git Linux Docker Tailscale Postman
+### Tools
+- Git
+- Linux
+- Docker
+- Tailscale
+- Postman
 
-**Databases**: MySQL PostgreSQL MongoDB
+### Databases
+- MySQL
+- PostgreSQL
+- MongoDB
 
 </div>
 
@@ -92,7 +127,7 @@ Software Developer with 3 Years of Full Stack Web and Mobile Experience
 
 <footer>
 
-[![](svgs/brands/github.svg)cjshearer](https://github.com/cjshearer "My GithHub")
+[![](svgs/brands/github.svg)cjshearer](https://github.com/cjshearer "My GitHub")
 [![](svgs/brands/linkedin.svg)in/cjshearer](https://linkedin.com/in/cjshearer "My LinkedIn")
 [![](svgs/solid/house.svg)cjshearer.dev](https://cjshearer.dev "My Website")
 [![](svgs/solid/envelope.svg)cjshearer@live.com](mailto:cjshearer@live.com "My Email")
