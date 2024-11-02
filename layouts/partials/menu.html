@@ -1,0 +1,13 @@
+<nav>
+  <ul class="inline-list" role="list">
+    {{- range .menu -}}
+      <li>
+        <a href="{{ .URL }}">
+          {{- .Pre | $.context.RenderString -}}
+          {{- .Name | $.context.RenderString -}}
+          {{- .Post | $.context.RenderString -}}
+        </a>
+      </li>
+    {{- end -}}
+  </ul>
+</nav>

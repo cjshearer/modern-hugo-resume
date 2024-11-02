@@ -1,0 +1,157 @@
+/* TODO: study caching for GetRemote to see if we can fetch this during nix build  */
+@import url("https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.min.css") layer(base);
+@layer base, components, utilities;
+@layer base {
+  :root {
+    --color-background: #fff;
+    --color-body: #1f2937;
+    --color-headings: #111827;
+    --color-link-hover: var(--color-body);
+    --color-link: inherit;
+    --color-invert-background: #262626;
+    --color-invert-body: #d1d5db;
+    --color-invert-headings: #fff;
+    --color-invert-link-hover: #f3f4f6;
+    --color-invert-link: inherit;
+    --font-size-1: 9rem;
+    --font-size-2: 10rem;
+    --font-size-3: 14rem;
+    --font-size-4: 17rem;
+
+    @media (prefers-color-scheme: dark) {
+      --color-background: var(--color-invert-background);
+      --color-body: var(--color-invert-body);
+      --color-headings: var(--color-invert-headings);
+      --color-link-hover: var(--color-invert-link-hover);
+      --color-link: var(--color-invert-link);
+    }
+  }
+
+  html {
+    font-size: 12.5%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-body);
+    font-size: 8rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--page-width);
+    padding: var(--page-margin);
+
+    @media not all and (min-width: 640px) {
+      padding: 8rem;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong {
+    color: var(--color-headings);
+    margin-bottom: 8rem;
+    margin-top: 10rem;
+    line-height: 1.25;
+    break-after: avoid-page;
+  }
+
+  h1 {
+    font-size: 10rem;
+    font-weight: 600;
+  }
+
+  h2 {
+    border-bottom: 1px solid;
+    font-size: var(--font-size-3);
+    font-weight: 600;
+    padding-bottom: 4rem;
+  }
+
+  h3 {
+    font-size: var(--font-size-2);
+    font-weight: 600;
+  }
+
+  h4,
+  h5,
+  h6,
+  a,
+  p,
+  li {
+    font-size: var(--font-size-1);
+    font-weight: 400;
+    line-height: 10rem;
+  }
+
+  p,
+  ul,
+  ol {
+    margin-bottom: 10rem;
+    break-inside: avoid;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-inline-start: 13rem;
+
+    ul {
+      list-style-type: circle;
+      margin-bottom: 6rem;
+      margin-top: 6rem;
+    }
+
+    > li {
+      margin-bottom: 4rem;
+      margin-top: 4rem;
+      padding-inline-start: 1.25rem;
+    }
+  }
+
+  a {
+    color: var(--color-link);
+    text-decoration-line: underline;
+    text-underline-offset: 2rem;
+
+    &:hover {
+      color: var(--color-link-hover);
+    }
+  }
+
+  header > nav > ul {
+    align-items: baseline;
+
+    > li:first-child {
+      flex-grow: 1;
+
+      > a {
+        font-size: var(--font-size-4);
+        font-weight: 600;
+        text-decoration-line: none;
+      }
+    }
+  }
+  footer {
+    padding-top: 14rem;
+  }
+}
+
+@layer components {
+  .inline-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6rem;
+    list-style-type: none;
+    padding-left: 0;
+
+    > li {
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-inline-start: 0;
+      white-space: nowrap;
+    }
+  }
+}

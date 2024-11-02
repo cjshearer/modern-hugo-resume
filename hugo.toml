@@ -9,7 +9,3 @@ tags = ["responsive", "minimal", "light", "dark", "dak mode"]
 [author]
 homepage = "https://cjshearer.dev"
 name = "Cody Shearer"
-
-[module.hugoVersion]
-extended = true
-min = "0.128.0" # requires css.TailwindCSS

@@ -1,0 +1,22 @@
+<style>
+  @layer base {
+    :root {
+      --page-width: {{ page.Param "page.width" }};
+      --page-margin: {{ page.Param "page.margin" }};
+    }
+  }
+</style>
+
+{{- $css := slice -}}
+{{- range .css -}}
+  {{- $css = append (resources.Get .) $css -}}
+{{- end -}}
+
+{{- with $css -}}
+  {{- $bundle := resources.Concat "bundle.css" $css -}}
+  <link
+    rel="stylesheet"
+    href="{{ $bundle.RelPermalink }}"
+    integrity="{{ $bundle.Data.Integrity }}"
+  />
+{{- end -}}

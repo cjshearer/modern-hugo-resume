@@ -16,8 +16,7 @@
         git = pkgs.git;
         go = pkgs.go;
         hugo = pkgs.hugo;
-        tailwindcss = pkgs.tailwindcss;
-        nativeBuildInputs = [ go hugo tailwindcss ];
+        nativeBuildInputs = [ go hugo ];
       in
       {
         checks = {

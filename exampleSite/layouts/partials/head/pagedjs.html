@@ -1,0 +1,31 @@
+{{- $path := "paged.js" -}}
+{{- $opts := dict "minify" hugo.IsProduction "format" "esm" -}}
+{{- $js := resources.Get $path | js.Build $opts -}}
+{{- if hugo.IsProduction -}}
+  {{- $js = $js | minify | fingerprint -}}
+{{- end -}}
+<style>
+  @layer base {
+    :root {
+      --page-height: {{ page.Param "page.height" }};
+    }
+  
+    footer {
+      position: running(footer);
+    }
+  
+    @page {
+      size: {{ page.Param "page.width" }} {{ page.Param "page.height" }};
+      margin: {{ page.Param "page.margin" }};
+  
+      @bottom-center {
+        content: element(footer);
+      }
+    }
+  }
+</style>
+<script
+  type="module"
+  src="{{ $js.RelPermalink }}"
+  integrity="{{ $js.Data.Integrity }}"
+></script>
