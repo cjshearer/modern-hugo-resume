@@ -3,22 +3,43 @@ defaultContentLanguage = "en"
 disableKinds = [ "RSS", "section", "sitemap", "taxonomy", "term" ]
 languageCode = "en-us"
 
-[build.buildStats]
-enable = true
-
-[[build.cacheBusters]]
-source = "assets/notwatching/hugo_stats.json"
-target = "tailwind.css"
-
-[markup.goldmark.renderer]
-unsafe = true
-
 [markup.goldmark.parser]
 wrapStandAloneImageWithinParagraph = false
-
 [markup.goldmark.parser.attribute]
 block = true
-title = true
+[markup.goldmark.renderer]
+unsafe = true
+[markup.goldmark.renderHooks.image]
+enableDefault = true
+
+[[menus.header]]
+name = "Cody Shearer"
+pageRef = "/"
+weight = 10
+
+[[menus.footer]]
+pre = "![](svgs/brands/github.svg)"
+name = "cjshearer"
+pageRef = "https://github.com/cjshearer"
+weight = 10
+[[menus.footer]]
+name = "in/cjshearer"
+pageRef = "https://linkedin.com/in/cjshearer"
+pre = """![](svgs/brands/linkedin.svg)
+{.dark-invert .inline-img}"""
+weight = 20
+[[menus.footer]]
+name = "cjshearer.dev"
+pageRef = "https://cjshearer.dev"
+pre = """![](svgs/solid/house.svg)
+{.dark-invert .inline-img}"""
+weight = 30
+[[menus.footer]]
+name = "cjshearer@live.com"
+pageRef = "mailto:cjshearer@live.com"
+pre = """![](svgs/solid/envelope.svg)
+{.dark-invert .inline-img}"""
+weight = 40
 
 [module]
 noVendor = "github.com/cjshearer/modern-hugo-resume"
@@ -34,12 +55,24 @@ path = "github.com/FortAwesome/Font-Awesome"
 source = "svgs"
 target = "assets/svgs"
 
-[[module.mounts]]
-disableWatch = true
-source = "hugo_stats.json"
-target = "assets/notwatching/hugo_stats.json"
+[params.author]
+name = "Cody Shearer"
+email = "cjshearer@live.com"
 
+[[params.head.partials]]
+path = "head/font.html"
+[[params.head.partials]]
+path = "head/metadata.html"
+[[params.head.partials]]
+path = "head/favicon.html"
+favicon = "💼"
+[[params.head.partials]]
+path = "head/css.html"
+css = [ "main.css", "custom.css"]
 [params.page]
 width = "8.5in"
 height = "11in"
 margin = "0.4in"
+[[params.head.partials]]
+path = "head/pagedjs.html"
+

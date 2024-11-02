@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    {{- $context := . -}}
+    {{- range .Param "head.partials" -}}
+      {{- partial .path . -}}
+    {{- end -}}
+  </head>
+  <body>
+    <header>
+      {{ partial "menu.html" (dict "context" . "menu" site.Menus.header) }}
+    </header>
+    <main>
+      {{- block "main" . -}}{{- end -}}
+    </main>
+    <footer>
+      {{ partial "menu.html" (dict "context" . "menu" site.Menus.footer) }}
+    </footer>
+  </body>
+</html>

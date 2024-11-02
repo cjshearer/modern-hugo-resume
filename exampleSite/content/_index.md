@@ -1,16 +1,7 @@
----
-title: Software Developer
-description: Full Stack Software Developer Resume
-params:
-  favicon:
-    text: 💼
-type: posts
-layout: fullscreen
----
-
-<main>
-
-# Cody Shearer
++++
+title = "Software Developer"
+description = "Full Stack Software Developer Resume"
++++
 
 Software Developer with 3 Years of Full Stack Web and Mobile Experience
 
@@ -29,7 +20,7 @@ Software Developer with 3 Years of Full Stack Web and Mobile Experience
 - Led company transition to Golang, improving performance, type-safety, and DX
 - Promoted culture of continuous improvement, code reviews, and linting
 
-##### Project Highlights:
+##### Project Highlights
 
 - Developed React app, React-Native app, Node servers for equipment manufacturer
   - Created Bluetooth abstraction with data anomaly filtering, connection recovery
@@ -72,9 +63,9 @@ Software Developer with 3 Years of Full Stack Web and Mobile Experience
 
 ## Skills
 
-<div class="[&>ul]:inline-list mt-6 grid grid-cols-[min-content_1fr] gap-4 *:mb-0 max-sm:grid-cols-1 [&>h3]:mt-0">
+<div class="skills-grid">
 
-### Languages
+**Languages**
 - TypeScript
 - JavaScript
 - HTML
@@ -84,16 +75,18 @@ Software Developer with 3 Years of Full Stack Web and Mobile Experience
 - SQL
 - Rust
 - Python
+{.inline-list}
 
-### Concepts
+**Concepts**
 - Agile (Scrum)
 - RESTful APIs
 - Material Design
 - Cloud Native
 - GitOps
 - CI/CD
+{.inline-list}
 
-### Frameworks
+**Frameworks**
 - React
 - React-Native
 - Vue
@@ -101,36 +94,28 @@ Software Developer with 3 Years of Full Stack Web and Mobile Experience
 - Hugo
 - TailwindCSS
 - Storybook
+{.inline-list}
 
-### Services
+**Services**
 - Auth0
 - LogRocket
 - Sentry
 - Stripe
 - SendGrid
+{.inline-list}
 
-### Tools
+**Tools**
 - Git
 - Linux
 - Docker
 - Tailscale
 - Postman
+{.inline-list}
 
-### Databases
+**Databases**
 - MySQL
 - PostgreSQL
 - MongoDB
+{.inline-list}
 
 </div>
-
-</main>
-
-<footer>
-
-[![](svgs/brands/github.svg)cjshearer](https://github.com/cjshearer "My GitHub")
-[![](svgs/brands/linkedin.svg)in/cjshearer](https://linkedin.com/in/cjshearer "My LinkedIn")
-[![](svgs/solid/house.svg)cjshearer.dev](https://cjshearer.dev "My Website")
-[![](svgs/solid/envelope.svg)cjshearer@live.com](mailto:cjshearer@live.com "My Email")
-{class="inline-svg flex flex-wrap justify-center gap-4 whitespace-nowrap mb-0"}
-
-</footer>

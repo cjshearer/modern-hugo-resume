@@ -1,8 +1,8 @@
 # modern-hugo-resume
 
-A responsive, minimal, print-friendly resume builder. Powered by Hugo, Tailwind CSS, Paged.js, Nix, and GitHub Pages.
+A responsive, minimal, print-friendly resume builder. Powered by Hugo, Nix, and GitHub Pages.
 
-_Host your own resume on GitHub for free!_
+_Host your site on GitHub for free!_
 
 ## Quick Start
 
@@ -25,7 +25,7 @@ Go to `(your repo) > Actions` and click "Enable workflows". These are disabled b
 Edit the resume at `(your repo) > exampleSite/content/_index.md` using the github editor. When you commit it, the resume site will automatically be built and deployed to `https://<your_username>.github.io`.
 
 > [!TIP]
-> You can skip editing the resume and trigger the build and deploy workflow manually by going to `Actions > ./github/workflows/deploy.yaml` and clicking "run workflow".
+> You can skip editing the content and trigger the build and deploy workflow manually by going to `Actions > ./github/workflows/deploy.yaml` and clicking "run workflow".
 
 ## Extended Setup
 
@@ -119,9 +119,8 @@ git push
 
 These can be installed manually, or automatically with [nix](https://nixos.org/download/) by running `nix develop`:
 
-1. Install [`hugo`](https://gohugo.io/installation/) >= 1.28.0+extended.
-2. Install [`go`](https://go.dev/dl/) >= 1.22.3.
-3. Install [`tailwindcss`](https://github.com/tailwindlabs/tailwindcss/releases) >= 3.4.4.
+1. Install [`hugo`](https://gohugo.io/installation/) v0.135.0+extended.
+2. Install [`go`](https://go.dev/dl/) v1.22.7.
 
 ### Common Commands
 ```sh

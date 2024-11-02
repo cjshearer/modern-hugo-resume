@@ -1,3 +1,4 @@
+/* TODO: see caching behavior for GetRemote so we can fetch this during nix build  */
 import "https://unpkg.com/pagedjs@0.4.3/dist/paged.min.js";
 
 async function initializePagedJS() {
