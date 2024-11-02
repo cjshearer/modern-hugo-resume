@@ -1,12 +1,12 @@
 # modern-hugo-resume
 
-A responsive, minimal, print-friendly resume builder. Powered by Hugo, Nix, and GitHub Pages.
+A responsive, minimal, hugo-theme. Powered by Hugo, Nix, and GitHub Pages.
 
 _Host your site on GitHub for free!_
 
 ## Quick Start
 
-This guide helps you quickly test the theme and deploy your resume to github pages. If you like it, we suggest continuing with the [Extended Setup](#extended-setup).
+This guide helps you quickly test the theme and deploy your site to github pages. If you like it, we suggest continuing with the [Extended Setup](#extended-setup).
 
 ### 1. Fork this repository
 
@@ -20,9 +20,9 @@ Under `(your repo) > Settings > Pages > Build and Deployment > Source`, select "
 
 Go to `(your repo) > Actions` and click "Enable workflows". These are disabled by default on forks, to prevent unintended workflow runs.
 
-### 4. Deploy your Customized Resume
+### 4. Deploy your Customized Site
 
-Edit the resume at `(your repo) > exampleSite/content/_index.md` using the github editor. When you commit it, the resume site will automatically be built and deployed to `https://<your_username>.github.io`.
+Edit the content at `(your repo) > exampleSite/content/_index.md` using the github editor. When you commit it, the site will automatically be built and deployed to `https://<your_username>.github.io`.
 
 > [!TIP]
 > You can skip editing the content and trigger the build and deploy workflow manually by going to `Actions > ./github/workflows/deploy.yaml` and clicking "run workflow".
@@ -131,3 +131,9 @@ nix flake check # run formatter/linter checks, exactly the same way it's done in
 hugo server     # serve to localhost and rebuild changes automatically
 hugo --minify   # build static site for production
 ```
+
+## Parameters
+
+Some features and data are configurable via Hugo's parameters
+
+TODO

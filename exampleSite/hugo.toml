@@ -16,6 +16,14 @@ enableDefault = true
 name = "Cody Shearer"
 pageRef = "/"
 weight = 10
+[[menus.header]]
+name = "resume"
+pageRef = "resume"
+weight = 20
+[[menus.header]]
+name = "posts"
+pageRef = "posts"
+weight = 30
 
 [[menus.footer]]
 pre = "![](svgs/brands/github.svg)"
