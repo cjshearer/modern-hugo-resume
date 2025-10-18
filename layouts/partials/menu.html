@@ -2,7 +2,7 @@
   <ul class="inline-list">
     {{- range .menu -}}
       <li>
-        <a href="{{ .PageRef }}">
+        <a href="{{ .URL }}">
           {{- .Pre | $.context.RenderString -}}
           {{- .Name | $.context.RenderString -}}
           {{- .Post | $.context.RenderString -}}

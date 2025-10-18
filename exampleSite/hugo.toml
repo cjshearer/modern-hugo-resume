@@ -1,46 +1,60 @@
 baseURL = "https://cjshearer.github.io/modern-hugo-resume"
-defaultContentLanguage = "en"
-disableKinds = [ "RSS", "section", "sitemap", "taxonomy", "term" ]
-languageCode = "en-us"
+disableKinds = [ "rss", "taxonomy" ]
+languageCode = "en-US"
 
-[markup.goldmark.parser]
-wrapStandAloneImageWithinParagraph = false
 [markup.goldmark.parser.attribute]
+# attributes can only be added to markdown elements when this is enabled
 block = true
 [markup.goldmark.renderer]
+# the resume example uses a div to group the skills together, which requires unsafe html rendering
 unsafe = true
 [markup.goldmark.renderHooks.image]
-enableDefault = true
+# svg rendering in the footer fails without this setting
+useEmbedded = 'fallback'
+[markup.highlight]
+anchorLineNos = true
+# hugo's default usage of chroma for syntax highlighting uses inline css, which cannot use media
+# queries for light/dark mode, so we vendor the classes in the static folder instead
+noClasses = false
+lineNos = true
+lineNumbersInTable = false
 
 [[menus.header]]
-name = "Cody Shearer"
+name = "Bob Smith"
 pageRef = "/"
 weight = 10
+[[menus.header]]
+name = "posts"
+pageRef = "posts"
+weight = 20
+[[menus.header]]
+name = "resume"
+pageRef = "resume"
+weight = 30
 
 [[menus.footer]]
 pre = "![](svgs/brands/github.svg)"
-name = "cjshearer"
-pageRef = "https://github.com/cjshearer"
+name = "source"
+url = "https://github.com/cjshearer/modern-hugo-resume"
 weight = 10
 [[menus.footer]]
-name = "in/cjshearer"
-pageRef = "https://linkedin.com/in/cjshearer"
-pre = """![](svgs/brands/linkedin.svg)
-{.dark-invert .inline-img}"""
+name = "in/bobsmith"
+url = "https://linkedin.com/in/bobsmithexampleprofile"
+pre = "![](svgs/brands/linkedin.svg)"
 weight = 20
 [[menus.footer]]
-name = "cjshearer.dev"
-pageRef = "https://cjshearer.dev"
-pre = """![](svgs/solid/house.svg)
-{.dark-invert .inline-img}"""
+name = "mysite.example.com"
+url = "https://mysite.example.com"
+pre = "![](svgs/solid/house.svg)"
 weight = 30
 [[menus.footer]]
-name = "cjshearer@live.com"
-pageRef = "mailto:cjshearer@live.com"
-pre = """![](svgs/solid/envelope.svg)
-{.dark-invert .inline-img}"""
+name = "bob.smith@example.com"
+url = "mailto:bob.smith@example.com"
+pre = "![](svgs/solid/envelope.svg)"
 weight = 40
 
+# We replace the module path with a relative path for local development. You should remove this
+# section for your own site, following the instructions in the README.
 [module]
 noVendor = "github.com/cjshearer/modern-hugo-resume"
 replacements = "github.com/cjshearer/modern-hugo-resume -> ../.."
@@ -55,9 +69,12 @@ path = "github.com/FortAwesome/Font-Awesome"
 source = "svgs"
 target = "assets/svgs"
 
+[permalinks]
+posts = "posts/:year-:month-:day/:slug/"
+
 [params.author]
-name = "Cody Shearer"
-email = "cjshearer@live.com"
+name = "Bob Smith"
+email = "bob.smith@example.com"
 
 [[params.head.partials]]
 path = "head/font.html"
@@ -68,11 +85,11 @@ path = "head/favicon.html"
 favicon = "💼"
 [[params.head.partials]]
 path = "head/css.html"
-css = [ "main.css", "custom.css"]
+# imports must declared before other rules, so they are separated here
+css = [ "imports.css", "main.css", "custom.css"]
 [params.page]
 width = "8.5in"
 height = "11in"
 margin = "0.4in"
 [[params.head.partials]]
 path = "head/pagedjs.html"
-
