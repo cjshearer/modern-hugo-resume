@@ -1,0 +1,2 @@
+@import "highlight-light.css" layer(base) (prefers-color-scheme: light);
+@import "highlight-dark.css" layer(base) (prefers-color-scheme: dark);

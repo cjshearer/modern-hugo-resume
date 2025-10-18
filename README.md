@@ -1,37 +1,41 @@
 # modern-hugo-resume
 
-A responsive, minimal, print-friendly resume builder. Powered by Hugo, Nix, and GitHub Pages.
+A minimal hugo theme, built around a resume. Powered by Hugo, Nix, and GitHub Pages.
 
 _Host your site on GitHub for free!_
 
 ## Quick Start
 
-This guide helps you quickly test the theme and deploy your resume to github pages. If you like it, we suggest continuing with the [Extended Setup](#extended-setup).
+This guide helps you quickly test the theme and deploy your site to github pages. If you like it, we suggest continuing with the [Extended Setup](#extended-setup).
 
 ### 1. Fork this repository
 
 [Fork this repository](https://github.com/cjshearer/modern-hugo-resume/fork), naming it `<your_username>.github.io`.
 
-### 2. Allow GitHub Actions to Deploy to GitHub Pages
+### 2. Allow GitHub Actions to deploy to GitHub Pages
 
 Under `(your repo) > Settings > Pages > Build and Deployment > Source`, select "GitHub Actions" as the source.
 
-### 3. Enable GitHub Actions Workflows
+### 3. Enable GitHub Actions workflows
 
 Go to `(your repo) > Actions` and click "Enable workflows". These are disabled by default on forks, to prevent unintended workflow runs.
 
-### 4. Deploy your Customized Resume
+### 4. Update your site's baseURL
 
-Edit the resume at `(your repo) > exampleSite/content/_index.md` using the github editor. When you commit it, the resume site will automatically be built and deployed to `https://<your_username>.github.io`.
+Edit `exampleSite/hugo.toml` and set `baseURL` to `https://<your_username>.github.io`.
 
-> [!TIP]
-> You can skip editing the content and trigger the build and deploy workflow manually by going to `Actions > ./github/workflows/deploy.yaml` and clicking "run workflow".
+```toml
+baseURL = "https://<your_username>.github.io"
+```
+
+When you push this change, the site will automatically be built and deployed to `https://<your_username>.github.io`.
+
 
 ## Extended Setup
 
-The fork you created in the [Quick Start](#quick-start) contains a _copy_ of the theme, which won't be easy to update. Follow this guide to convert your forked hugo site into one which _imports_ the theme.
+The fork you created in the [Quick Start](#quick-start) uses a local _copy_ of the theme, which won't be easy to update. Follow this guide to convert your forked hugo site into one which _imports_ the theme.
 
-### 5. Remove Theme Source Code
+### 5. Remove theme source code
 
 Clone your forked repository and modify it as follows:
 
@@ -59,9 +63,9 @@ Clone your forked repository and modify it as follows:
 - └── hugo.toml
 ```
 
-### 6. Rename your Hugo Module and Import Theme
+### 6. Rename your Hugo module and import the theme
 
-Rename your module, remove the `noVendor` and `replacements` configs, then import the theme from GitHub with `hugo mod get -u github.com/cjshearer/modern-hugo-resume`.
+Rename your module, remove the `noVendor` and `replacements` configs, then import the theme from GitHub with `hugo mod get -u github.com/cjshearer/modern-hugo-resume`:
 
 ```diff
 // go.mod (originally from `exampleSite/go.mod`)
@@ -74,11 +78,11 @@ Rename your module, remove the `noVendor` and `replacements` configs, then impor
 - replacements = "github.com/cjshearer/modern-hugo-resume -> ../.."
 ```
 
-### 7. Update Build Path, Name, and Dependency Hash
+### 7. Update the build path, name, and dependency hash
 
-GitHub Actions is configured to build the site using Nix. Now that your site is built from the root directory (not `exampleSite`), you should update its `pname` and remove the custom `sourceRoot`.
+GitHub Actions is configured to build the site using Nix. Now that your site is built from the root directory (no longer under `exampleSite`), you should update its `pname` and remove `sourceRoot`.
 
-As Nix requires the expected hash of downloaded dependencies, which now includes `modern-hugo-resume`, you will need to update this hash. Follow the instructions above `outputHash` in [`flake.nix`](./flake.nix).
+Because Nix checks the hash of downloaded dependencies, which now include `modern-hugo-resume`, you will need to update this hash. To do this follow the instructions above `outputHash` in [`flake.nix`](./flake.nix).
 
 ```diff
 # flake.nix
@@ -103,7 +107,7 @@ As Nix requires the expected hash of downloaded dependencies, which now includes
 + outputHash = "sha256-someNewHash=
 ```
 
-### 8. Commit and Push
+### 8. Commit and push
 
 Commit and push your changes to your main branch.
 
@@ -130,4 +134,39 @@ nix flake check # run formatter/linter checks, exactly the same way it's done in
 
 hugo server     # serve to localhost and rebuild changes automatically
 hugo --minify   # build static site for production
+```
+
+## Parameters
+
+Some features and data are configurable via Hugo's parameters.
+
+**`params.head.partials`**:
+
+Allows you to specify partial templates to be included in the `<head>` of your site.
+Each entry can have a `path` (required), and some support additional keys (e.g., `favicon` for `head/favicon.html`, `css` for `head/css.html`).
+
+Example:
+```toml
+[[params.head.partials]]
+path = "head/font.html"
+[[params.head.partials]]
+path = "head/metadata.html"
+[[params.head.partials]]
+path = "head/favicon.html"
+favicon = "💼"
+[[params.head.partials]]
+path = "head/css.html"
+css = [ "imports.css", "main.css", "custom.css"]
+```
+
+**`params.page`**:
+
+Controls the page size and margins.
+
+Example:
+```toml
+[params.page]
+width = "8.5in"
+height = "11in"
+margin = "0.4in"
 ```

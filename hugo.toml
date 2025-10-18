@@ -4,7 +4,8 @@ homepage = "https://github.com/cjshearer/modern-hugo-resume"
 license = "MIT"
 licenselink = "https://github.com/cjshearer/modern-hugo-resume/main/LICENSE"
 name = "modern-hugo-resume"
-tags = ["responsive", "minimal", "light", "dark", "dak mode"]
+tags = ["responsive", "minimal", "light", "dark"]
+features = ["blog"]
 
 [author]
 homepage = "https://cjshearer.dev"

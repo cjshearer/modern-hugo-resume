@@ -6,10 +6,10 @@
 <meta property="og:description" content="{{ . }}" />
 <meta name="description" content="{{ . }}" />
 {{ end }}
-<base href="{{ .Site.BaseURL }}" />
+<base href='{{ .Site.BaseURL }}' />
 <link rel="canonical" href="{{ .Permalink }}" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content="{{ .Site.LanguageCode }}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ .Permalink }}" />

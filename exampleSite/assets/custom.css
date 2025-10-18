@@ -1,13 +1,4 @@
 @layer base {
-  :root {
-    --invert-dark: invert(0.2);
-    /* --color-link: #0284c7; */
-
-    @media (prefers-color-scheme: dark) {
-      --invert-dark: invert(1);
-    }
-  }
-
   html {
     font-family: "Atkinson Hyperlegible", system-ui;
   }
@@ -33,19 +24,6 @@
   footer {
     @media print {
       padding-top: 0;
-    }
-
-    > nav > ul {
-      justify-content: center;
-
-      > li > a > img {
-        display: inline-block;
-        filter: var(--invert-dark);
-        height: 1em;
-        margin-right: 6rem;
-        vertical-align: calc(0.5cap - 0.5em);
-        width: 1em;
-      }
     }
   }
 }
