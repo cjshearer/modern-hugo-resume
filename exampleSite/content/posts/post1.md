@@ -152,18 +152,14 @@ Result:
 ### Embedding HTML
 
 ```html
-<button 
-  style="font-size:2em; padding:1em 2em;"
->
+<button  style="font-size:2em; padding:1em 2em;">
   Big Button
 </button>
 ```
 
 Result:
 
-<button 
-  style="font-size:2em; padding:1em 2em;"
->
+<button  style="font-size:2em; padding:1em 2em;">
   Big Button
 </button>
 
