@@ -80,13 +80,13 @@ Result:
 
 ```md
 ![O RLY](https://raw.githubusercontent.com/denitdao/o-rly-collection/refs/heads/main/public/book_covers/resume-driven-dev.jpg)
-{style="width: 200px;"}
+{style="max-width: 200px;"}
 ```
 
 Result:
 
 ![O RLY](https://raw.githubusercontent.com/denitdao/o-rly-collection/refs/heads/main/public/book_covers/resume-driven-dev.jpg)
-{style="width: 200px;"}
+{style="max-width: 200px;"}
 
 ### Links
 
@@ -161,7 +161,11 @@ Result:
 
 Result:
 
-<button style="font-size:2em; padding:1em 2em;">Big Button</button>
+<button 
+  style="font-size:2em; padding:1em 2em;"
+>
+  Big Button
+</button>
 
 ## Advanced Markdown
 
