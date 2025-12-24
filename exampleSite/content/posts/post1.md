@@ -152,7 +152,11 @@ Result:
 ### Embedding HTML
 
 ```html
-<button style="font-size:2em; padding:1em 2em;">Big Button</button>
+<button 
+  style="font-size:2em; padding:1em 2em;"
+>
+  Big Button
+</button>
 ```
 
 Result:
@@ -245,6 +249,29 @@ First Header | Second Header
 Content from cell 1 | Content from cell 2
 Content in the first column | Content in the second column
 
+### Diagrams
+
+See [here](https://github.com/blampe/goat) for more info.
+
+    ```goat
+         .               .                .               .--- 1          .-- 1     / 1
+        / \              |                |           .---+            .-+         +
+       /   \         .---+---.         .--+--.        |   '--- 2      |   '-- 2   / \ 2
+      +     +        |       |        |       |    ---+            ---+          +
+     / \   / \     .-+-.   .-+-.     .+.     .+.      |   .--- 3      |   .-- 3   \ / 3
+    /   \ /   \    |   |   |   |    |   |   |   |     '---+            '-+         +
+    1   2 3   4    1   2   3   4    1   2   3   4         '--- 4          '-- 4     \ 4
+    ```
+
+```goat
+     .               .                .               .--- 1          .-- 1     / 1
+    / \              |                |           .---+            .-+         +
+   /   \         .---+---.         .--+--.        |   '--- 2      |   '-- 2   / \ 2
+  +     +        |       |        |       |    ---+            ---+          +
+ / \   / \     .-+-.   .-+-.     .+.     .+.      |   .--- 3      |   .-- 3   \ / 3
+/   \ /   \    |   |   |   |    |   |   |   |     '---+            '-+         +
+1   2 3   4    1   2   3   4    1   2   3   4         '--- 4          '-- 4     \ 4
+```
 
 ## References
 
