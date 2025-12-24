@@ -154,9 +154,9 @@
     max-width: 100%;
   }
   pre {
-    /* prefer soft-wrapping and fallback to a horizontal scrollbar */
     overflow-x: auto;
-    white-space: pre-wrap;
+    overflow-y: hidden;
+  }
   }
 
   header > nav > ul > li:first-child {
