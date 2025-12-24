@@ -31,9 +31,9 @@
 @layer components {
   .skills-grid {
     display: grid;
-    gap: 8rem;
+    gap: 1rem;
     grid-template-columns: min-content 1fr;
-    margin-top: 14rem;
+    margin-top: 1.75rem;
 
     > * {
       margin-top: 0;

@@ -8,10 +8,10 @@
     --color-headings: #111827;
     --color-link-hover: var(--color-body);
     --color-link: inherit;
-    --font-size-1: 9rem;
-    --font-size-2: 10rem;
-    --font-size-3: 14rem;
-    --font-size-4: 17rem;
+    --font-size-1: 1.125rem;
+    --font-size-2: 1.25rem;
+    --font-size-3: 1.75rem;
+    --font-size-4: 2.125rem;
     --invert-dark: invert(0.2);
 
     @media (prefers-color-scheme: dark) {
@@ -41,13 +41,6 @@
   }
 
   html {
-    /* 
-     12.5% of 16px, the default browser font size, is 2px, making calculation from rem units to px
-     simple. See
-     [dont-use-pixels-for-font-size](https://www.aleksandrhovhannisyan.com/blog/use-rems-for-font-size/#dont-use-pixels-for-font-size)
-     for why percentage is used.
-    */
-    font-size: 12.5%;
     /* moving from pages with no scrollbar to ones which do should not cause the layout to jump */
     scrollbar-gutter: stable;
   }
@@ -55,7 +48,7 @@
   body {
     background-color: var(--color-background);
     color: var(--color-body);
-    font-size: 8rem;
+    font-size: 1rem;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
@@ -63,7 +56,7 @@
     padding: var(--page-margin);
 
     @media not all and (min-width: 640px) {
-      padding: 8rem;
+      padding: 1rem;
     }
   }
 
@@ -75,14 +68,14 @@
   h6,
   strong {
     color: var(--color-headings);
-    margin-bottom: 8rem;
-    margin-top: 10rem;
+    margin-bottom: 1rem;
+    margin-top: 1.25rem;
     line-height: 1.25;
     break-after: avoid-page;
   }
 
   h1 {
-    font-size: 10rem;
+    font-size: 1.25rem;
     font-weight: 600;
   }
 
@@ -90,7 +83,7 @@
     border-bottom: 1px solid;
     font-size: var(--font-size-3);
     font-weight: 600;
-    padding-bottom: 4rem;
+    padding-bottom: 0.5rem;
   }
 
   h3 {
@@ -106,30 +99,30 @@
   li {
     font-size: var(--font-size-1);
     font-weight: 400;
-    line-height: 10rem;
+    line-height: 1.25rem;
   }
 
   p,
   ul,
   ol {
-    margin-bottom: 10rem;
+    margin-bottom: 1.25rem;
     break-inside: avoid;
   }
 
   ul {
     list-style-type: disc;
-    padding-inline-start: 13rem;
+    padding-inline-start: 1.625rem;
 
     ul {
       list-style-type: circle;
-      margin-bottom: 6rem;
-      margin-top: 6rem;
+      margin-bottom: 0.75rem;
+      margin-top: 0.75rem;
     }
 
     > li {
-      margin-bottom: 4rem;
-      margin-top: 4rem;
-      padding-inline-start: 1.25rem;
+      margin-bottom: 0.5rem;
+      margin-top: 0.5rem;
+      padding-inline-start: 0.15625rem;
     }
   }
 
@@ -142,7 +135,7 @@
   a {
     color: var(--color-link);
     text-decoration-line: underline;
-    text-underline-offset: 2rem;
+    text-underline-offset: 0.25rem;
 
     &:hover {
       color: var(--color-link-hover);
@@ -181,14 +174,14 @@
         display: inline-block;
         filter: var(--invert-dark);
         height: 1em;
-        margin-right: 6rem;
+        margin-right: 0.75rem;
         vertical-align: calc(0.5cap - 0.5em);
         width: 1em;
       }
     }
   }
   footer {
-    padding-top: 14rem;
+    padding-top: 1.75rem;
   }
 }
 
@@ -196,7 +189,7 @@
   .inline-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 6rem;
+    gap: 0.75rem;
     list-style-type: none;
     padding-left: 0;
 
