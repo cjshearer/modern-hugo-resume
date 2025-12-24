@@ -1,6 +1,8 @@
 @layer base, components, utilities;
 @layer base {
   :root {
+    color-scheme: light dark;
+
     --color-background: #fff;
     --color-body: #1f2937;
     --color-headings: #111827;
