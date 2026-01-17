@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="{{ .Site.LanguageCode }}">
   <head>
-    {{- $context := . -}}
+    {{/*  context comes from [[params.head.partials]] in hugo.toml  */}}
     {{- range .Param "head.partials" -}}
       {{- partial .path . -}}
     {{- end -}}
