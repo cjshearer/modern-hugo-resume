@@ -1,15 +1,15 @@
-{{ with (.Page.Title | default $.Site.Title) }}
+{{ with (page.Title | default site.Title) }}
 <title>{{ . }}</title>
 <meta property="og:title" content="{{ . }}" />
 {{ end }}
-{{ with .Page.Description }}
+{{ with page.Description }}
 <meta property="og:description" content="{{ . }}" />
 <meta name="description" content="{{ . }}" />
 {{ end }}
-<base href='{{ .Site.BaseURL }}' />
-<link rel="canonical" href="{{ .Permalink }}" />
+<base href='{{ site.BaseURL }}' />
+<link rel="canonical" href="{{ page.Permalink }}" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta property="og:locale" content="{{ .Site.LanguageCode }}" />
+<meta property="og:locale" content="{{ site.LanguageCode }}" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:url" content="{{ page.Permalink }}" />

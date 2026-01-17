@@ -1,6 +1,7 @@
 baseURL = "https://cjshearer.github.io/modern-hugo-resume"
 disableKinds = [ "rss", "taxonomy" ]
 languageCode = "en-US"
+title = "Modern Hugo Resume"
 
 [markup.goldmark.parser.attribute]
 # attributes can only be added to markdown elements when this is enabled
